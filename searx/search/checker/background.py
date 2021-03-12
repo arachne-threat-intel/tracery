@@ -95,7 +95,11 @@ def _signal_handler(signum, frame):
 
 def initialize():
     logger.info('Send SIGUSR1 signal to pid %i to start the checker', os.getpid())
-    signal.signal(signal.SIGUSR1, _signal_handler)
+    try:
+        # This can only execute on the main thread - will throw error if otherwise
+        signal.signal(signal.SIGUSR1, _signal_handler)
+    except ValueError as e:
+        logger.exception(e)
 
     # disabled by default
     _set_result({'status': 'disabled'}, include_timestamp=False)
