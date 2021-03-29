@@ -242,7 +242,8 @@ def code_highlighter(codelines, language=None):
 
             # highlight last codepart
             formatter = HtmlFormatter(linenos='inline',
-                                      linenostart=line_code_start)
+                                      linenostart=line_code_start,
+                                      cssclass="code-highlight")
             html_code = html_code + highlight(tmp_code, lexer, formatter)
 
             # reset conditions for next codepart
@@ -256,7 +257,7 @@ def code_highlighter(codelines, language=None):
         last_line = line
 
     # highlight last codepart
-    formatter = HtmlFormatter(linenos='inline', linenostart=line_code_start)
+    formatter = HtmlFormatter(linenos='inline', linenostart=line_code_start, cssclass="code-highlight")
     html_code = html_code + highlight(tmp_code, lexer, formatter)
 
     return html_code
@@ -361,6 +362,15 @@ def image_proxify(url):
                             urlencode(dict(url=url.encode(), h=h)))
 
 
+def get_translations():
+    return {
+        # when overpass AJAX request fails (on a map result)
+        'could_not_load': gettext('could not load data'),
+        # when there is autocompletion
+        'no_item_found': gettext('No item found')
+    }
+
+
 def render(template_name, override_theme=None, **kwargs):
     disabled_engines = request.preferences.engines.get_disabled()
 
@@ -419,6 +429,8 @@ def render(template_name, override_theme=None, **kwargs):
     kwargs['preferences'] = request.preferences
 
     kwargs['brand'] = brand
+
+    kwargs['translations'] = json.dumps(get_translations(), separators=(',', ':'))
 
     kwargs['scripts'] = set()
     kwargs['endpoint'] = 'results' if 'q' in kwargs else request.endpoint
@@ -841,7 +853,6 @@ def preferences():
             if e.timeout > settings['outgoing']['request_timeout']:
                 stats[e.name]['warn_timeout'] = True
             stats[e.name]['supports_selected_language'] = _is_selected_language_supported(e, request.preferences)
-
             engines_by_category[c].append(e)
 
     # get first element [0], the engine time,
@@ -1081,14 +1092,6 @@ def config():
         'doi_resolvers': [r for r in settings['doi_resolvers']],
         'default_doi_resolver': settings['default_doi_resolver'],
     })
-
-
-@app.route('/translations.js')
-def js_translations():
-    return render(
-        'translations.js.tpl',
-        override_theme='__common__',
-    ), {'Content-Type': 'text/javascript; charset=UTF-8'}
 
 
 @app.errorhandler(404)
