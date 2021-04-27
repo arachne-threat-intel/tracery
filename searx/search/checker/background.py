@@ -94,8 +94,8 @@ def _signal_handler(signum, frame):
 
 
 def initialize():
-    if hasattr(signal, 'SIGUSR1'):
-        # Windows doesn't support SIGUSR1
+    if hasattr(signal, 'SIGUSR1') and __name__ == '__main__':
+        # Windows doesn't support SIGUSR1 and this can only be done on the main thread
         logger.info('Send SIGUSR1 signal to pid %i to start the checker', os.getpid())
         signal.signal(signal.SIGUSR1, _signal_handler)
 
