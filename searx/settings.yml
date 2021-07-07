@@ -229,6 +229,7 @@ engines:
     title_xpath : //li//div[@class="mw-search-result-heading"]/a
     content_xpath : //li/div[@class="searchresult"]
     categories : general
+    disabled : True
     about:
       website: https://wikimini.org/
       wikidata_id: Q3568032
@@ -551,6 +552,7 @@ engines:
   - name : google
     engine : google
     shortcut : go
+    use_mobile_ui: false
     # additional_tests:
     #   android: *test_android
 
@@ -756,6 +758,19 @@ engines:
   - name : mixcloud
     engine : mixcloud
     shortcut : mc
+
+# MongoDB engine
+# Required dependency: pymongo
+#  - name : mymongo
+#    engine : mongodb
+#    shortcut : md
+#    exact_match_only : False
+#    host : '127.0.0.1'
+#    port : 27017
+#    results_per_page : 20
+#    database : 'business'
+#    collection : 'reviews' # name of the db collection
+#    key : 'name' # key in the collection to search for
 
   - name : npm
     engine : json_engine
