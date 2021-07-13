@@ -25,5 +25,5 @@ def _execfile(filepath, specified_globals=None, specified_locals=None):
 class ExternalCaller:
     # Method to run the webapp.py script
     @staticmethod
-    def call_webapp():
-        _execfile(os.path.join('searx', 'searx', 'webapp.py'))
+    def call_webapp(path_prefix=''):
+        _execfile(os.path.join(path_prefix, 'webapp.py'))
