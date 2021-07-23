@@ -17,7 +17,6 @@ along with searx. If not, see < http://www.gnu.org/licenses/ >.
 
 import logging
 import searx.settings_loader
-from searx.external_caller import ExternalCaller
 from os import environ
 from os.path import realpath, dirname, join, abspath, isfile
 

@@ -86,6 +86,8 @@ class OnlineProcessor(EngineProcessor):
             req = searx.network.post
 
         request_args['data'] = params['data']
+        # Have a longer timeout for searches
+        request_args['timeout'] = 180
 
         # send the request
         response = req(params['url'], **request_args)
