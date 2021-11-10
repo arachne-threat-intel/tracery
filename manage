@@ -41,10 +41,16 @@ PYLINT_FILES=(
     searx_extra/update/update_external_bangs.py
 )
 
+# Any files which should be ignored by the linter (please state why)
+PYLINT_IGNORE=(
+    # external_caller raises Pylint error W0122 (exec-used); it's executing a searx file
+    searx/external_caller.py
+)
+
 PYLINT_SEARX_DISABLE_OPTION="\
 I,C,R,\
 W0105,W0212,W0511,W0603,W0613,W0621,W0702,W0703,W1401,\
-E1136,W0122"
+E1136"
 PYLINT_ADDITIONAL_BUILTINS_FOR_ENGINES="supported_languages,language_aliases"
 PYLINT_OPTIONS="-m pylint -j 0 --rcfile .pylintrc"
 
@@ -84,7 +90,7 @@ pyenv.* :
 pypi.upload:
   Upload python packages to PyPi (to test use pypi.upload.test)
 test.* :
-  pylint    : lint PYLINT_FILES, searx/engines, searx & tests
+  pylint    : lint PYLINT_FILES, searx/engines, searx & tests except PYLINT_IGNORE
   pep8      : pycodestyle (pep8) for all files except PYLINT_FILES
   unit      : run unit tests
   coverage  : run unit tests with coverage
@@ -386,21 +392,25 @@ pypi.upload.test() {
 test.pylint() {
     # shellcheck disable=SC2086
     (   set -e
+        local _exclude=""
+        printf -v _exclude '%s, ' "${PYLINT_IGNORE[@]}"
+
         build_msg TEST "[pylint] \$PYLINT_FILES"
         pyenv.cmd python ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
-            "${PYLINT_FILES[@]}"
+            "${PYLINT_FILES[@]}" \
+            --ignore=$_exclude
 
         build_msg TEST "[pylint] searx/engines"
         pyenv.cmd python ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
             --disable="${PYLINT_SEARX_DISABLE_OPTION}" \
             --additional-builtins="${PYLINT_ADDITIONAL_BUILTINS_FOR_ENGINES}" \
-            searx/engines
+            searx/engines \
+            --ignore=$_exclude
 
         build_msg TEST "[pylint] searx tests"
         pyenv.cmd python ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
             --disable="${PYLINT_SEARX_DISABLE_OPTION}" \
-	    --ignore=searx/engines \
-	    tests
+	          --ignore=searx/engines tests $_exclude
     )
     dump_return $?
 }
