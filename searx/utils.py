@@ -7,7 +7,7 @@ from numbers import Number
 from os.path import splitext, join
 from random import choice
 from html.parser import HTMLParser
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, urlunparse
 
 from lxml import html
 from lxml.etree import ElementBase, XPath, XPathError, XPathSyntaxError, _ElementStringResult, _ElementUnicodeResult
@@ -214,6 +214,16 @@ def normalize_url(url, base_url):
     return url
 
 
+def add_scheme_to_url(url, scheme="https"):
+    """Add schema to URL: if scheme is missing from the URL, then add it."""
+
+    parsed = urlparse(url)
+    if parsed.scheme == '':
+        parsed_with_scheme = parsed._replace(scheme=scheme)
+        return urlunparse(parsed_with_scheme)
+    return url
+
+
 def extract_url(xpath_results, base_url):
     """Extract and normalize URL from lxml Element
 
@@ -262,11 +272,7 @@ def dict_subset(d, properties):
         >>> >> dict_subset({'A': 'a', 'B': 'b', 'C': 'c'}, ['A', 'D'])
         {'A': 'a'}
     """
-    result = {}
-    for k in properties:
-        if k in d:
-            result[k] = d[k]
-    return result
+    return {k: d[k] for k in properties if k in d}
 
 
 def get_torrent_size(filesize, filesize_multiplier):

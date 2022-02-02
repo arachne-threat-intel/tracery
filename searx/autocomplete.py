@@ -24,6 +24,7 @@ from httpx import HTTPError
 
 
 from searx import settings
+from searx.data import ENGINES_LANGUAGES
 from searx.network import get as http_get
 from searx.exceptions import SearxEngineResponseException
 
@@ -33,6 +34,22 @@ def get(*args, **kwargs):
         kwargs['timeout'] = settings['outgoing']['request_timeout']
     kwargs['raise_for_httperror'] = True
     return http_get(*args, **kwargs)
+
+
+def brave(query, lang):
+    # brave search autocompleter
+    url = 'https://search.brave.com/api/suggest?{query}'
+
+    resp = get(url.format(query=urlencode({'q': query})))
+
+    results = []
+
+    if resp.ok:
+        data = loads(resp.text)
+        for suggestion in data[1]:
+            results.append(suggestion)
+
+    return results
 
 
 def dbpedia(query, lang):
@@ -77,12 +94,11 @@ def google(query, lang):
 
 def startpage(query, lang):
     # startpage autocompleter
-    url = 'https://startpage.com/do/suggest?{query}'
-
-    resp = get(url.format(query=urlencode({'query': query}))).text.split('\n')
-    if len(resp) > 1:
-        return resp
-    return []
+    lui = ENGINES_LANGUAGES['startpage'].get(lang, 'english')
+    url = 'https://startpage.com/suggestions?{query}'
+    resp = get(url.format(query=urlencode({'q': query, 'segment': 'startpage.udog', 'lui': lui})))
+    data = resp.json()
+    return [e['text'] for e in data.get('suggestions', []) if 'text' in e]
 
 
 def swisscows(query, lang):
@@ -120,7 +136,8 @@ def wikipedia(query, lang):
     return []
 
 
-backends = {'dbpedia': dbpedia,
+backends = {'brave': brave,
+            'dbpedia': dbpedia,
             'duckduckgo': duckduckgo,
             'google': google,
             'startpage': startpage,

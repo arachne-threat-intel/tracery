@@ -410,6 +410,13 @@ engines:
     timeout: 3.0
     disabled : True
 
+  - name : tineye
+    engine : tineye
+    shortcut : tin
+    paging : True
+    timeout : 9.0
+    disabled : True
+
   - name : etools
     engine : etools
     shortcut : eto
@@ -498,6 +505,13 @@ engines:
     engine : gigablast
     shortcut : gb
     timeout : 3.0
+    # Collection names to search in, separated by whitespaces.
+    # By default searx, queries the main collection.
+    #collections: main
+    # Search types, not required. possible values: images, news
+    #search_type: images
+    # Enable fast to get results quicker.
+    #fast : 1
     disabled: True
     additional_tests:
       rosebud: *test_rosebud
@@ -683,22 +697,19 @@ engines:
 
   - name : hoogle
     engine : xpath
-    paging : True
     search_url : https://hoogle.haskell.org/?hoogle={query}&start={pageno}
     results_xpath : '//div[@class="result"]'
-    title_xpath : './/div[@class="ans"]//a'
-    url_xpath : './/div[@class="ans"]//a/@href'
-    content_xpath : './/div[@class="from"]'
-    page_size : 20
+    title_xpath : './div[@class="ans"]'
+    url_xpath : './div[@class="ans"]//a/@href'
+    content_xpath : './div[contains(@class, "doc")]'
     categories : it
     shortcut : ho
     about:
-      website: https://www.haskell.org/
+      website: https://hoogle.haskell.org/
       wikidata_id: Q34010
-      official_api_documentation: https://hackage.haskell.org/api
       use_official_api: false
       require_api_key: false
-      results: JSON
+      results: HTML
 
   - name : imdb
     engine : imdb
@@ -907,6 +918,26 @@ engines:
   - name : openstreetmap
     engine : openstreetmap
     shortcut : osm
+
+#  - name : prowlarr
+#    engine : prowlarr
+#    shortcut : prow
+#    categories : files
+#    enable_http : True
+#    api_key : ''
+#    indexer_ids : 5 # comma separated list of indexer ids
+#    search_categories : '' # comma separated list of categories
+#    search_type : search
+#    base_url: http://localhost:9696/api/v1/search?
+#    timeout : 50.0
+#    disabled : True,
+#    about :
+#      website : https://wiki.servarr.com/prowlarr
+#      wikidata_id : None
+#      official_api_documentation : https://wiki.servarr.com/prowlarr/search
+#      use_official_api : true
+#      require_api_key : true
+#      results : JSON
 
   - name : openrepos
     engine : xpath
@@ -1450,10 +1481,10 @@ engines:
     engine : xpath
     paging : True
     search_url : https://petalsearch.com/search?query={query}&pn={pageno}
-    results_xpath : //div[@class="container"]/div[@class="container"]
-    title_xpath : .//a[@class="title"]
-    url_xpath : .//a[@class="title"]/@href
-    content_xpath : .//div[@class="webpage-text"]
+    title_xpath : //span[@class="title-name"]
+    url_xpath : //div[@class="card-source"]/text()
+    content_xpath : //span[@class="desc-cont"]
+    suggestion_xpath : //*[@class="rs-text"]/*[contains(class, rs-text)]
     page_size : 12
     categories : general
     timeout : 4.0
@@ -1625,6 +1656,7 @@ engines:
   - name: onesearch
     shortcut: onesearch
     engine: onesearch
+    disabled: True
     about:
       website: https://www.onesearch.com/
       wikidata_id: None
