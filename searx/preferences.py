@@ -62,7 +62,7 @@ class Setting:
         return self.value
 
     def save(self, name, resp):
-        """Save cookie ``name`` in the HTTP reponse obect
+        """Save cookie ``name`` in the HTTP response object
 
         If needed, its overwritten in the inheritance."""
         resp.set_cookie(name, self.value, max_age=COOKIE_MAX_AGE)
@@ -125,7 +125,7 @@ class MultipleChoiceSetting(EnumStringSetting):
                 self.value.append(choice)
 
     def save(self, name, resp):
-        """Save cookie ``name`` in the HTTP reponse obect
+        """Save cookie ``name`` in the HTTP response object
         """
         resp.set_cookie(name, ','.join(self.value), max_age=COOKIE_MAX_AGE)
 
@@ -160,7 +160,7 @@ class SetSetting(Setting):
         self.values = set(elements)  # pylint: disable=attribute-defined-outside-init
 
     def save(self, name, resp):
-        """Save cookie ``name`` in the HTTP reponse obect
+        """Save cookie ``name`` in the HTTP response object
         """
         resp.set_cookie(name, ','.join(self.values), max_age=COOKIE_MAX_AGE)
 
@@ -209,7 +209,7 @@ class MapSetting(Setting):
         self.key = data  # pylint: disable=attribute-defined-outside-init
 
     def save(self, name, resp):
-        """Save cookie ``name`` in the HTTP reponse obect
+        """Save cookie ``name`` in the HTTP response object
         """
         if hasattr(self, 'key'):
             resp.set_cookie(name, self.key, max_age=COOKIE_MAX_AGE)
@@ -225,11 +225,9 @@ class SwitchableSetting(Setting):
             raise MissingArgumentException('missing argument: choices')
 
     def transform_form_items(self, items):  # pylint: disable=missing-function-docstring
-        # pylint: disable=no-self-use
         return items
 
     def transform_values(self, values):   # pylint: disable=missing-function-docstring
-        # pylint: disable=no-self-use
         return values
 
     def parse_cookie(self, data):   # pylint: disable=missing-function-docstring
@@ -255,7 +253,7 @@ class SwitchableSetting(Setting):
                     self.enabled.add(choice['id'])
 
     def save(self, resp):  # pylint: disable=arguments-differ
-        """Save cookie in the HTTP reponse obect
+        """Save cookie in the HTTP response object
         """
         resp.set_cookie('disabled_{0}'.format(self.value), ','.join(self.disabled), max_age=COOKIE_MAX_AGE)
         resp.set_cookie('enabled_{0}'.format(self.value), ','.join(self.enabled), max_age=COOKIE_MAX_AGE)
@@ -345,6 +343,26 @@ class Preferences:
                 settings['search'].get('autocomplete', ''),
                 is_locked('autocomplete'),
                 choices=list(autocomplete.backends.keys()) + ['']
+            ),
+            'autofocus': MapSetting(
+                settings['ui'].get('autofocus', True),
+                is_locked('autofocus'),
+                map={
+                    '0': False,
+                    '1': True,
+                    'False': False,
+                    'True': True
+                }
+            ),
+            'archive_today': MapSetting(
+                settings['ui'].get('archive_today', True),
+                is_locked('archive_today'),
+                map={
+                    '0': False,
+                    '1': True,
+                    'False': False,
+                    'True': True
+                }
             ),
             'image_proxy': MapSetting(
                 settings['server'].get('image_proxy', False),
@@ -499,7 +517,7 @@ class Preferences:
         return ret_val
 
     def save(self, resp):
-        """Save cookie in the HTTP reponse obect
+        """Save cookie in the HTTP response object
         """
         for user_setting_name, user_setting in self.key_value_settings.items():
             if user_setting.locked:

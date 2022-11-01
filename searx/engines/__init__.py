@@ -27,7 +27,7 @@ from searx import settings
 from searx import logger
 from searx.data import ENGINES_LANGUAGES
 from searx.exceptions import SearxEngineResponseException
-from searx.network import get, initialize as initialize_network, set_context_network_name
+from searx.poolrequests import get, get_proxy_cycles
 from searx.utils import load_module, match_language, get_engine_from_settings, gen_useragent
 
 
@@ -89,6 +89,8 @@ def load_engine(engine_data):
                 engine.categories = []
             else:
                 engine.categories = list(map(str.strip, param_value.split(',')))
+        elif param_name == 'proxies':
+            engine.proxies = get_proxy_cycles(param_value)
         else:
             setattr(engine, param_name, param_value)
 
@@ -140,7 +142,7 @@ def load_engine(engine_data):
 
     engine.stats = {
         'sent_search_count': 0,  # sent search
-        'search_count': 0,  # succesful search
+        'search_count': 0,  # successful search
         'result_count': 0,
         'engine_time': 0,
         'engine_time_count': 0,
@@ -169,7 +171,7 @@ def load_engine(engine_data):
         categories.setdefault(category_name, []).append(engine)
 
     if engine.shortcut in engine_shortcuts:
-        logger.error('Engine config error: ambigious shortcut: {0}'.format(engine.shortcut))
+        logger.error('Engine config error: ambiguous shortcut: {0}'.format(engine.shortcut))
         sys.exit(1)
 
     engine_shortcuts[engine.shortcut] = engine.name
@@ -283,3 +285,24 @@ def load_engines(engine_list):
         if engine is not None:
             engines[engine.name] = engine
     return engines
+
+
+def initialize_engines(engine_list):
+    load_engines(engine_list)
+
+    def engine_init(engine_name, init_fn):
+        try:
+            init_fn(get_engine_from_settings(engine_name))
+        except SearxEngineResponseException as exc:
+            logger.warn('%s engine: Fail to initialize // %s', engine_name, exc)
+        except Exception:
+            logger.exception('%s engine: Fail to initialize', engine_name)
+        else:
+            logger.debug('%s engine: Initialized', engine_name)
+
+    for engine_name, engine in engines.items():
+        if hasattr(engine, 'init'):
+            init_fn = getattr(engine, 'init')
+            if init_fn:
+                logger.debug('%s engine: Starting background initialization', engine_name)
+                threading.Thread(target=engine_init, args=(engine_name, init_fn)).start()

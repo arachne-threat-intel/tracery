@@ -10,8 +10,8 @@ import traceback
 
 from os.path import dirname, join, abspath, realpath
 
+from unittest import TestCase
 from splinter import Browser
-import aiounittest
 
 
 class SearxTestLayer:
@@ -82,7 +82,7 @@ def run_robot_tests(tests):
             test(browser)
 
 
-class SearxTestCase(aiounittest.AsyncTestCase):
+class SearxTestCase(TestCase):
     """Base test case for non-robot tests."""
 
     layer = SearxTestLayer
@@ -114,6 +114,6 @@ if __name__ == '__main__':
             run_robot_tests([getattr(robot, x) for x in dir(robot) if x.startswith('test_')])
         except Exception:  # pylint: disable=broad-except
             errors = True
-            print('Error occured: {0}'.format(traceback.format_exc()))
+            print('Error occurred: {0}'.format(traceback.format_exc()))
         test_layer.tearDown()
         sys.exit(1 if errors else 0)

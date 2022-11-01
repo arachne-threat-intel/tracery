@@ -5,9 +5,8 @@
 
 from json import loads
 from urllib.parse import urlencode
+import requests
 import base64
-
-from searx.network import post as http_post
 
 # about
 about = {
@@ -24,6 +23,7 @@ categories = ['music']
 paging = True
 api_client_id = None
 api_client_secret = None
+timeout = 10.0
 
 # search-url
 url = 'https://api.spotify.com/'
@@ -39,11 +39,12 @@ def request(query, params):
 
     params['url'] = search_url.format(query=urlencode({'q': query}), offset=offset)
 
-    r = http_post(
+    r = requests.post(
         'https://accounts.spotify.com/api/token',
+        timeout=timeout,
         data={'grant_type': 'client_credentials'},
         headers={'Authorization': 'Basic ' + base64.b64encode(
-            "{}:{}".format(api_client_id, api_client_secret).encode()
+            "{}:{}".format(api_client_id, api_client_secret).encode(),
         ).decode()}
     )
     j = loads(r.text)

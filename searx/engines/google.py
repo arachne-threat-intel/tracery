@@ -10,7 +10,8 @@ Definitions`_.
 
 # pylint: disable=invalid-name, missing-function-docstring, too-many-branches
 
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
+from random import random
 from lxml import html
 from searx import logger
 from searx.utils import match_language, extract_text, eval_xpath, eval_xpath_list, eval_xpath_getindex
@@ -108,22 +109,15 @@ filter_mapping = {
 # specific xpath variables
 # ------------------------
 
-# google results are grouped into <div class="g ..." ../>
-results_xpath = '//div[@id="search"]//div[contains(@class, "g ")]'
+results_xpath = '//div[contains(@class, "MjjYud")]'
+title_xpath = './/h3[1]'
+href_xpath = './/a/@href'
+content_xpath = './/div[@data-content-feature=1]'
 results_xpath_mobile_ui = '//div[contains(@class, "g ")]'
 
 # google *sections* are no usual *results*, we ignore them
 g_section_with_header = './g-section-with-header'
 
-# the title is a h3 tag relative to the result group
-title_xpath = './/h3[1]'
-
-# in the result group there is <div class="yuRUbf" ../> it's first child is a <a
-# href=...>
-href_xpath = './/div[@class="yuRUbf"]//a/@href'
-
-# in the result group there is <div class="VwiC3b ..." ../> containing the *content*
-content_xpath = './/div[contains(@class, "VwiC3b")]'
 
 # Suggestions are links placed in a *card-section*, we extract only the text
 # from the links not the links itself.
@@ -194,7 +188,8 @@ def get_lang_info(params, lang_list, custom_aliases, supported_any_language):
     return ret_val
 
 def detect_google_sorry(resp):
-    if resp.url.host == 'sorry.google.com' or resp.url.path.startswith('/sorry'):
+    resp_url = urlparse(resp.url)
+    if resp_url.netloc == 'sorry.google.com' or resp_url.path.startswith('/sorry'):
         raise SearxEngineCaptchaException()
 
 
@@ -211,7 +206,8 @@ def request(query, params):
     additional_parameters = {}
     if use_mobile_ui:
         additional_parameters = {
-            'async': 'use_ac:true,_fmt:pc',
+            'asearch': 'arc',
+            'async': 'use_ac:true,_fmt:html',
         }
 
     # https://www.google.de/search?q=corona&hl=de&lr=lang_de&start=0&tbs=qdr%3Ad&safe=medium
@@ -222,6 +218,7 @@ def request(query, params):
         'oe': "utf8",
         'start': offset,
         'filter': '0',
+        'ucbcb': 1,
         **additional_parameters,
     })
 
@@ -234,6 +231,7 @@ def request(query, params):
     params['url'] = query_url
 
     logger.debug("HTTP header Accept-Language --> %s", lang_info.get('Accept-Language'))
+    params['cookies']['CONSENT'] = "PENDING+" + str(random()*100)
     params['headers'].update(lang_info['headers'])
     if use_mobile_ui:
         params['headers']['Accept'] = '*/*'
@@ -284,7 +282,7 @@ def response(resp):
 
         # google *sections*
         if extract_text(eval_xpath(result, g_section_with_header)):
-            logger.debug("ingoring <g-section-with-header>")
+            logger.debug("ignoring <g-section-with-header>")
             continue
 
         try:

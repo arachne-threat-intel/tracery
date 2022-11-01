@@ -96,7 +96,7 @@
 
                     {% if 'method' not in locked_preferences %}
                     {% set method_label = _('Method') %}
-                    {% set method_info = _('Change how forms are submited, <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods" rel="external">learn more about request methods</a>') %}
+                    {% set method_info = _('Change how forms are submitted, <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods" rel="external">learn more about request methods</a>') %}
                     {{ preferences_item_header(method_info, method_label, rtl, 'method') }}
                         <select class="form-control {{ custom_select_class(rtl) }}" name="method" id="method">
                             <option value="POST" {% if method == 'POST' %}selected="selected"{% endif %}>POST</option>
@@ -146,6 +146,28 @@
                         <select class="form-control {{ custom_select_class(rtl) }}" name="results_on_new_tab" id="results_on_new_tab">
                             <option value="1" {% if results_on_new_tab %}selected="selected"{% endif %}>{{ _('On') }}</option>
                             <option value="0" {% if not results_on_new_tab %}selected="selected"{% endif %}>{{ _('Off')}}</option>
+                        </select>
+                    {{ preferences_item_footer(info, label, rtl) }}
+                    {% endif %}
+
+                    {% if 'autofocus' not in locked_preferences %}
+                    {% set label = _('Autofocus search field') %}
+                    {% set info = _('Turn off if you use your keyboard to scroll') %}
+                    {{ preferences_item_header(info, label, rtl, 'autofocus') }}
+                        <select class="form-control {{ custom_select_class(rtl) }}" name="autofocus" id="autofocus">
+                            <option value="1" {% if autofocus %}selected="selected"{% endif %}>{{ _('On') }}</option>
+                            <option value="0" {% if not autofocus %}selected="selected"{% endif %}>{{ _('Off')}}</option>
+                        </select>
+                    {{ preferences_item_footer(info, label, rtl) }}
+                    {% endif %}
+
+                    {% if 'archive_today' not in locked_preferences %}
+                    {% set label = _('Show archive.today links') %}
+                    {% set info = _('Alternative link cache service') %}
+                    {{ preferences_item_header(info, label, rtl, 'archive_today') }}
+                        <select class="form-control {{ custom_select_class(rtl) }}" name="archive_today" id="archive_today">
+                            <option value="1" {% if archive_today %}selected="selected"{% endif %}>{{ _('On') }}</option>
+                            <option value="0" {% if not archive_today %}selected="selected"{% endif %}>{{ _('Off')}}</option>
                         </select>
                     {{ preferences_item_footer(info, label, rtl) }}
                     {% endif %}

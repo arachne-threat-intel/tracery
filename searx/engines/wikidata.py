@@ -12,7 +12,7 @@ from babel.dates import format_datetime, format_date, format_time, get_datetime_
 
 from searx import logger
 from searx.data import WIKIDATA_UNITS
-from searx.network import post, get
+from searx.poolrequests import post, get
 from searx.utils import match_language, searx_useragent, get_string_replaces_function
 from searx.external_urls import get_external_url, get_earth_coordinates_url, area_to_osm_zoom
 from searx.engines.wikipedia import _fetch_supported_languages, supported_languages_url  # NOQA # pylint: disable=unused-import
@@ -49,7 +49,7 @@ WIKIDATA_PROPERTIES = {
 # SERVICE wikibase:label: https://en.wikibooks.org/wiki/SPARQL/SERVICE_-_Label#Manual_Label_SERVICE
 # https://en.wikibooks.org/wiki/SPARQL/WIKIDATA_Precision,_Units_and_Coordinates
 # https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Data_model
-# optmization:
+# optimization:
 # * https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/query_optimization
 # * https://github.com/blazegraph/database/wiki/QueryHints
 QUERY_TEMPLATE = """
@@ -64,6 +64,7 @@ WHERE
         mwapi:language "%LANGUAGE%".
         ?item wikibase:apiOutputItem mwapi:item.
   }
+  hint:Prior hint:runFirst "true".
 
   %WHERE%
 
@@ -91,6 +92,12 @@ WHERE {
     OPTIONAL { ?item rdfs:label ?name. }
 }
 """
+
+# see the property "dummy value" of https://www.wikidata.org/wiki/Q2013 (Wikidata)
+# hard coded here to avoid to an additional SPARQL request when the server starts
+DUMMY_ENTITY_URLS = set(
+    "http://www.wikidata.org/entity/" + wid for wid in ("Q4115189", "Q13406268", "Q15397819", "Q17339402")
+)
 
 
 # https://www.w3.org/TR/sparql11-query/#rSTRING_LITERAL1
@@ -173,7 +180,7 @@ def response(resp):
     for result in jsonresponse.get('results', {}).get('bindings', []):
         attribute_result = {key: value['value'] for key, value in result.items()}
         entity_url = attribute_result['item']
-        if entity_url not in seen_entities:
+        if entity_url not in seen_entities and entity_url not in DUMMY_ENTITY_URLS:
             seen_entities.add(entity_url)
             results += get_results(attribute_result, attributes, language)
         else:
@@ -328,7 +335,7 @@ def get_attributes(language):
     add_amount('P2046')  # area
     add_amount('P281')   # postal code
     add_label('P38')     # currency
-    add_amount('P2048')  # heigth (building)
+    add_amount('P2048')  # height (building)
 
     # Media
     for p in ['P400',    # platform (videogames, computing)

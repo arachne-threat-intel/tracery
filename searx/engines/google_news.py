@@ -2,7 +2,7 @@
 """Google (News)
 
 For detailed description of the *REST-full* API see: `Query Parameter
-Definitions`_.  Not all parameters can be appied:
+Definitions`_.  Not all parameters can be applied:
 
 - num_ : the number of search results is ignored
 - save_ : is ignored / Google-News results are always *SafeSearch*
@@ -21,6 +21,7 @@ import binascii
 import re
 from urllib.parse import urlencode
 from base64 import b64decode
+from random import random
 from lxml import html
 
 from searx import logger
@@ -104,6 +105,7 @@ def request(query, params):
         **lang_info['params'],
         'ie': "utf8",
         'oe': "utf8",
+        'ucbcb': 1,
         'gl': lang_info['country'],
     }) + ('&ceid=%s' % ceid)  # ceid includes a ':' character which must not be urlencoded
 
@@ -111,10 +113,12 @@ def request(query, params):
     params['url'] = query_url
 
     logger.debug("HTTP header Accept-Language --> %s", lang_info.get('Accept-Language'))
+
+    params['cookies']['CONSENT'] = "PENDING+" + str(random()*100)
     params['headers'].update(lang_info['headers'])
     params['headers']['Accept'] = (
         'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
-        )
+    )
 
     return params
 
@@ -151,7 +155,7 @@ def response(resp):
                 padding = (4 -(len(jslog) % 4)) * "="
                 jslog = b64decode(jslog + padding)
             except binascii.Error:
-                # URL cant be read, skip this result
+                # URL can't be read, skip this result
                 continue
 
             # now we have : b'[null, ... null,"https://www.cnn.com/.../index.html"]'
