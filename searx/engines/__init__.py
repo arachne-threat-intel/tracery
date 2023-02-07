@@ -71,14 +71,18 @@ def load_engine(engine_data):
         engine_data['name'] = engine_name
 
     engine_module = engine_data['engine']
+    cannot_load_msg = 'Cannot load engine "{}"'.format(engine_module)
 
     try:
         engine = load_module(engine_module + '.py', engine_dir)
     except (SyntaxError, KeyboardInterrupt, SystemExit, SystemError, ImportError, RuntimeError):
         logger.exception('Fatal exception in engine "{}"'.format(engine_module))
         sys.exit(1)
+    except FileNotFoundError as e:
+        logger.exception(cannot_load_msg + '; ' + str(e), exc_info=False)
+        return None
     except:
-        logger.exception('Cannot load engine "{}"'.format(engine_module))
+        logger.exception(cannot_load_msg)
         return None
 
     for param_name, param_value in engine_data.items():
