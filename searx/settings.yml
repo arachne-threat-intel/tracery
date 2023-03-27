@@ -22,7 +22,7 @@ search:
     prefer_configured_language: False # increase weight of results in configured language in ranking
 
 server:
-    port : 8888
+    port : 9000
     bind_address : "127.0.0.1" # address to listen on
     secret_key : "ultrasecretkey" # change this!
     base_url : False # Set custom base_url. Possible values: False or "https://your.custom.host/location/"
