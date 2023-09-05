@@ -188,7 +188,6 @@ def _get_browser_or_settings_language(request, lang_list):
     return settings['search']['default_lang'] or 'en'
 
 
-@babel.localeselector
 def get_locale():
     if 'locale' in request.form\
        and request.form['locale'] in settings['locales']:
@@ -216,6 +215,9 @@ def get_locale():
     )
 
     return locale
+
+
+babel.init_app(app, locale_selector=get_locale)
 
 
 # code-highlighter
