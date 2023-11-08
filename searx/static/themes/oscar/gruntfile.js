@@ -26,6 +26,8 @@ module.exports = function(grunt) {
         filter: 'isFile',
         timestamp: true,
         src: [
+          './bootstrap/dist/css/bootstrap.css',
+          './bootstrap/dist/css/bootstrap.min.css',
           './bootstrap/dist/css/bootstrap-theme.css',
           './bootstrap/dist/css/bootstrap-theme.min.css',
           './bootstrap/dist/css/bootstrap-theme.min.css.map',
@@ -94,7 +96,7 @@ module.exports = function(grunt) {
           paths: ["src/less/pointhi", "src/less/logicodev", "src/less/logicodev-dark", "src/less/bootstrap"]
         },
         files: {
-          "css/bootstrap.css": "src/less/bootstrap/bootstrap.less",
+          // "css/bootstrap.css": "src/less/bootstrap/bootstrap.less",
           "css/pointhi.css": "src/less/pointhi/oscar.less",
           "css/logicodev.css": "src/less/logicodev-dark/oscar.less",
           "css/logicodev-dark.css": "src/less/logicodev/oscar.less"

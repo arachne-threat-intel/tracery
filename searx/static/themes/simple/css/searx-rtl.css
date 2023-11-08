@@ -1,4 +1,4 @@
-/*! searx | 25-07-2022 | https://github.com/searx/searx */
+/*! searx | 08-11-2023 |  */
 /*
 * searx, A privacy-respecting, hackable metasearch engine
 *
@@ -1908,7 +1908,7 @@ article.result-images[data-vim-selected]::before {
   width: auto !important;
 }
 .result-map table {
-  font-size: .9em;
+  font-size: 0.9em;
   width: auto;
   border-collapse: separate;
   border-spacing: 0 0.35rem;
@@ -2050,7 +2050,7 @@ article.result-images[data-vim-selected]::before {
   box-shadow: 0px 0px 5px #CCC;
 }
 #sidebar .infobox h2 {
-  margin: 0 0 .5em 0;
+  margin: 0 0 0.5em 0;
 }
 #sidebar .infobox img {
   max-width: 100%;
