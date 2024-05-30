@@ -1,4 +1,24 @@
+
 .. SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+**************************
+Tracery
+**************************
+
+We want to extend our deepest gratitude to the original creators and maintainers of Searx, whose dedication and hard work made this powerful meta search engine possible. Without their invaluable contributions, this project would not exist.
+
+As Searx has been archived and is no longer maintained, Arachne Digital is committed to continuing its legacy. We have forked the original Searx project to ensure its ongoing development and to provide the community with a maintained and improved version.
+
+While we maintain the core functionalities and ethos of Searx, we aim to introduce new features, enhancements, and security improvements. Our goal is to create a robust and user-friendly meta search engine that continues to evolve and meet the needs of our users.
+
+To differentiate our efforts from the original Searx project and to establish a clear identity for our fork, we will be renaming this version to Tracery. This change is not only a mark of respect to the original Searx project but also a step towards building a new community around our ongoing work.
+
+We invite developers, users, and contributors to join us in this new chapter. Your feedback, contributions, and support are crucial as we strive to make this meta search engine better. Together, we can build a vibrant and active community that continues to innovate and improve upon the solid foundation laid by Searx.
+
+**************************
+Original searx README
+**************************
 
 Searx is no longer maintained. Thank you for your support and all your contributions.
 
