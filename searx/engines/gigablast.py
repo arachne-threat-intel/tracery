@@ -129,10 +129,10 @@ def response(resp):
         if len(subtitle) > 3 and subtitle != title:
             title += " - " + subtitle
 
-        results.append(dict(
-            url = url
-            , title = title
-            , content = content
-        ))
+        results.append({
+            "url": url,
+            "title": title,
+            "content": content,
+        })
 
     return results
