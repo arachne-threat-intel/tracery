@@ -348,7 +348,6 @@ EOF
 }
 
 pyenv.install() {
-
     if ! pyenv.OK; then
         py.clean > /dev/null
     fi
@@ -386,26 +385,29 @@ pypi.upload.test() {
 
 test.pylint() {
     # shellcheck disable=SC2086
-    (   set -e
+    (
+        set -e
         local _exclude=""
-        printf -v _exclude '%s, ' "${PYLINT_IGNORE[@]}"
+        IFS=',' read -r -a PYLINT_IGNORE <<< "${PYLINT_IGNORE[@]}"
+        _exclude="${PYLINT_IGNORE[*]}"
 
         build_msg TEST "[pylint] \$PYLINT_FILES"
         pyenv.cmd python ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
             "${PYLINT_FILES[@]}" \
-            --ignore=$_exclude
+            --ignore-patterns=$_exclude
 
         build_msg TEST "[pylint] searx/engines"
         pyenv.cmd python ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
             --disable="${PYLINT_SEARX_DISABLE_OPTION}" \
             --additional-builtins="${PYLINT_ADDITIONAL_BUILTINS_FOR_ENGINES}" \
             searx/engines \
-            --ignore=$_exclude
+            --ignore-patterns=$_exclude
 
         build_msg TEST "[pylint] searx tests"
         pyenv.cmd python ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
             --disable="${PYLINT_SEARX_DISABLE_OPTION}" \
-	          --ignore=searx/engines tests $_exclude
+	          --ignore=searx/engines tests \
+	          --ignore-patterns=$_exclude
     )
     dump_return $?
 }

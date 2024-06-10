@@ -76,6 +76,8 @@ def response(resp):
 
     for entry in search_results.xpath('./result/doc'):
         content = "No description available"
+        url = ""
+        title = ""
 
         date = datetime.now()  # needed in case no dcdate is available for an item
         for item in entry:
@@ -93,7 +95,7 @@ def response(resp):
                 if len(item.text) > 300:
                     content += "..."
 
-# dates returned by the BASE API are not several formats
+        # dates returned by the BASE API are not several formats
         publishedDate = None
         for date_format in ['%Y-%m-%dT%H:%M:%SZ', '%Y-%m-%d', '%Y-%m', '%Y']:
             try:

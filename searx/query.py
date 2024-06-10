@@ -317,14 +317,14 @@ class RawTextQuery:
         return self.getFullQuery()
 
     def __repr__(self):
-        return f"<{self.__class__.__name__} " \
-               + f"query={self.query!r} " \
-               + f"disabled_engines={self.disabled_engines!r}\n  " \
-               + f"languages={self.languages!r} " \
-               + f"timeout_limit={self.timeout_limit!r} "\
-               + f"external_bang={self.external_bang!r} " \
-               + f"specific={self.specific!r} " \
-               + f"enginerefs={self.enginerefs!r}\n  " \
-               + f"autocomplete_list={self.autocomplete_list!r}\n  " \
-               + f"query_parts={self.query_parts!r}\n  " \
-               + f"user_query_parts={self.user_query_parts!r} >"
+        return (f"<{self.__class__.__name__} "
+                + f"query={self.query!r} "
+                + f"disabled_engines={self.disabled_engines!r}\n  "
+                + f"languages={self.languages!r} "
+                + f"timeout_limit={self.timeout_limit!r} "
+                + f"external_bang={self.external_bang!r} "
+                + f"specific={self.specific!r} "
+                + f"enginerefs={self.enginerefs!r}\n  "
+                + f"autocomplete_list={self.autocomplete_list!r}\n  "
+                + f"query_parts={self.query_parts!r}\n  "
+                + f"user_query_parts={self.user_query_parts!r} >")
