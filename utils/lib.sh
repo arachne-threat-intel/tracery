@@ -700,8 +700,13 @@ pyenv.uninstall() {
 
 
 pyenv.cmd() {
-    pyenv.install
-    (   set -e
+    # Check if environment-installation was already called
+    if [ -z "$ENV_SETUP_STARTED" ]; then
+        export ENV_SETUP_STARTED=1
+        pyenv.install
+    fi
+    (
+        set -e
         # shellcheck source=/dev/null
         source "${PY_ENV_BIN}/activate"
         [ "$VERBOSE" = "1" ] && set -x
