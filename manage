@@ -13,7 +13,7 @@ source_dot_config
 
 PY_SETUP_EXTRAS='[test]'
 NPM_PACKAGES="less@2.7 less-plugin-clean-css grunt-cli"
-GECKODRIVER_VERSION="v0.30.0"
+GECKODRIVER_VERSION="0.34.0"
 # SPHINXOPTS=
 
 # These py files are linted by test.pylint(), all other files are linted by
@@ -252,15 +252,27 @@ gecko.driver() {
 
     build_msg INSTALL "gecko.driver"
     # run installation in a subprocess and activate pyenv
-    (   set -e
+    (
+        set -e
         # shellcheck source=/dev/null
         source "${PY_ENV_BIN}/activate"
 
-        # TODO : check the current geckodriver version
-        geckodriver -V > /dev/null 2>&1 || NOTFOUND=1
+        # Get the current version of geckodriver
+        GECKODRIVER_VERSION_OUTPUT=$(geckodriver --version 2>&1)
+
+        # Extract the version number using grep and awk
+        INSTALLED_VERSION=$(echo "$GECKODRIVER_VERSION_OUTPUT" | grep -oP 'geckodriver \d+\S+' | awk '{print $2}')
+
+        # Check if the version matches desired version
+        if [ "$INSTALLED_VERSION" = $GECKODRIVER_VERSION ]; then
+            build_msg INSTALL "Geckodriver version $GECKODRIVER_VERSION is installed."
+        else
+            build_msg INSTALL "Geckodriver version $GECKODRIVER_VERSION is not installed. Installed version is $INSTALLED_VERSION."
+            NOTFOUND=1
+        fi
+
         set +e
         if [ -z "$NOTFOUND" ]; then
-            build_msg INSTALL "geckodriver already installed"
             return
         fi
         PLATFORM="$(python3 -c 'import platform; print(platform.system().lower(), platform.architecture()[0])')"
@@ -271,7 +283,7 @@ gecko.driver() {
             "windows 64 bit") ARCH="win64";;
             "mac 64bit") ARCH="macos";;
         esac
-        GECKODRIVER_URL="https://github.com/mozilla/geckodriver/releases/download/$GECKODRIVER_VERSION/geckodriver-$GECKODRIVER_VERSION-$ARCH.tar.gz";
+        GECKODRIVER_URL="https://github.com/mozilla/geckodriver/releases/download/v$GECKODRIVER_VERSION/geckodriver-v$GECKODRIVER_VERSION-$ARCH.tar.gz";
 
         build_msg GECKO "Installing ${PY_ENV_BIN}/geckodriver from $GECKODRIVER_URL"
 
@@ -348,17 +360,17 @@ EOF
 }
 
 pyenv.install() {
-
     if ! pyenv.OK; then
         py.clean > /dev/null
     fi
     if pyenv.install.OK > /dev/null; then
         return 0
     fi
-    (   set -e
+    (
+        set -e
         pyenv
-    	build_msg PYENV "[install] pip install -e 'searx${PY_SETUP_EXTRAS}'"
-    	"${PY_ENV_BIN}/python" -m pip install -e ".${PY_SETUP_EXTRAS}"
+        build_msg PYENV "[install] pip install -e 'searx${PY_SETUP_EXTRAS}'"
+        "${PY_ENV_BIN}/python" -m pip install -e ".${PY_SETUP_EXTRAS}"
         buildenv
     ) || die 42 "error while build & install pyenv (${PY_ENV_BIN})"
 }
@@ -385,26 +397,29 @@ pypi.upload.test() {
 
 test.pylint() {
     # shellcheck disable=SC2086
-    (   set -e
+    (
+        set -e
         local _exclude=""
-        printf -v _exclude '%s, ' "${PYLINT_IGNORE[@]}"
+        IFS=',' read -r -a PYLINT_IGNORE <<< "${PYLINT_IGNORE[@]}"
+        _exclude="${PYLINT_IGNORE[*]}"
 
         build_msg TEST "[pylint] \$PYLINT_FILES"
         pyenv.cmd python ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
             "${PYLINT_FILES[@]}" \
-            --ignore=$_exclude
+            --ignore-patterns=$_exclude
 
         build_msg TEST "[pylint] searx/engines"
         pyenv.cmd python ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
             --disable="${PYLINT_SEARX_DISABLE_OPTION}" \
             --additional-builtins="${PYLINT_ADDITIONAL_BUILTINS_FOR_ENGINES}" \
             searx/engines \
-            --ignore=$_exclude
+            --ignore-patterns=$_exclude
 
         build_msg TEST "[pylint] searx tests"
         pyenv.cmd python ${PYLINT_OPTIONS} ${PYLINT_VERBOSE} \
             --disable="${PYLINT_SEARX_DISABLE_OPTION}" \
-	          --ignore=searx/engines tests $_exclude
+	          --ignore=searx/engines tests \
+	          --ignore-patterns=$_exclude
     )
     dump_return $?
 }

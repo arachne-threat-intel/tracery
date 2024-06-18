@@ -41,12 +41,15 @@ def response(resp):
     results = []
     for entry in suggestions['d']:
         content = ""
+        href = ""
+
         if entry['id'][:2] in search_categories:
             href = base_url.format(category=search_categories[entry['id'][:2]], id=entry['id'])
         if 'y' in entry:
             content += str(entry['y']) + " - "
         if 's' in entry:
             content += entry['s']
+
         results.append({
             "title": entry['l'],
             "url": href,
