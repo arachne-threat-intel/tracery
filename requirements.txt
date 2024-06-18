@@ -1,6 +1,6 @@
 Brotli~=1.0.9
 babel~=2.15
-certifi~=2022.12.7
+certifi~=2024.6.2
 flask-babel~=4.0
 flask~=3.0
 jinja2~=3.1
