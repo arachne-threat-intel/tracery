@@ -3,144 +3,110 @@
 
 
 **************************
-Tracery
+Welcome to the Tracery project!
 **************************
+
+Hello and welcome to Tracery, a metasearch engine forked from searx, designed to provide robust and maintained open source intelligence (OSINT) capabilities! We are thrilled that you have dropped by to learn more about what Tracery has to offer and how you can get involved in this exciting community.
+
+Behind Tracery is a passionate team of cybersecurity enthusiasts who believe in the power of collaborative, open-source solutions. Our aim is to empower individuals, security professionals, and organisations with streamlined threat intelligence processes, making the digital world a safer place for all.
+
+Whether you are here to explore Tracery as a user, potential contributor, or simply out of curiosity, we extend a warm welcome. Your interest and involvement mean a lot to us, and we cannot wait to embark on this cybersecurity journey together. So, let us dive in and discover how Tracery can revolutionise the way we approach OSINT!
+
+Project Mission & Summary:
+##########################
+
+Tracery is an open-source initiative dedicated to enhancing cyber threat intelligence (CTI) by automating the process of collecting data. Our mission is to empower security professionals, organisations, and analysts by providing efficient, empowering, and community-driven CTI capabilities.
+
+Table of Contents
+#################
+
+.. contents:: Table of Contents
+   :depth: 2
+   :local:
+
+Tracery in Simple Terms
+#######################
+
+Tracery is a tool for searching the internet based on key words.
+
+Tracery was originally forked from searx, and we wanted to build upon it. Later, the searx project announced that it was no longer maintaining searx. Arachne Digital has a committment to maintaining abandoned open source software that we use, so Arachne Digital will support Tracery into the future.
+
+Why Use Tracery
+###############
+
+Tracery is a fork of the popular searx metasearch engine, created to address the need for a robust and well-maintained search solution. Here are some reasons why you should choose Tracery over other metasearch engines:
+
+Active Maintenance and Updates: Tracery is actively maintained by a dedicated team, ensuring that the engine stays up-to-date with the latest search engine changes, security patches, and feature enhancements.
+
+Enhanced Privacy and Security: Tracery is designed with a strong focus on user privacy and security, which carries over from the original searx project. Unlike many other metasearch engines, Tracery does not track your searches or store any personal information.
+
+Community-Driven Development: Tracery is developed with input from the community, ensuring that the features and improvements are aligned with the needs of the users. You can contribute to the project, suggest new features, and report issues through our GitHub repository.
+
+Requirements
+############
+
+TDB
+
+Installation
+############
+
+TDB
+
+Project Description
+###################
+
+Tracery is an essential component of Arachne Digital's Cyber Threat Intelligence (CTI) ecosystem. As a powerful metasearch engine, Tracery is designed to streamline the process of gathering relevant and actionable intelligence from diverse sources across the internet. 
+
+At its core, Tracery enhances the efficiency of CTI gathering by aggregating search results from multiple search engines and repositories. Tracery gathers information from a wide range of sources, including blogs, forums, research papers, threat databases, and news sites. This extensive data collection ensures that no critical intelligence is overlooked.
+
+Required Resources
+##################
+
+Creating and maintaining Tracery requires a diverse set of resources. Some of these resources are provided by Arachne Digital, the for profit company that maintains Tracery. However, the collective is strong through diversity, which is why Arachne Digital is opening Tracery up to the community. From design and development to community building and infrastructure, here is what powers Tracery:
+
+* Design: Craft an intuitive user experience with UI/UX design and establish Thread's unique identity through branding and visual elements.
+* Development: Skilled developers, machine learning experts, data managers, cybersecurity specialists, and quality assurance testers bring Thread's software to life, ensuring it is robust and secure. CI/CD pipelines keep everything running smoothly.
+* Community Building: Our community thrives with dedicated managers, vigilant moderators, and technical writers who create comprehensive documentation and tutorials for Thread's users and contributors.
+* Infrastructure and Hardware: Server infrastructure, data backup, scalability measures, and cloud resources guarantee a seamless experience for Thread's users.
+* Additional Resources: Thread also commits to legal compliance, marketing, outreach, community events, maintenance, and support. Plus, we actively contribute to other open-source projects, fostering collaboration across the ecosystem.
+
+Code of Conduct
+###############
+
+The Arachne Digital community has adopted the Contributor Covenant. Before contributing, please read the `code of conduct <https://github.com/arachne-threat-intel/thread/blob/main/CODE_OF_CONDUCT.md>`_. By contributing to the Arachne Digital community, you agree to the code of conduct.
+
+How do I contribute?
+####################
+
+We welcome your help as part of the Tracery community!
+
+Read our `contribution guidelines <https://github.com/arachne-threat-intel/thread/blob/main/CONTRIBUTING.md>`_ for further information.
+
+To get access to our Arachne Digital Slack channel, email contact[at]arachne[dot]digital with a bit about who you are and how you want to get involved.
+
+Contact us
+##########
+
+You can contact us by emailing us at contact[at]arachne[dot]digital.
+
+If you have found any security issues with Tracery, we ask that you please contact us directly (so we can work on it without it being discovered and exploited). We will be transparent about any security issues in our documentation.
+
+If you have found any other bugs with Tracery, please feel free to contact us or raise an issue here in our GitHub repo.
+
+If you have any questions or comments about Tracery, please feel free to contact us via the email address above.
+
+Acknowledgements
+################
+
+We extend our sincere appreciation to the dedicated individuals whose contributions have made Tracery a thriving open-source community and a valuable resource for the cybersecurity community!
 
 We want to extend our deepest gratitude to the original creators and maintainers of Searx, whose dedication and hard work made this powerful meta search engine possible. Without their invaluable contributions, this project would not exist.
 
-As Searx has been archived and is no longer maintained, Arachne Digital is committed to continuing its legacy. We have forked the original Searx project to ensure its ongoing development and to provide the community with a maintained and improved version.
+Notice
+######
 
-While we maintain the core functionalities and ethos of Searx, we aim to introduce new features, enhancements, and security improvements. Our goal is to create a robust and user-friendly meta search engine that continues to evolve and meet the needs of our users.
+Copyright 2024 Arachne Digital
 
-To differentiate our efforts from the original Searx project and to establish a clear identity for our fork, we will be renaming this version to Tracery. This change is not only a mark of respect to the original Searx project but also a step towards building a new community around our ongoing work.
+Licensed under the GNU Affero General Public License v3.0
 
-We invite developers, users, and contributors to join us in this new chapter. Your feedback, contributions, and support are crucial as we strive to make this meta search engine better. Together, we can build a vibrant and active community that continues to innovate and improve upon the solid foundation laid by Searx.
-
-**************************
-Original searx README
-**************************
-
-Searx is no longer maintained. Thank you for your support and all your contributions.
-
-.. figure:: https://raw.githubusercontent.com/searx/searx/master/searx/static/themes/oscar/img/logo_searx_a.png
-   :target: https://searx.github.io/searx/
-   :alt: searX
-   :width: 100%
-   :align: center
-
--------
-
-|searx install|
-|searx homepage|
-|searx wiki|
-|AGPL License|
-|Issues|
-|commits|
-|OpenCollective searx backers|
-|OpenCollective searx sponsors|
-
-Privacy-respecting, hackable `metasearch engine`_ / *pronunciation* **sɜːks**.
-
-.. _metasearch engine: https://en.wikipedia.org/wiki/Metasearch_engine
-
-.. |searx install| image:: https://img.shields.io/badge/-install-blue
-   :target: https://searx.github.io/searx/admin/installation.html
-
-.. |searx homepage| image:: https://img.shields.io/badge/-homepage-blue
-   :target: https://searx.github.io/searx
-
-.. |searx wiki| image:: https://img.shields.io/badge/-wiki-blue
-   :target: https://github.com/searx/searx/wiki
-
-.. |AGPL License|  image:: https://img.shields.io/badge/license-AGPL-blue.svg
-   :target: https://github.com/searx/searx/blob/master/LICENSE
-
-.. |Issues| image:: https://img.shields.io/github/issues/searx/searx?color=yellow&label=issues
-   :target: https://github.com/searx/searx/issues
-
-.. |PR| image:: https://img.shields.io/github/issues-pr-raw/searx/searx?color=yellow&label=PR
-   :target: https://github.com/searx/searx/pulls
-
-.. |commits| image:: https://img.shields.io/github/commit-activity/y/searx/searx?color=yellow&label=commits
-   :target: https://github.com/searx/searx/commits/master
-
-.. |OpenCollective searx backers| image:: https://opencollective.com/searx/backers/badge.svg
-   :target: https://opencollective.com/searx#backer
-
-.. |OpenCollective searx sponsors| image:: https://opencollective.com/searx/sponsors/badge.svg
-   :target: https://opencollective.com/searx#sponsor
-
-
-If you are looking for running instances, ready to use, then visit searx.space_.
-
-Otherwise jump to the user_, admin_ and developer_ handbooks you will find on
-our homepage_.
-
-.. _searx.space: https://searx.space
-.. _user: https://searx.github.io/searx/user
-.. _admin: https://searx.github.io/searx/admin
-.. _developer: https://searx.github.io/searx/dev
-.. _homepage: https://searx.github.io/searx
-
-contact:
-  openhub_ // twitter_ // IRC: #searx @ Libera (irc.libera.chat)
-
-.. _openhub: https://www.openhub.net/p/searx
-.. _twitter: https://twitter.com/Searx_engine
-
-**************************
-Frequently asked questions
-**************************
-
-Is searx in maintenance mode?
-#############################
-
-No, searx is no longer maintained.
-
-What is the difference between searx and SearxNG?
-#################################################
-
-TL;DR: SearXNG is for users that want more features and bugs getting fixed quicker.
-If you prefer a minimalist software and stable experience, use searx.
-
-SearxNG is a fork of searx, created by a former maintainer of searx. The fork
-was created because the majority of the maintainers at the time did not find
-the new proposed features privacy respecting enough. The most significant issue is with
-engine metrics.
-
-Searx is built for privacy conscious users. It comes with a unique set of
-challenges. One of the problems we face is that users rather not report bugs,
-because they do not want to publicly share what engines they use or what search
-query triggered a problem. It is a challenge we accepted.
-
-The new metrics feature collects more information to make engine maintenance easier.
-We could have had better and more error reports to benefit searx maintainers.
-However, we believe that the users of searx must come first, not the
-software. We are willing to compromise on the lack of issue reports to avoid
-violating the privacy of users.
-
-Furthermore, SearxNG is under heavy refactoring and dependencies are constantly updated, even
-if it is unnecessary. It increases the risk of introducing regressions. In searx
-we strive for stability, rather than moving fast and breaking things.
-
-Is searx for me?
-################
-
-Are you privacy conscious user? Then yes.
-
-In searx we decided to double down on being privacy respecting. We are picking
-engine changes from SearxNG, but we are not implementing engine detailed
-monitoring and not adding a new UI that relies on Javascript.
-
-If you are willing to give up some privacy respecting features, we encourage you to
-adopt SearxNG. Searx is targeted for privacy conscious users who run their
-instances locally, instead of using public instances.
-
-Why should I use SearxNG?
-#########################
-
-SearxNG has rolling releases, dependencies updated more frequently, and engines are fixed
-faster. It is easy to set up your own public instance, and monitor its
-performance and metrics. It is simple to maintain as an instance administrator.
-
-As a user, it provides a prettier user interface and nicer experience.
+Please see our `NOTICE <https://github.com/arachne-threat-intel/tracery/blob/main/NOTICE>`_ and `LICENSE <https://github.com/arachne-threat-intel/tracery/blob/main/LICENSE>`_ files for further information.
