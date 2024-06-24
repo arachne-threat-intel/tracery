@@ -14,6 +14,11 @@ Major contributing authors:
 - Émilien Devos @unixfox
 - Alexandre Flament
 
+Major contributing authors from Arachne (for Tracery changes beyond Searx):
+
+- Kade Morton `@KadeMorton <https://github.com/KadeMorton>`_
+- Jenine Carron `@jecarr <https://github.com/jecarr>`_
+
 People who have submitted patches/translations, reported bugs, consulted features or
 generally made searx better:
 
