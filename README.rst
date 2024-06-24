@@ -2,9 +2,13 @@
 .. SPDX-License-Identifier: AGPL-3.0-or-later
 
 
-**************************
+*******************************
 Welcome to the Tracery project!
-**************************
+*******************************
+
+.. contents::
+   :depth: 2
+   :local:
 
 Hello and welcome to Tracery, a metasearch engine forked from searx, designed to provide robust and maintained open source intelligence (OSINT) capabilities! We are thrilled that you have dropped by to learn more about what Tracery has to offer and how you can get involved in this exciting community.
 
@@ -12,17 +16,10 @@ Behind Tracery is a passionate team of cybersecurity enthusiasts who believe in 
 
 Whether you are here to explore Tracery as a user, potential contributor, or simply out of curiosity, we extend a warm welcome. Your interest and involvement mean a lot to us, and we cannot wait to embark on this cybersecurity journey together. So, let us dive in and discover how Tracery can revolutionise the way we approach OSINT!
 
-Project Mission & Summary:
-##########################
+Project Mission & Summary
+#########################
 
 Tracery is an open-source initiative dedicated to enhancing cyber threat intelligence (CTI) by automating the process of collecting data. Our mission is to empower security professionals, organisations, and analysts by providing efficient, empowering, and community-driven CTI capabilities.
-
-Table of Contents
-#################
-
-.. contents:: Table of Contents
-   :depth: 2
-   :local:
 
 Tracery in Simple Terms
 #######################
