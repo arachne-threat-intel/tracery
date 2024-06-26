@@ -6,15 +6,15 @@
 Welcome to the Tracery project!
 *******************************
 
-.. contents::
-   :depth: 2
-   :local:
-
 Hello and welcome to Tracery, a metasearch engine forked from searx, designed to provide robust and maintained open source intelligence (OSINT) capabilities! We are thrilled that you have dropped by to learn more about what Tracery has to offer and how you can get involved in this exciting community.
 
 Behind Tracery is a passionate team of cybersecurity enthusiasts who believe in the power of collaborative, open-source solutions. Our aim is to empower individuals, security professionals, and organisations with streamlined threat intelligence processes, making the digital world a safer place for all.
 
 Whether you are here to explore Tracery as a user, potential contributor, or simply out of curiosity, we extend a warm welcome. Your interest and involvement mean a lot to us, and we cannot wait to embark on this cybersecurity journey together. So, let us dive in and discover how Tracery can revolutionise the way we approach OSINT!
+
+.. contents::
+   :depth: 2
+   :local:
 
 Project Mission & Summary
 #########################
@@ -59,13 +59,13 @@ At its core, Tracery enhances the efficiency of CTI gathering by aggregating sea
 Required Resources
 ##################
 
-Creating and maintaining Tracery requires a diverse set of resources. Some of these resources are provided by Arachne Digital, the for profit company that maintains Tracery. However, the collective is strong through diversity, which is why Arachne Digital is opening Tracery up to the community. From design and development to community building and infrastructure, here is what powers Tracery:
+Creating and maintaining Tracery requires a diverse set of resources. Some of these resources are provided by Arachne Digital, the for-profit company that maintains Tracery. However, the collective is strong through diversity, which is why Arachne Digital is opening Tracery up to the community. From design and development to community building and infrastructure, here is what powers Tracery:
 
-* Design: Craft an intuitive user experience with UI/UX design and establish Thread's unique identity through branding and visual elements.
-* Development: Skilled developers, machine learning experts, data managers, cybersecurity specialists, and quality assurance testers bring Thread's software to life, ensuring it is robust and secure. CI/CD pipelines keep everything running smoothly.
-* Community Building: Our community thrives with dedicated managers, vigilant moderators, and technical writers who create comprehensive documentation and tutorials for Thread's users and contributors.
-* Infrastructure and Hardware: Server infrastructure, data backup, scalability measures, and cloud resources guarantee a seamless experience for Thread's users.
-* Additional Resources: Thread also commits to legal compliance, marketing, outreach, community events, maintenance, and support. Plus, we actively contribute to other open-source projects, fostering collaboration across the ecosystem.
+* Design: Craft an intuitive user experience with UI/UX design and establish Tracery's unique identity through branding and visual elements.
+* Development: Skilled developers, machine learning experts, data managers, cybersecurity specialists, and quality assurance testers bring Tracery's software to life, ensuring it is robust and secure. CI/CD pipelines keep everything running smoothly.
+* Community Building: Our community thrives with dedicated managers, vigilant moderators, and technical writers who create comprehensive documentation and tutorials for Tracery's users and contributors.
+* Infrastructure and Hardware: Server infrastructure, data backup, scalability measures, and cloud resources guarantee a seamless experience for Tracery's users.
+* Additional Resources: Tracery also commits to legal compliance, marketing, outreach, community events, maintenance, and support. Plus, we actively contribute to other open-source projects, fostering collaboration across the ecosystem.
 
 Code of Conduct
 ###############
