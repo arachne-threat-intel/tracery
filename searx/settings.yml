@@ -6,7 +6,7 @@ general:
 
 brand:
     git_url: https://github.com/searx/searx
-    git_branch: master
+    git_branch: main
     issue_url: https://github.com/searx/searx/issues
     docs_url: https://searx.github.io/searx
     public_instances: https://searx.space
