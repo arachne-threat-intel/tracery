@@ -42,12 +42,34 @@ Community-Driven Development: Tracery is developed with input from the community
 Requirements
 ############
 
-TDB
+Tracery supports Python 3.9+
 
 Installation
 ############
 
-TDB
+In line with the original Searx documentation, you can install and run Tracery via `Docker <https://searx.github.io/searx/admin/installation-docker.html#installation-docker>`_ or these steps:
+
+Clone this repository.
+
+In the root of this project, run the following:
+
+.. code-block::
+
+   sudo -H ./utils/searx.sh install all
+
+You will be prompted to review steps as this runs.
+
+The original repo came with additional installation steps to use for public-instances/ensuring privacy. You are advised to read about this `here <https://searx.github.io/searx/admin/installation.html>`_.
+
+When you are ready to run Tracery, run the following:
+
+.. code-block::
+
+   make run
+
+A launched browser-tab may display an error, this is because the browser may have loaded the page before the app finished its startup (i.e. refresh after a short moment).
+
+Full developer documentation provided from the original repo is found `here <https://searx.github.io/searx/dev/index.html>`_.
 
 Project Description
 ###################
