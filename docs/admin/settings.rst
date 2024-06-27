@@ -44,9 +44,9 @@ Global Settings
    general:
        debug : False # Debug mode, only for development
        instance_name : "searx" # displayed name
-       git_url: https://github.com/searx/searx
-       git_branch: master
-       issue_url: https://github.com/searx/searx/issues
+       git_url: https://github.com/arachne-threat-intel/tracery
+       git_branch: main
+       issue_url: https://github.com/arachne-threat-intel/tracery/issues
        docs_url: https://searx.github.io/searx
        public_instances: https://searx.space
        contact_url: False # mailto:contact@example.com
