@@ -84,7 +84,7 @@ Required Resources
 Creating and maintaining Tracery requires a diverse set of resources. Some of these resources are provided by Arachne Digital, the for-profit company that maintains Tracery. However, the collective is strong through diversity, which is why Arachne Digital is opening Tracery up to the community. From design and development to community building and infrastructure, here is what powers Tracery:
 
 * Design: Craft an intuitive user experience with UI/UX design and establish Tracery's unique identity through branding and visual elements.
-* Development: Skilled developers, machine learning experts, data managers, cybersecurity specialists, and quality assurance testers bring Tracery's software to life, ensuring it is robust and secure. CI/CD pipelines keep everything running smoothly.
+* Development: Skilled developers, data managers, cybersecurity specialists, and quality assurance testers bring Tracery's software to life, ensuring it is robust and secure. CI/CD pipelines keep everything running smoothly.
 * Community Building: Our community thrives with dedicated managers, vigilant moderators, and technical writers who create comprehensive documentation and tutorials for Tracery's users and contributors.
 * Infrastructure and Hardware: Server infrastructure, data backup, scalability measures, and cloud resources guarantee a seamless experience for Tracery's users.
 * Additional Resources: Tracery also commits to legal compliance, marketing, outreach, community events, maintenance, and support. Plus, we actively contribute to other open-source projects, fostering collaboration across the ecosystem.
@@ -119,7 +119,7 @@ Acknowledgements
 
 We extend our sincere appreciation to the dedicated individuals whose contributions have made Tracery a thriving open-source community and a valuable resource for the cybersecurity community!
 
-We want to extend our deepest gratitude to the original creators and maintainers of Searx, whose dedication and hard work made this powerful meta search engine possible. Without their invaluable contributions, this project would not exist.
+We want to extend our deepest gratitude to the original creators and maintainers of Searx, whose dedication and hard work made this powerful meta search engine possible. Without their invaluable foundations, this project would not exist.
 
 Notice
 ######
