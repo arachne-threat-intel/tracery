@@ -1,3 +1,5 @@
-# How to contribute
+# Contribute to Arachne Digital Projects
 
-Please refer to the [contribution guidelines](https://github.com/arachne-threat-intel/thread/blob/main/CONTRIBUTING.md) for Arachne Digital projects.
+Thank you for wanting to contribute to one (or more!) of the Arachne Digital projects! 
+
+Please see the Contributing Guidelines [here](https://github.com/arachne-threat-intel/community/blob/main/CONTRIBUTING.md).
