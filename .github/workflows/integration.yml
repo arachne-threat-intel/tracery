@@ -45,7 +45,7 @@ jobs:
     - name: Test coverage
       run: make V=1 test.coverage
     - name: Store coverage result
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: coverage-${{ matrix.python-version }}
         path: coverage/
