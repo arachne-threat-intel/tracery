@@ -10,7 +10,7 @@ from html.parser import HTMLParser
 from urllib.parse import urljoin, urlparse, urlunparse
 
 from lxml import html
-from lxml.etree import ElementBase, XPath, XPathError, XPathSyntaxError, _ElementStringResult, _ElementUnicodeResult
+from lxml.etree import ElementBase, XPath, XPathError, XPathSyntaxError, _ElementUnicodeResult
 from babel.core import get_global
 
 
@@ -154,7 +154,7 @@ def extract_text(xpath_results, allow_none=False):
         )
         text = text.strip().replace('\n', ' ')
         return ' '.join(text.split())
-    elif isinstance(xpath_results, (_ElementStringResult, _ElementUnicodeResult, str, Number, bool)):
+    elif isinstance(xpath_results, (_ElementUnicodeResult, str, Number, bool)):
         return str(xpath_results)
     elif xpath_results is None and allow_none:
         return None
