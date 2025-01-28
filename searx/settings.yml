@@ -223,6 +223,7 @@ engines:
     engine : wikipedia
     shortcut : wp
     base_url : 'https://{language}.wikipedia.org/'
+    disabled : True
 
     #The fulltext and title parameter is necessary for Wikimini because sometimes it will not show the results and redirect instead
   - name: wikimini
@@ -347,7 +348,6 @@ engines:
     engine : duckduckgo_definitions
     shortcut : ddd
     weight : 2
-    disabled : True
     tests: *tests_infobox
 
 # cloudflare protected
@@ -578,12 +578,14 @@ engines:
     engine : google
     shortcut : go
     use_mobile_ui: false
+    disabled : True
     # additional_tests:
     #   android: *test_android
 
   - name : google images
     engine : google_images
     shortcut : goi
+    disabled : True
     # additional_tests:
     #   android: *test_android
     #   dali:
@@ -596,18 +598,21 @@ engines:
   - name : google news
     engine : google_news
     shortcut : gon
+    disabled : True
     # additional_tests:
     #   android: *test_android
 
   - name : google videos
     engine : google_videos
     shortcut : gov
+    disabled : True
     # additional_tests:
     #   android: *test_android
 
   - name : google scholar
     engine : google_scholar
     shortcut : gos
+    disabled : True
 
   - name : google play apps
     engine : xpath
@@ -1112,6 +1117,7 @@ engines:
   - name : soundcloud
     engine : soundcloud
     shortcut : sc
+    disabled : True
 
   - name: stackoverflow
     engine: stackexchange
@@ -1259,7 +1265,6 @@ engines:
   - name : yahoo
     engine : yahoo
     shortcut : yh
-    disabled : True
 
   - name : yahoo news
     engine : yahoo_news
@@ -1267,19 +1272,13 @@ engines:
 
   - name : youtube
     shortcut : yt
+    disabled : True
     # You can use the engine using the official stable API, but you need an API key
     # See : https://console.developers.google.com/project
     #    engine : youtube_api
     #    api_key: 'apikey' # required!
     # Or you can use the html non-stable engine, activated by default
     engine : youtube_noapi
-
-  - name : yggtorrent
-    engine : yggtorrent
-    shortcut : ygg
-    url: https://www4.yggtorrent.li/
-    disabled : True
-    timeout : 4.0
 
   - name : dailymotion
     engine : dailymotion
@@ -1399,6 +1398,7 @@ engines:
   - name : dictzone
     engine : dictzone
     shortcut : dc
+    disabled : True
 
   - name : mymemory translated
     engine : translated
@@ -1446,7 +1446,6 @@ engines:
     suggestion_xpath : /html/body//div[@class="top-info"]/p[@class="top-info spell"]/a
     first_page_num : 0
     page_size : 10
-    disabled : True
     about:
       website: https://www.mojeek.com/
       wikidata_id: Q60747299
@@ -1660,6 +1659,7 @@ engines:
     shortcut: brave
     engine: xpath
     paging: true
+    disabled : True
     first_page_num: 0
     search_url: https://search.brave.com/search?q={query}&offset={pageno}&spellcheck=1
     url_xpath: //a[@class="result-header"]/@href
