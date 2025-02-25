@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search API &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plugins" href="plugins.html" />
+    <link rel="prev" title="Engine overview" href="engine_overview.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="plugins.html" title="Plugins"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="engine_overview.html" title="Engine overview"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-1.1.0.tex)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Developer documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Search API</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="search-api">
+<span id="id1"></span><h1>Search API<a class="headerlink" href="#search-api" title="Permalink to this heading">¶</a></h1>
+<p>The search supports both <code class="docutils literal notranslate"><span class="pre">GET</span></code> and <code class="docutils literal notranslate"><span class="pre">POST</span></code>.</p>
+<p>Furthermore, two endpoints <code class="docutils literal notranslate"><span class="pre">/</span></code> and <code class="docutils literal notranslate"><span class="pre">/search</span></code> are available for querying.</p>
+<p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/search</span></code></p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h2>
+<aside class="sidebar">
+<p class="sidebar-title">Further reading ..</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="engine_overview.html#engines-dev"><span class="std std-ref">Engine overview</span></a></p></li>
+<li><p><a class="reference internal" href="../admin/settings.html#settings-yml"><span class="std std-ref">settings.yml</span></a></p></li>
+<li><p><a class="reference internal" href="../admin/engines.html#engines-generic"><span class="std std-ref">General Engine Settings</span></a></p></li>
+</ul>
+</aside>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">q</span></code><span class="classifier">required</span></dt><dd><p>The search query.  This string is passed to external search services.  Thus,
+searx supports syntax of each search service.  For example, <code class="docutils literal notranslate"><span class="pre">site:github.com</span>
+<span class="pre">searx</span></code> is a valid query for Google.  However, if simply the query above is
+passed to any search engine which does not filter its results based on this
+syntax, you might not get the results you wanted.</p>
+<p>See more at <a class="reference internal" href="../user/search_syntax.html#search-syntax"><span class="std std-ref">Search syntax</span></a></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">categories</span></code><span class="classifier">optional</span></dt><dd><p>Comma separated list, specifies the active search categories</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">engines</span></code><span class="classifier">optional</span></dt><dd><p>Comma separated list, specifies the active search engines.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">lang</span></code><span class="classifier">default <code class="docutils literal notranslate"><span class="pre">all</span></code></span></dt><dd><p>Code of the language.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pageno</span></code><span class="classifier">default <code class="docutils literal notranslate"><span class="pre">1</span></code></span></dt><dd><p>Search page number.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">time_range</span></code><span class="classifier">optional</span></dt><dd><p>[ <code class="docutils literal notranslate"><span class="pre">day</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, <code class="docutils literal notranslate"><span class="pre">year</span></code> ]</p>
+<p>Time range of search for engines which support it.  See if an engine supports
+time range search in the preferences page of an instance.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">format</span></code><span class="classifier">optional</span></dt><dd><p>[ <code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">csv</span></code>, <code class="docutils literal notranslate"><span class="pre">rss</span></code> ]</p>
+<p>Output format of results.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">results_on_new_tab</span></code><span class="classifier">default <code class="docutils literal notranslate"><span class="pre">0</span></code></span></dt><dd><p>[ <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code> ]</p>
+<p>Open search results on new tab.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">image_proxy</span></code><span class="classifier">default <code class="docutils literal notranslate"><span class="pre">False</span></code></span></dt><dd><p>[  <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code> ]</p>
+<p>Proxy image results through searx.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">autocomplete</span></code><span class="classifier">default <em>empty</em></span></dt><dd><p>[ <code class="docutils literal notranslate"><span class="pre">google</span></code>, <code class="docutils literal notranslate"><span class="pre">dbpedia</span></code>, <code class="docutils literal notranslate"><span class="pre">duckduckgo</span></code>, <code class="docutils literal notranslate"><span class="pre">startpage</span></code>, <code class="docutils literal notranslate"><span class="pre">wikipedia</span></code> ]</p>
+<p>Service which completes words as you type.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">safesearch</span></code><span class="classifier">default <code class="docutils literal notranslate"><span class="pre">None</span></code></span></dt><dd><p>[ <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code> ]</p>
+<p>Filter search results of engines which support safe search.  See if an engine
+supports safe search in the preferences page of an instance.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">theme</span></code><span class="classifier">default <code class="docutils literal notranslate"><span class="pre">oscar</span></code></span></dt><dd><p>[ <code class="docutils literal notranslate"><span class="pre">oscar</span></code>, <code class="docutils literal notranslate"><span class="pre">simple</span></code> ]</p>
+<p>Theme of instance.</p>
+<p>Please note, available themes depend on an instance.  It is possible that an
+instance administrator deleted, created or renamed themes on their instance.
+See the available options in the preferences page of the instance.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">oscar-style</span></code><span class="classifier">default <code class="docutils literal notranslate"><span class="pre">logicodev</span></code></span></dt><dd><p>[ <code class="docutils literal notranslate"><span class="pre">pointhi</span></code>, <code class="docutils literal notranslate"><span class="pre">logicodev</span></code> ]</p>
+<p>Style of Oscar theme.  It is only parsed if the theme of an instance is
+<code class="docutils literal notranslate"><span class="pre">oscar</span></code>.</p>
+<p>Please note, available styles depend on an instance.  It is possible that an
+instance administrator deleted, created or renamed styles on their
+instance. See the available options in the preferences page of the instance.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">enabled_plugins</span></code><span class="classifier">optional</span></dt><dd><p>List of enabled plugins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">HTTPS_rewrite</span></code>, <code class="docutils literal notranslate"><span class="pre">Self_Informations</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Search_on_category_select</span></code>, <code class="docutils literal notranslate"><span class="pre">Tracker_URL_remover</span></code></p>
+</dd>
+<dt class="field-even">values<span class="colon">:</span></dt>
+<dd class="field-even"><p>[ <code class="docutils literal notranslate"><span class="pre">DOAI_rewrite</span></code>, <code class="docutils literal notranslate"><span class="pre">HTTPS_rewrite</span></code>, <code class="docutils literal notranslate"><span class="pre">Infinite_scroll</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Vim-like_hotkeys</span></code>, <code class="docutils literal notranslate"><span class="pre">Self_Informations</span></code>, <code class="docutils literal notranslate"><span class="pre">Tracker_URL_remover</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Search_on_category_select</span></code> ]</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">disabled_plugins</span></code>: optional</dt><dd><p>List of disabled plugins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">DOAI_rewrite</span></code>, <code class="docutils literal notranslate"><span class="pre">Infinite_scroll</span></code>, <code class="docutils literal notranslate"><span class="pre">Vim-like_hotkeys</span></code></p>
+</dd>
+<dt class="field-even">values<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">DOAI_rewrite</span></code>, <code class="docutils literal notranslate"><span class="pre">HTTPS_rewrite</span></code>, <code class="docutils literal notranslate"><span class="pre">Infinite_scroll</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Vim-like_hotkeys</span></code>, <code class="docutils literal notranslate"><span class="pre">Self_Informations</span></code>, <code class="docutils literal notranslate"><span class="pre">Tracker_URL_remover</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Search_on_category_select</span></code></p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">enabled_engines</span></code><span class="classifier">optional</span><span class="classifier"><em>all</em> <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/searx/engines">engines</a></span></dt><dd><p>List of enabled engines.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">disabled_engines</span></code><span class="classifier">optional</span><span class="classifier"><em>all</em> <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/searx/engines">engines</a></span></dt><dd><p>List of disabled engines.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+            </a></p>
+  
+
+  <h3>Project Links</h3>
+  <ul>
+    <li><a href="https://searx.github.io/searx/blog/index.html">Blog</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/">Source</a>
+  
+    <li><a href="https://github.com/searx/searx/wiki">Wiki</a>
+  
+    <li><a href="https://twitter.com/Searx_engine">Twitter</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/issues">Issue Tracker</a>
+  </ul><h3>Navigation</h3>
+<ul>
+  <li><a href="../index.html">Overview</a>
+    <ul>
+      <li><a href="index.html">Developer documentation</a>
+        <ul>
+          <li>Previous: <a href="engine_overview.html" title="previous chapter">Engine overview</a>
+          <li>Next: <a href="plugins.html" title="next chapter">Plugins</a></ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>

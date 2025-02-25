@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Architecture &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to protect an instance" href="filtron.html" />
+    <link rel="prev" title="Administration API" href="api.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="filtron.html" title="How to protect an instance"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="Administration API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-1.1.0.tex)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Administrator documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Architecture</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="architecture">
+<span id="id1"></span><h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">¶</a></h1>
+<aside class="sidebar">
+<p class="sidebar-title">Further reading</p>
+<ul class="simple">
+<li><p>Reverse Proxy: <a class="reference internal" href="installation-apache.html#apache-searx-site"><span class="std std-ref">Apache</span></a> &amp; <a class="reference internal" href="installation-nginx.html#nginx-searx-site"><span class="std std-ref">nginx</span></a></p></li>
+<li><p>Filtron: <a class="reference internal" href="filtron.html#searx-filtron"><span class="std std-ref">How to protect an instance</span></a></p></li>
+<li><p>Morty: <a class="reference internal" href="morty.html#searx-morty"><span class="std std-ref">How to setup result proxy</span></a></p></li>
+<li><p>uWSGI: <a class="reference internal" href="installation-uwsgi.html#searx-uwsgi"><span class="std std-ref">uwsgi</span></a></p></li>
+<li><p>Searx: <a class="reference internal" href="installation-searx.html#installation-basic"><span class="std std-ref">Step by step installation</span></a></p></li>
+</ul>
+</aside>
+<p>Herein you will find some hints and suggestions about typical architectures of
+searx infrastructures.</p>
+<p>We start with a contribution from <a class="reference external" href="https://github.com/searx/searx/pull/1776#issuecomment-567917320">&#64;dalf</a>.
+It shows a <em>reference</em> setup for public searx instances which can build up and
+maintained by the scripts from our <a class="reference internal" href="../utils/index.html#toolboxing"><span class="std std-ref">Admin’s tooling box</span></a>.</p>
+<figure class="align-default" id="id2">
+<img alt="arch_public.dot" src="../_images/arch_public.svg" /><figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Reference architecture of a public searx setup.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+            </a></p>
+  
+
+  <h3>Project Links</h3>
+  <ul>
+    <li><a href="https://searx.github.io/searx/blog/index.html">Blog</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/">Source</a>
+  
+    <li><a href="https://github.com/searx/searx/wiki">Wiki</a>
+  
+    <li><a href="https://twitter.com/Searx_engine">Twitter</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/issues">Issue Tracker</a>
+  </ul><h3>Navigation</h3>
+<ul>
+  <li><a href="../index.html">Overview</a>
+    <ul>
+      <li><a href="index.html">Administrator documentation</a>
+        <ul>
+          <li>Previous: <a href="api.html" title="previous chapter">Administration API</a>
+          <li>Next: <a href="filtron.html" title="next chapter">How to protect an instance</a></ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>

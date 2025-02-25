@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>utils/searx.sh &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="utils/filtron.sh" href="filtron.sh.html" />
+    <link rel="prev" title="Admin’s tooling box" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="filtron.sh.html" title="utils/filtron.sh"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Admin’s tooling box"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-1.1.0.tex)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Admin’s tooling box</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="docutils literal notranslate"><span class="pre">utils/searx.sh</span></code></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="utils-searx-sh">
+<span id="searx-sh"></span><h1><code class="docutils literal notranslate"><span class="pre">utils/searx.sh</span></code><a class="headerlink" href="#utils-searx-sh" title="Permalink to this heading">¶</a></h1>
+<aside class="sidebar">
+<p class="sidebar-title">further reading</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../admin/architecture.html#architecture"><span class="std std-ref">Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="../admin/installation.html#installation"><span class="std std-ref">Installation</span></a></p></li>
+<li><p><a class="reference internal" href="../admin/installation-nginx.html#installation-nginx"><span class="std std-ref">Install with nginx</span></a></p></li>
+<li><p><a class="reference internal" href="../admin/installation-apache.html#installation-apache"><span class="std std-ref">Install with apache</span></a></p></li>
+</ul>
+</aside>
+<p>To simplify installation and maintenance of a searx instance you can use the
+script <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/searx.sh">Origin: utils/searx.sh</a>.</p>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading">¶</a></h2>
+<p>In most cases you will install searx simply by running the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-H<span class="w"> </span>./utils/searx.sh<span class="w"> </span>install<span class="w"> </span>all
+</pre></div>
+</div>
+<p>The script adds a <code class="docutils literal notranslate"><span class="pre">${SERVICE_USER}</span></code> (default:<code class="docutils literal notranslate"><span class="pre">searx</span></code>) and installs searx
+into this user account.  The installation is described in chapter
+<a class="reference internal" href="../admin/installation-searx.html#installation-basic"><span class="std std-ref">Step by step installation</span></a>.</p>
+</section>
+<section id="overview">
+<span id="intranet-reverse-proxy"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">--help</span></code> output of the script is largely self-explanatory
+(<a class="reference internal" href="index.html#toolboxing-common"><span class="std std-ref">Common commands &amp; environment</span></a>):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>usage::
+  searx.sh shell
+  searx.sh install    [all|user|searx-src|pyenv|uwsgi|packages|settings|buildhost]
+  searx.sh update     [searx]
+  searx.sh remove     [all|user|pyenv|searx-src]
+  searx.sh activate   [service]
+  searx.sh deactivate [service]
+  searx.sh inspect    [service]
+  searx.sh option     [debug-[on|off]|image-proxy-[on|off]|result-proxy &lt;url&gt; &lt;key&gt;]
+  searx.sh apache     [install|remove]
+
+shell
+  start interactive shell from user searx
+install / remove
+  :all:        complete (de-) installation of searx service
+  :user:       add/remove service user &#39;searx&#39; (/usr/local/searx)
+  :searx-src:  clone https://github.com/arachne-threat-intel/tracery/
+  :pyenv:      create/remove virtualenv (python) in /usr/local/searx/searx-pyenv
+  :uwsgi:      install searx uWSGI application
+  :settings:   reinstall settings from /home/runner/work/tracery/tracery/utils/templates/etc/searx/use_default_settings.yml
+  :packages:   install needed packages from OS package manager
+  :buildhost:  install packages from OS package manager needed by buildhosts
+update searx
+  Update searx installation (/usr/local/searx)
+activate service
+  activate and start service daemon (systemd unit)
+deactivate service
+  stop and deactivate service daemon (systemd unit)
+inspect service
+  run some small tests and inspect service&#39;s status and log
+option
+  set one of the available options
+apache
+  :install: apache site with the searx uwsgi app
+  :remove:  apache site 
+
+searx settings: /etc/searx/settings.yml
+
+If needed, set PUBLIC_URL of your WEB service in the &#39;.config.sh&#39; file::
+  PUBLIC_URL          : http://fv-az1114-349/searx
+  SEARX_INSTANCE_NAME : searx@fv-az1114-349 
+  SERVICE_USER        : searx
+  SEARX_INTERNAL_HTTP : http://127.0.0.1:8888
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+            </a></p>
+  
+
+  <h3>Project Links</h3>
+  <ul>
+    <li><a href="https://searx.github.io/searx/blog/index.html">Blog</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/">Source</a>
+  
+    <li><a href="https://github.com/searx/searx/wiki">Wiki</a>
+  
+    <li><a href="https://twitter.com/Searx_engine">Twitter</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/issues">Issue Tracker</a>
+  </ul><h3>Navigation</h3>
+<ul>
+  <li><a href="../index.html">Overview</a>
+    <ul>
+      <li><a href="index.html">Admin’s tooling box</a>
+        <ul>
+          <li>Previous: <a href="index.html" title="previous chapter">Admin’s tooling box</a>
+          <li>Next: <a href="filtron.sh.html" title="next chapter"><code class="docutils literal notranslate"><span class="pre">utils/filtron.sh</span></code></a></ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>

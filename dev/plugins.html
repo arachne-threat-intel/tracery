@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plugins &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Translation" href="translation.html" />
+    <link rel="prev" title="Search API" href="search_api.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="translation.html" title="Translation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="search_api.html" title="Search API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-1.1.0.tex)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Developer documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Plugins</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="plugins">
+<span id="dev-plugin"></span><h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this heading">¶</a></h1>
+<aside class="sidebar">
+<p class="sidebar-title">Further reading ..</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../admin/plugins.html#plugins-generic"><span class="std std-ref">Plugins builtin</span></a></p></li>
+</ul>
+</aside>
+<p>Plugins can extend or replace functionality of various components of searx.</p>
+<section id="example-plugin">
+<h2>Example plugin<a class="headerlink" href="#example-plugin" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Example plugin&#39;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;This plugin extends the suggestions with the word &quot;example&quot;&#39;</span>
+<span class="n">default_on</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># disabled by default</span>
+
+<span class="n">js_dependencies</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>  <span class="c1"># optional, list of static js files</span>
+<span class="n">css_dependencies</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>  <span class="c1"># optional, list of static css files</span>
+
+
+<span class="c1"># attach callback to the post search hook</span>
+<span class="c1">#  request: flask request object</span>
+<span class="c1">#  ctx: the whole local context of the post search hook</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">post_search</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="n">ctx</span><span class="p">[</span><span class="s1">&#39;search&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">suggestions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="external-plugins">
+<h2>External plugins<a class="headerlink" href="#external-plugins" title="Permalink to this heading">¶</a></h2>
+<p>External plugins are standard python modules implementing all the requirements of the standard plugins.
+Plugins can be enabled by adding them to <a class="reference internal" href="../admin/settings.html#settings-yml"><span class="std std-ref">settings.yml</span></a>’s <code class="docutils literal notranslate"><span class="pre">plugins</span></code> section.
+Example external plugin can be found <a class="reference external" href="https://github.com/asciimoo/searx_external_plugin_example">here</a>.</p>
+</section>
+<section id="register-your-plugin">
+<h2>Register your plugin<a class="headerlink" href="#register-your-plugin" title="Permalink to this heading">¶</a></h2>
+<p>To enable your plugin register your plugin in
+searx &gt; plugin &gt; __init__.py.
+And at the bottom of the file add your plugin like.
+<code class="docutils literal notranslate"><span class="pre">plugins.register(name_of_python_file)</span></code></p>
+</section>
+<section id="plugin-entry-points">
+<h2>Plugin entry points<a class="headerlink" href="#plugin-entry-points" title="Permalink to this heading">¶</a></h2>
+<p>Entry points (hooks) define when a plugin runs. Right now only three hooks are
+implemented. So feel free to implement a hook if it fits the behaviour of your
+plugin.</p>
+<section id="pre-search-hook">
+<h3>Pre search hook<a class="headerlink" href="#pre-search-hook" title="Permalink to this heading">¶</a></h3>
+<p>Runs BEFORE the search request. Function to implement: <code class="docutils literal notranslate"><span class="pre">pre_search</span></code></p>
+</section>
+<section id="post-search-hook">
+<h3>Post search hook<a class="headerlink" href="#post-search-hook" title="Permalink to this heading">¶</a></h3>
+<p>Runs AFTER the search request. Function to implement: <code class="docutils literal notranslate"><span class="pre">post_search</span></code></p>
+</section>
+<section id="result-hook">
+<h3>Result hook<a class="headerlink" href="#result-hook" title="Permalink to this heading">¶</a></h3>
+<p>Runs when a new result is added to the result list. Function to implement:
+<code class="docutils literal notranslate"><span class="pre">on_result</span></code></p>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+            </a></p>
+  
+
+  <h3>Project Links</h3>
+  <ul>
+    <li><a href="https://searx.github.io/searx/blog/index.html">Blog</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/">Source</a>
+  
+    <li><a href="https://github.com/searx/searx/wiki">Wiki</a>
+  
+    <li><a href="https://twitter.com/Searx_engine">Twitter</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/issues">Issue Tracker</a>
+  </ul><h3>Navigation</h3>
+<ul>
+  <li><a href="../index.html">Overview</a>
+    <ul>
+      <li><a href="index.html">Developer documentation</a>
+        <ul>
+          <li>Previous: <a href="search_api.html" title="previous chapter">Search API</a>
+          <li>Next: <a href="translation.html" title="next chapter">Translation</a></ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>

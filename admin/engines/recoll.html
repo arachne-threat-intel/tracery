@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recoll &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/searx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to create private engines" href="../private-engines.html" />
+    <link rel="prev" title="Engines" href="../engines.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../private-engines.html" title="How to create private engines"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../engines.html" title="Engines"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Searx Documentation (Searx-1.1.0.tex)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Administrator documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../engines.html" accesskey="U">Engines</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Recoll</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="recoll">
+<span id="engine-recoll"></span><h1>Recoll<a class="headerlink" href="#recoll" title="Permalink to this heading">¶</a></h1>
+<aside class="sidebar">
+<p class="sidebar-title">info</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.lesbonscomptes.com/recoll/">Recoll</a></p></li>
+<li><p><a class="reference external" href="https://framagit.org/medoc92/recollwebui.git">recoll-webui</a></p></li>
+</ul>
+</aside>
+<p><a class="reference external" href="https://www.lesbonscomptes.com/recoll/">Recoll</a> is a desktop full-text search tool based on Xapian. By itself <a class="reference external" href="https://www.lesbonscomptes.com/recoll/">Recoll</a>
+does not offer web or API access, this can be achieved using <a class="reference external" href="https://framagit.org/medoc92/recollwebui.git">recoll-webui</a></p>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
+<p>You must configure the following settings:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">base_url</span></code>:</dt><dd><p>Location where recoll-webui can be reached.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">mount_prefix</span></code>:</dt><dd><p>Location where the file hierarchy is mounted on your <em>local</em> filesystem.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">dl_prefix</span></code>:</dt><dd><p>Location where the file hierarchy as indexed by recoll can be reached.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">search_dir</span></code>:</dt><dd><p>Part of the indexed file hierarchy to be search, if empty the full domain is
+searched.</p>
+</dd>
+</dl>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h2>
+<p>Scenario:</p>
+<ol class="arabic simple">
+<li><p>Recoll indexes a local filesystem mounted in <code class="docutils literal notranslate"><span class="pre">/export/documents/reference</span></code>,</p></li>
+<li><p>the Recoll search interface can be reached at <a class="reference external" href="https://recoll.example.org/">https://recoll.example.org/</a> and</p></li>
+<li><p>the contents of this filesystem can be reached though <a class="reference external" href="https://download.example.org/reference">https://download.example.org/reference</a></p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">base_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://recoll.example.org/</span>
+<span class="nt">mount_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/export/documents</span>
+<span class="nt">dl_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://download.example.org</span>
+<span class="nt">search_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/searx_logo_small.png" alt="Logo"/>
+            </a></p>
+  
+
+  <h3>Project Links</h3>
+  <ul>
+    <li><a href="https://searx.github.io/searx/blog/index.html">Blog</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/">Source</a>
+  
+    <li><a href="https://github.com/searx/searx/wiki">Wiki</a>
+  
+    <li><a href="https://twitter.com/Searx_engine">Twitter</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/issues">Issue Tracker</a>
+  </ul><h3>Navigation</h3>
+<ul>
+  <li><a href="../../index.html">Overview</a>
+    <ul>
+      <li><a href="../index.html">Administrator documentation</a>
+        <ul>
+      <li><a href="../engines.html">Engines</a>
+        <ul>
+          <li>Previous: <a href="../engines.html" title="previous chapter">Engines</a>
+          <li>Next: <a href="../private-engines.html" title="next chapter">How to create private engines</a></ul>
+      </li></ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  <script src="../../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>

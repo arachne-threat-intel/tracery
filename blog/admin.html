@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Searx admin interface &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introducing Python 3 support" href="python3.html" />
+    <link rel="prev" title="Preparation for offline engines" href="intro-offline.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="python3.html" title="Introducing Python 3 support"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="intro-offline.html" title="Preparation for offline engines"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-1.1.0.tex)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Blog</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Searx admin interface</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="searx-admin-interface">
+<h1>Searx admin interface<a class="headerlink" href="#searx-admin-interface" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>manage your instance from your browser</p>
+</div></blockquote>
+<aside class="sidebar">
+<p class="sidebar-title">Installation</p>
+<p>Installation guide can be found in the repository of <a class="reference external" href="https://github.com/kvch/searx-admin#searx-admin">searx-admin</a>.</p>
+</aside>
+<p>One of the biggest advantages of searx is being extremely customizable. But at
+first it can be daunting to newcomers.  A barrier of taking advantage of this
+feature is our ugly settings file which is sometimes hard to understand and
+edit.</p>
+<p>To make self-hosting searx more accessible a new tool is introduced, called
+<code class="docutils literal notranslate"><span class="pre">searx-admin</span></code>.  It is a web application which is capable of managing your
+instance and manipulating its settings via a web UI.  It aims to replace editing
+of <code class="docutils literal notranslate"><span class="pre">settings.yml</span></code> for less experienced administrators or people who prefer
+graphical admin interfaces.</p>
+<figure class="align-default" id="id1">
+<img alt="Screenshot of engine list" src="../_images/searx-admin-engines.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Configuration page of engines</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Since <code class="docutils literal notranslate"><span class="pre">searx-admin</span></code> acts as a supervisor for searx, we have decided to
+implement it as a standalone tool instead of part of searx.  Another reason for
+making it a standalone tool is that the codebase and dependencies of searx
+should not grow because of a fully optional feature, which does not affect
+existing instances.</p>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">¶</a></h2>
+<p>This development was sponsored by <a class="reference external" href="https://nlnet.nl/">NLnet Foundation</a>.</p>
+<div class="line-block">
+<div class="line">Happy hacking.</div>
+<div class="line">kvch // 2017.08.22 21:25</div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+            </a></p>
+  
+
+  <h3>Project Links</h3>
+  <ul>
+    <li><a href="https://searx.github.io/searx/blog/index.html">Blog</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/">Source</a>
+  
+    <li><a href="https://github.com/searx/searx/wiki">Wiki</a>
+  
+    <li><a href="https://twitter.com/Searx_engine">Twitter</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/issues">Issue Tracker</a>
+  </ul><h3>Navigation</h3>
+<ul>
+  <li><a href="../index.html">Overview</a>
+    <ul>
+      <li><a href="index.html">Blog</a>
+        <ul>
+          <li>Previous: <a href="intro-offline.html" title="previous chapter">Preparation for offline engines</a>
+          <li>Next: <a href="python3.html" title="next chapter">Introducing Python 3 support</a></ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>

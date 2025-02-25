@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search syntax &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Why use a private instance?" href="own-instance.html" />
+    <link rel="prev" title="User documentation" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="own-instance.html" title="Why use a private instance?"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="User documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-1.1.0.tex)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Search syntax</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="search-syntax">
+<span id="id1"></span><h1>Search syntax<a class="headerlink" href="#search-syntax" title="Permalink to this heading">¶</a></h1>
+<p>Searx allows you to modify the default categories, engines and search language
+via the search query.</p>
+<dl class="simple">
+<dt>Prefix <code class="docutils literal notranslate"><span class="pre">!</span></code></dt><dd><p>to set Category/engine</p>
+</dd>
+<dt>Prefix: <code class="docutils literal notranslate"><span class="pre">:</span></code></dt><dd><p>to set language</p>
+</dd>
+<dt>Prefix: <code class="docutils literal notranslate"><span class="pre">?</span></code></dt><dd><p>to add engines and categories to the currently selected categories</p>
+</dd>
+</dl>
+<p>Abbreviations of the engines and languages are also accepted.  Engine/category
+modifiers are chainable and inclusive (e.g. with <a class="reference external" href="/?q=%21it%20%21ddg%20%21wp%20qwer">!it !ddg !wp qwer</a> search in IT category <strong>and</strong> duckduckgo
+<strong>and</strong> wikipedia for <code class="docutils literal notranslate"><span class="pre">qwer</span></code>).</p>
+<p>See the <a class="reference external" href="/preferences">/preferences page</a> for the list of engines,
+categories and languages.</p>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<p>Search in wikipedia for <code class="docutils literal notranslate"><span class="pre">qwer</span></code>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="/?q=%21wp%20qwer">!wp qwer</a> or</p></li>
+<li><p><a class="reference external" href="/?q=%21wikipedia%20qwer">!wikipedia qwer :search:</a></p></li>
+</ul>
+<p>Image search:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="/?q=%21images%20Cthulhu">!images Cthulhu</a></p></li>
+</ul>
+<p>Custom language in wikipedia:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="/?q=%3Ahu%20%21wp%20hackerspace">:hu !wp hackerspace</a></p></li>
+</ul>
+</section>
+<section id="multilingual-search">
+<h2>Multilingual Search<a class="headerlink" href="#multilingual-search" title="Permalink to this heading">¶</a></h2>
+<p>Searx does not support true multilingual search.
+You have to use the language prefix in your search query when searching in a different language.</p>
+<p>But there is a workaround:
+By adding a new search engine with a different language, Searx will search in your default and other language.</p>
+<dl>
+<dt>Example configuration in settings.yml for a German and English speaker:</dt><dd><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">search</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">language </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;de&quot;</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+
+<span class="nt">engines</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google english</span>
+<span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google</span>
+<span class="w">    </span><span class="nt">language </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">english</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>When searching, the default google engine will return German results and “google english” will return English results.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+            </a></p>
+  
+
+  <h3>Project Links</h3>
+  <ul>
+    <li><a href="https://searx.github.io/searx/blog/index.html">Blog</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/">Source</a>
+  
+    <li><a href="https://github.com/searx/searx/wiki">Wiki</a>
+  
+    <li><a href="https://twitter.com/Searx_engine">Twitter</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/issues">Issue Tracker</a>
+  </ul><h3>Navigation</h3>
+<ul>
+  <li><a href="../index.html">Overview</a>
+    <ul>
+      <li><a href="index.html">User documentation</a>
+        <ul>
+          <li>Previous: <a href="index.html" title="previous chapter">User documentation</a>
+          <li>Next: <a href="own-instance.html" title="next chapter">Why use a private instance?</a></ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>

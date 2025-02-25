@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administrator documentation &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Why use a private instance?" href="../user/own-instance.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../user/own-instance.html" title="Why use a private instance?"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-1.1.0.tex)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Administrator documentation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="administrator-documentation">
+<h1>Administrator documentation<a class="headerlink" href="#administrator-documentation" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-scripts">Installation scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation-searx.html">Step by step installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation-searx.html#install-packages">Install packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-searx.html#create-user">Create user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-searx.html#install-searx-dependencies">install searx &amp; dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-searx.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-searx.html#check">Check</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation-uwsgi.html">uwsgi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation-uwsgi.html#origin-uwsgi">Origin uWSGI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-uwsgi.html#distributors">Distributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-uwsgi.html#all-together">All together</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation-nginx.html">Install with nginx</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation-nginx.html#the-nginx-http-server">The nginx HTTP server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-nginx.html#a-nginx-searx-site">A nginx searx site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-nginx.html#disable-logs">Disable logs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation-apache.html">Install with apache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation-apache.html#the-apache-http-server">The apache HTTP server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-apache.html#apache-reverse-proxy">Apache Reverse Proxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-apache.html#uwsgi-support">uWSGI support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-apache.html#restart-service">Restart service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-apache.html#disable-logs">disable logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-apache.html#the-debian-layout">The Debian Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation-docker.html">Docker installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation-docker.html#docker-image-searx-searx">Docker image searx/searx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-docker.html#public-instance">Public instance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="update-searx.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update-searx.html#how-to-inspect-debug">How to inspect &amp; debug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html"><code class="docutils literal notranslate"><span class="pre">settings.yml</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="settings.html#settings-yml-location">settings.yml location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html#global-settings">Global Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html#engine-settings">Engine settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html#use-default-settings">use_default_settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Administration API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#get-configuration-data">Get configuration data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#embed-search-bar">Embed search bar</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filtron.html">How to protect an instance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filtron.html#filtron-go">filtron &amp; go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtron.html#sample-configuration-of-filtron">Sample configuration of filtron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtron.html#route-request-through-filtron">Route request through filtron</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="morty.html">How to setup result proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="engines.html">Engines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="engines.html#special-engine-settings">Special Engine Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="engines.html#general-engine-settings">General Engine Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="private-engines.html">How to create private engines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="private-engines.html#server-side-configuration">Server side configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="private-engines.html#client-side-configuration">Client side configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="command-engine.html">Run shell commands from your instance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="command-engine.html#the-command">The command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command-engine.html#access-control">Access control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command-engine.html#available-settings">Available settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command-engine.html#customize-the-result-template">Customize the result template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command-engine.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="indexer-engines.html">Search in indexers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="indexer-engines.html#elasticsearch">Elasticsearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexer-engines.html#meilisearch">Meilisearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexer-engines.html#solr">Solr</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="no-sql-engines.html">Query SQL and NoSQL servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="no-sql-engines.html#sql">SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="no-sql-engines.html#nosql">NoSQL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins builtin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buildhosts.html">Buildhosts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="buildhosts.html#build-docs">Build docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buildhosts.html#lint-shell-scripts">Lint shell scripts</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+            </a></p>
+  
+
+  <h3>Project Links</h3>
+  <ul>
+    <li><a href="https://searx.github.io/searx/blog/index.html">Blog</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/">Source</a>
+  
+    <li><a href="https://github.com/searx/searx/wiki">Wiki</a>
+  
+    <li><a href="https://twitter.com/Searx_engine">Twitter</a>
+  
+    <li><a href="https://github.com/arachne-threat-intel/tracery/issues">Issue Tracker</a>
+  </ul><h3>Navigation</h3>
+<ul>
+  <li><a href="../index.html">Overview</a>
+    <ul>
+          <li>Previous: <a href="../user/own-instance.html" title="previous chapter">Why use a private instance?</a>
+          <li>Next: <a href="installation.html" title="next chapter">Installation</a>
+    </ul>
+  </li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>
