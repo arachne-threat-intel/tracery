@@ -31,7 +31,7 @@ jobs:
         architecture: 'x64'
     - name: Cache Python dependencies
       id: cache-python
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: ./local
         key: python-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('requirements*.txt', 'setup.py') }}
@@ -66,7 +66,7 @@ jobs:
         architecture: 'x64'
     - name: Cache Python dependencies
       id: cache-python
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: ./local
         key: python-ubuntu-20.04-3.9-${{ hashFiles('requirements*.txt', 'setup.py') }}
@@ -95,7 +95,7 @@ jobs:
         architecture: 'x64'
     - name: Cache Python dependencies
       id: cache-python
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: ./local
         key: python-ubuntu-20.04-3.9-${{ hashFiles('requirements*.txt', 'setup.py') }}
@@ -135,7 +135,7 @@ jobs:
           architecture: 'x64'
       - name: Cache Python dependencies
         id: cache-python
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ./local
           key: python-ubuntu-20.04-3.9-${{ hashFiles('requirements*.txt', 'setup.py') }}
