@@ -7,7 +7,7 @@
 # install it manually to use the engine
 # pylint: disable=import-error
 
-import psycopg2
+import psycopg
 
 engine_type = 'offline'
 host = "127.0.0.1"
@@ -19,7 +19,6 @@ query_str = ""
 limit = 10
 paging = True
 result_template = 'key-value.html'
-_connection = None
 
 
 def init(engine_settings):
@@ -29,21 +28,24 @@ def init(engine_settings):
     if not engine_settings['query_str'].lower().startswith('select '):
         raise ValueError('only SELECT query is supported')
 
-    global _connection
-    _connection = psycopg2.connect(
-        database=database,
-        user=username,
-        password=password,
-        host=host,
-        port=port,
+
+def get_connection():
+    """Creates and returns a new connection."""
+    connection_string = (
+        f"hostaddr='{host or ''}' "
+        f"port='{port or ''}' "
+        f"dbname='{database}' "
+        f"user='{username}' "
+        f"password='{password}'"
     )
+    return psycopg.connect(conninfo=connection_string)
 
 
 def search(query, params):
     query_params = {'query': query}
     query_to_run = query_str + ' LIMIT {0} OFFSET {1}'.format(limit, (params['pageno'] - 1) * limit)
 
-    with _connection:
+    with get_connection() as _connection:
         with _connection.cursor() as cur:
             cur.execute(query_to_run, query_params)
 
@@ -63,7 +65,7 @@ def _fetch_results(cur):
             results.append(result)
 
     # no results to fetch
-    except psycopg2.ProgrammingError:
+    except psycopg.ProgrammingError:
         pass
 
     return results

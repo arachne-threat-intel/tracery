@@ -1004,7 +1004,7 @@ engines:
     url: https://thepiratebay.org/
     timeout : 3.0
 
-# Required dependency: psychopg2
+# Required dependency: psycopg
 #  - name : postgresql
 #    engine : postgresql
 #    database : postgres
