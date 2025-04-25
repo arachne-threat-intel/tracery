@@ -10,7 +10,7 @@ permissions:
 jobs:
   updateData:
     name: Update data - ${{ matrix.fetch }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     if: ${{ github.repository_owner == 'searx'}}
     strategy:
       matrix:

@@ -12,10 +12,10 @@ permissions:
 jobs:
   python:
     name: Python ${{ matrix.python-version }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-20.04]
+        os: [ubuntu-latest]
         python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
     steps:
     - name: Checkout
@@ -23,7 +23,15 @@ jobs:
     - name: Install Ubuntu packages
       run: |
         sudo ./utils/searx.sh install packages
-        sudo apt install firefox
+        # Use APT Firefox rather than Snap
+        sudo add-apt-repository -y ppa:mozillateam/ppa
+        echo '
+        Package: *
+        Pin: release o=LP-PPA-mozillateam
+        Pin-Priority: 1001
+        ' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+        sudo apt-get update
+        sudo apt-get install -y firefox
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -53,7 +61,7 @@ jobs:
 
   themes:
     name: Themes
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -69,7 +77,7 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ./local
-        key: python-ubuntu-20.04-3.9-${{ hashFiles('requirements*.txt', 'setup.py') }}
+        key: python-ubuntu-latest-3.9-${{ hashFiles('requirements*.txt', 'setup.py') }}
     - name: Install node dependencies
       run: make V=1 node.env
     - name: Build themes
@@ -79,7 +87,7 @@ jobs:
     permissions:
       contents: write  # for JamesIves/github-pages-deploy-action to push changes in repo
     name: Documentation
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -98,7 +106,7 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ./local
-        key: python-ubuntu-20.04-3.9-${{ hashFiles('requirements*.txt', 'setup.py') }}
+        key: python-ubuntu-latest-3.9-${{ hashFiles('requirements*.txt', 'setup.py') }}
     - name: Build documentation
       run: |
         make V=1 docs.clean docs.html
@@ -120,7 +128,7 @@ jobs:
       - documentation
     env:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         if: env.DOCKERHUB_USERNAME != null
@@ -138,7 +146,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ./local
-          key: python-ubuntu-20.04-3.9-${{ hashFiles('requirements*.txt', 'setup.py') }}
+          key: python-ubuntu-latest-3.9-${{ hashFiles('requirements*.txt', 'setup.py') }}
       - name: Set up QEMU
         if: env.DOCKERHUB_USERNAME != null
         uses: docker/setup-qemu-action@v1
