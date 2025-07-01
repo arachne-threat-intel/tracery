@@ -690,10 +690,10 @@ pyenv.uninstall() {
     build_msg PYENV "[uninstall] ${PYOBJECTS}"
 
     if [ "." = "${PYOBJECTS}" ]; then
-	pyenv.cmd python setup.py develop --uninstall 2>&1 \
+        pyenv.cmd python -m pip uninstall --yes . 2>&1 \
             | prefix_stdout "${_Blue}PYENV     ${_creset}[pyenv.uninstall] "
     else
-	pyenv.cmd python -m pip uninstall --yes ${PYOBJECTS} 2>&1 \
+        pyenv.cmd python -m pip uninstall --yes ${PYOBJECTS} 2>&1 \
             | prefix_stdout "${_Blue}PYENV     ${_creset}[pyenv.uninstall] "
     fi
 }

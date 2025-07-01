@@ -377,9 +377,8 @@ pyenv.install() {
 
 pyenv.uninstall() {
     build_msg PYENV "[pyenv.uninstall] uninstall packages: ${PYOBJECTS}"
-    pyenv.cmd python setup.py develop --uninstall 2>&1 \
+    pyenv.cmd python -m pip uninstall -y searx 2>&1 \
         | prefix_stdout "${_Blue}PYENV     ${_creset}[pyenv.uninstall] "
-
 }
 
 pypi.upload() {
