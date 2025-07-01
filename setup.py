@@ -1,14 +1,33 @@
 # -*- coding: utf-8 -*-
 """Installer for Searx package."""
 
-from setuptools import setup
-from setuptools import find_packages
-
 import os
 import sys
 
-from searx.version import VERSION_STRING
-from searx import brand
+from setuptools import find_packages, setup
+
+
+version_ns = {}
+with open(os.path.join('searx', 'version.py')) as f:
+    exec(f.read(), version_ns)
+VERSION_STRING = version_ns.get('VERSION_STRING', '')
+
+brand = {}
+with open(os.path.join('utils', 'brand.env')) as f:
+    for line in f:
+        line = line.strip()
+
+        if not line or line.startswith('#'):
+            continue
+
+        if line.startswith('export '):
+            line = line[len('export '):]
+
+        if '=' in line:
+            key, val = line.split('=', 1)
+            key = key.strip()
+            val = val.strip().strip("'").strip('"')
+            brand[key] = val
 
 with open('README.rst', encoding='utf-8') as f:
     long_description = f.read()
@@ -24,10 +43,10 @@ setup(
     version=VERSION_STRING,
     description="A privacy-respecting, hackable metasearch engine",
     long_description=long_description,
-    url=brand.DOCS_URL,
+    url=brand.get("DOCS_URL", ""),
     project_urls={
-        "Code": brand.GIT_URL,
-        "Issue tracker": brand.ISSUE_URL
+        "Code": brand.get("GIT_URL", ""),
+        "Issue tracker": brand.get("ISSUE_URL", ""),
     },
     classifiers=[
         "Development Status :: 4 - Beta",
