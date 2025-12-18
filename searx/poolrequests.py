@@ -4,6 +4,7 @@ from itertools import cycle
 from threading import local
 
 import requests
+from curl_cffi import requests as requests_cffi
 
 from searx import settings
 from searx import logger
@@ -153,6 +154,23 @@ def get_global_proxies():
 
 
 def request(method, url, **kwargs):
+    use_curl_cffi = settings.get('search', dict()).get('use_curl_cffi')
+    if use_curl_cffi:
+        return _request_cffi(method, url)
+
+    return _request(method, url, **kwargs)
+
+
+def _request_cffi(method, url):
+    """Executes the request using curl_cffi."""
+    session = requests_cffi.Session()
+    response = session.request(method=method, url=url, impersonate='chrome')
+    session.close()
+
+    return response
+
+
+def _request(method, url, **kwargs):
     """same as requests/requests/api.py request(...)"""
     time_before_request = time()
 
