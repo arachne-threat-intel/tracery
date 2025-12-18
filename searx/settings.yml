@@ -20,6 +20,7 @@ search:
     ban_time_on_fail : 5 # ban time in seconds after engine errors
     max_ban_time_on_fail : 120 # max ban time in seconds after engine errors
     prefer_configured_language: False # increase weight of results in configured language in ranking
+    use_curl_cffi : False # whether to use curl_cffi for requests
 
 server:
     port : 9000
