@@ -95,7 +95,7 @@ def request(query, params):
     })
 
     domain = lang2domain.get(lang, '%s.search.yahoo.com' % lang)
-    params['url'] = 'https://%s/search?%s' % (domain, args)
+    params['url'] = 'https://%s/search?%s&guccounter=2' % (domain, args)
     return params
 
 
