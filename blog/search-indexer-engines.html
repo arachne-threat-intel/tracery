@@ -1,27 +1,23 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Query your local search engines &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=6625fa76" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css?v=08d6f00e" />
+    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script data-project="searx" data-version="1.1.0" src="../_static/describe_version.js?v=fa7f30d0"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Running shell commands to fetch results" href="command-line-engines.html" />
     <link rel="prev" title="Query SQL servers" href="sql-engines.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,7 +41,7 @@
           <div class="body" role="main">
             
   <section id="query-your-local-search-engines">
-<h1>Query your local search engines<a class="headerlink" href="#query-your-local-search-engines" title="Permalink to this heading">¶</a></h1>
+<h1>Query your local search engines<a class="headerlink" href="#query-your-local-search-engines" title="Link to this heading">¶</a></h1>
 <p>From now on, searx lets you to query your locally running search engines. The following
 ones are supported now:</p>
 <ul class="simple">
@@ -61,10 +57,10 @@ HTTP requests by setting <code class="docutils literal notranslate"><span class=
 still add them and limit the access by setting <code class="docutils literal notranslate"><span class="pre">tokens</span></code> as described in the <a class="reference external" href="private-engines.html#private-engines">blog post about
 private engines</a>.</p>
 <section id="configuring-searx-for-search-engines">
-<h2>Configuring searx for search engines<a class="headerlink" href="#configuring-searx-for-search-engines" title="Permalink to this heading">¶</a></h2>
+<h2>Configuring searx for search engines<a class="headerlink" href="#configuring-searx-for-search-engines" title="Link to this heading">¶</a></h2>
 <p>Each search engine is powerful, capable of full-text search.</p>
 <section id="elasticsearch">
-<h3>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this heading">¶</a></h3>
+<h3>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Link to this heading">¶</a></h3>
 <p>Elasticsearch supports numerous ways to query the data it is storing. At the moment
 the engine supports the most popular search methods: <code class="docutils literal notranslate"><span class="pre">match</span></code>, <code class="docutils literal notranslate"><span class="pre">simple_query_string</span></code>, <code class="docutils literal notranslate"><span class="pre">term</span></code> and <code class="docutils literal notranslate"><span class="pre">terms</span></code>.</p>
 <p>If none of the methods fit your use case, you can select <code class="docutils literal notranslate"><span class="pre">custom</span></code> query type and provide the JSON payload
@@ -84,7 +80,7 @@ configured to read from <code class="docutils literal notranslate"><span class="
 </div>
 </section>
 <section id="meilisearch">
-<h3>Meilisearch<a class="headerlink" href="#meilisearch" title="Permalink to this heading">¶</a></h3>
+<h3>Meilisearch<a class="headerlink" href="#meilisearch" title="Link to this heading">¶</a></h3>
 <p>This search engine is aimed at individuals and small companies. It is designed for
 small-scale (less than 10 million documents) data collections. E.g. it is great for storing
 web pages you have visited and searching in the contents later.</p>
@@ -101,7 +97,7 @@ Furthermore, you can search in Meilisearch instances that require authentication
 </div>
 </section>
 <section id="solr">
-<h3>Solr<a class="headerlink" href="#solr" title="Permalink to this heading">¶</a></h3>
+<h3>Solr<a class="headerlink" href="#solr" title="Link to this heading">¶</a></h3>
 <p>Solr is a popular search engine based on Lucene, just like Elasticsearch.
 But instead of searching in indices, you can search in collections.</p>
 <p>This is an example configuration for searching in the collection <code class="docutils literal notranslate"><span class="pre">my-collection</span></code> and get
@@ -118,11 +114,11 @@ the results in ascending order.</p>
 </section>
 </section>
 <section id="next-steps">
-<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">¶</a></h2>
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
 <p>The next step is to add support for various SQL databases.</p>
 </section>
 <section id="acknowledgement">
-<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this heading">¶</a></h2>
+<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Link to this heading">¶</a></h2>
 <p>This development was sponsored by <a class="reference external" href="https://nlnet.nl/discovery">Search and Discovery Fund</a> of <a class="reference external" href="https://nlnet.nl/">NLnet Foundation</a> .</p>
 <div class="line-block">
 <div class="line">Happy hacking.</div>
@@ -137,12 +133,12 @@ the results in ascending order.</p>
         </div>
       </div>
   <span id="sidebar-top"></span>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   
     
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo of searx"/>
             </a></p>
   
 
@@ -169,7 +165,7 @@ the results in ascending order.</p>
     </ul>
   </li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -177,18 +173,15 @@ the results in ascending order.</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-  
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
-  <script src="../_static/version_warning_offset.js"></script>
-
   </body>
 </html>

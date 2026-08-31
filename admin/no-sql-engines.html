@@ -1,27 +1,23 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Query SQL and NoSQL servers &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=6625fa76" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css?v=08d6f00e" />
+    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script data-project="searx" data-version="1.1.0" src="../_static/describe_version.js?v=fa7f30d0"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Plugins builtin" href="plugins.html" />
     <link rel="prev" title="Search in indexers" href="indexer-engines.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,9 +41,9 @@
           <div class="body" role="main">
             
   <section id="query-sql-and-nosql-servers">
-<h1>Query SQL and NoSQL servers<a class="headerlink" href="#query-sql-and-nosql-servers" title="Permalink to this heading">¶</a></h1>
+<h1>Query SQL and NoSQL servers<a class="headerlink" href="#query-sql-and-nosql-servers" title="Link to this heading">¶</a></h1>
 <section id="sql">
-<h2>SQL<a class="headerlink" href="#sql" title="Permalink to this heading">¶</a></h2>
+<h2>SQL<a class="headerlink" href="#sql" title="Link to this heading">¶</a></h2>
 <p>SQL servers are traditional databases with predefined data schema. Furthermore,
 modern versions also support BLOB data.</p>
 <p>You can search in the following servers:</p>
@@ -62,7 +58,7 @@ one parameter in your query.</p>
 <p>Do not include LIMIT or OFFSET in your SQL query as the engines
 rely on these keywords during paging.</p>
 <section id="postgresql">
-<h3>PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this heading">¶</a></h3>
+<h3>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">¶</a></h3>
 <p>Required PyPi package: <code class="docutils literal notranslate"><span class="pre">psychopg2</span></code></p>
 <p>You can find an example configuration below:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql</span>
@@ -75,7 +71,7 @@ rely on these keywords during paging.</p>
 </pre></div>
 </div>
 <section id="available-options">
-<h4>Available options<a class="headerlink" href="#available-options" title="Permalink to this heading">¶</a></h4>
+<h4>Available options<a class="headerlink" href="#available-options" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">host</span></code>: IP address of the host running PostgreSQL. By default it is <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">port</span></code>: Port number PostgreSQL is listening on. By default it is <code class="docutils literal notranslate"><span class="pre">5432</span></code>.</p></li>
@@ -88,7 +84,7 @@ rely on these keywords during paging.</p>
 </section>
 </section>
 <section id="mysql">
-<h3>MySQL<a class="headerlink" href="#mysql" title="Permalink to this heading">¶</a></h3>
+<h3>MySQL<a class="headerlink" href="#mysql" title="Link to this heading">¶</a></h3>
 <p>Required PyPi package: <code class="docutils literal notranslate"><span class="pre">mysql-connector-python</span></code></p>
 <p>This is an example configuration for quering a MySQL server:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
@@ -102,7 +98,7 @@ rely on these keywords during paging.</p>
 </pre></div>
 </div>
 <section id="id1">
-<h4>Available options<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
+<h4>Available options<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">host</span></code>: IP address of the host running MySQL. By default it is <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">port</span></code>: Port number MySQL is listening on. By default it is <code class="docutils literal notranslate"><span class="pre">3306</span></code>.</p></li>
@@ -116,7 +112,7 @@ rely on these keywords during paging.</p>
 </section>
 </section>
 <section id="sqlite">
-<h3>SQLite<a class="headerlink" href="#sqlite" title="Permalink to this heading">¶</a></h3>
+<h3>SQLite<a class="headerlink" href="#sqlite" title="Link to this heading">¶</a></h3>
 <p>You can read from your database <code class="docutils literal notranslate"><span class="pre">my_database</span></code> using this example configuration:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlite</span>
 <span class="w">  </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlite</span>
@@ -126,7 +122,7 @@ rely on these keywords during paging.</p>
 </pre></div>
 </div>
 <section id="id2">
-<h4>Available options<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
+<h4>Available options<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">database</span></code>: Name of the database you are connecting to.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">query_str</span></code>: Query string to run. Keywords like <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> and <code class="docutils literal notranslate"><span class="pre">OFFSET</span></code> are not allowed. Required.</p></li>
@@ -136,7 +132,7 @@ rely on these keywords during paging.</p>
 </section>
 </section>
 <section id="nosql">
-<h2>NoSQL<a class="headerlink" href="#nosql" title="Permalink to this heading">¶</a></h2>
+<h2>NoSQL<a class="headerlink" href="#nosql" title="Link to this heading">¶</a></h2>
 <p>NoSQL data stores are used for storing arbitrary data without first defining their
 structure. To query the supported servers, you must install their drivers using PyPi.</p>
 <p>You can search in the following servers:</p>
@@ -145,7 +141,7 @@ structure. To query the supported servers, you must install their drivers using 
 <li><p><a class="reference internal" href="#mongodb">MongoDB</a></p></li>
 </ul>
 <section id="redis">
-<h3>Redis<a class="headerlink" href="#redis" title="Permalink to this heading">¶</a></h3>
+<h3>Redis<a class="headerlink" href="#redis" title="Link to this heading">¶</a></h3>
 <p>Reqired PyPi package: <code class="docutils literal notranslate"><span class="pre">redis</span></code></p>
 <p>Example configuration:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mystore</span>
@@ -160,7 +156,7 @@ structure. To query the supported servers, you must install their drivers using 
 </pre></div>
 </div>
 <section id="id3">
-<h4>Available options<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
+<h4>Available options<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">host</span></code>: IP address of the host running Redis. By default it is <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">port</span></code>: Port number Redis is listening on. By default it is <code class="docutils literal notranslate"><span class="pre">6379</span></code>.</p></li>
@@ -171,7 +167,7 @@ structure. To query the supported servers, you must install their drivers using 
 </section>
 </section>
 <section id="mongodb">
-<h3>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this heading">¶</a></h3>
+<h3>MongoDB<a class="headerlink" href="#mongodb" title="Link to this heading">¶</a></h3>
 <p>Required PyPi package: <code class="docutils literal notranslate"><span class="pre">pymongo</span></code></p>
 <p>Below is an example configuration for using a MongoDB collection:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mymongo</span>
@@ -186,7 +182,7 @@ structure. To query the supported servers, you must install their drivers using 
 </pre></div>
 </div>
 <section id="id4">
-<h4>Available options<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h4>
+<h4>Available options<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">host</span></code>: IP address of the host running MongoDB. By default it is <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">port</span></code>: Port number MongoDB is listening on. By default it is <code class="docutils literal notranslate"><span class="pre">27017</span></code>.</p></li>
@@ -206,12 +202,12 @@ structure. To query the supported servers, you must install their drivers using 
         </div>
       </div>
   <span id="sidebar-top"></span>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   
     
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo of searx"/>
             </a></p>
   
 
@@ -238,7 +234,7 @@ structure. To query the supported servers, you must install their drivers using 
     </ul>
   </li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -246,18 +242,15 @@ structure. To query the supported servers, you must install their drivers using 
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-  
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
-  <script src="../_static/version_warning_offset.js"></script>
-
   </body>
 </html>

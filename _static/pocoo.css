@@ -1,9 +1,30 @@
 @import url("basic.css");
 
+/* -- Atkinson Hyperlegible font definitions ------------------------ */
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("atkinson/AtkinsonHyperlegibleNextVF-Variable.woff2") format("woff2");
+  font-display: block;
+  font-weight: 200 800;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("atkinson/AtkinsonHyperlegibleMonoVF-Variable.woff2") format("woff2");
+  font-display: block;
+  font-weight: 200 800;
+}
+
 /* -- page layout --------------------------------------------------- */
 
+html {
+  scroll-padding-top: calc(30px + 1em);
+  /* see .version-warning selector for banner positioning */
+}
+
 body {
-  font-family: 'Garamond', 'Georgia', serif;
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
   font-size: 17px;
   background-color: #fff;
   color: #3e4349;
@@ -50,10 +71,23 @@ div.sphinxsidebar {
   color: #444;
 }
 
+div.sphinxsidebar li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div.sphinxsidebar li:hover {
+  overflow: visible;
+}
+
 div.sphinxsidebar a,
 div.sphinxsidebar a code {
   color: #444;
   border-color: #444;
+}
+
+div.sphinxsidebar a:hover {
+  background-color:#fff;
 }
 
 div.sphinxsidebar p.logo {
@@ -103,6 +137,24 @@ div.footer a {
   border-color: #888;
 }
 
+/* more font overrides from basic.css */
+
+div.sphinxsidebar input {
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+}
+
+.sig {
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+}
+
+.guilabel, .menuselection {
+    font-family: "Atkinson Hyperlegible Next", sans-serif;
+}
+
+.viewcode-back {
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+}
+
 /* -- quick search -------------------------------------------------- */
 
 div.sphinxsidebar #searchbox form {
@@ -123,19 +175,9 @@ div.sphinxsidebar #searchbox input[type=submit] {
   border-left-width: 0;
 }
 
-/* -- versions ------------------------------------------------------ */
-
-div.sphinxsidebar ul.versions a.current {
-  font-style: italic;
-  border-bottom: 1px solid #000;
-  color: #000;
-}
-
-div.sphinxsidebar ul.versions span.note {
-  color: #999;
-}
-
 /* -- version warning ----------------------------------------------- */
+
+/* see html selector for scroll offset */
 
 p.version-warning {
   top: 10px;
@@ -167,12 +209,14 @@ p.version-warning a {
 /* -- body styles --------------------------------------------------- */
 
 a {
-  text-decoration: none;
-  border-bottom: 1px dotted #000;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: #000;
+  text-decoration-thickness: 1px;
 }
 
 a:hover {
-  border-bottom-style: solid;
+  text-decoration-style: solid;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -315,7 +359,7 @@ rect.highlighted {
 /* -- code displays ------------------------------------------------- */
 
 pre, code {
-  font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+  font-family: "Atkinson Hyperlegible Mono", monospace;
   font-size: 0.9em;
 }
 
@@ -454,11 +498,6 @@ table.footnote td {
     display: none;
   }
 
-  div.sphinxsidebar ul.versions a.current {
-    border-bottom-color: #fff;
-    color: #fff;
-  }
-
   div.footer {
     text-align: left;
     margin: 0 -20px;
@@ -489,7 +528,7 @@ table.footnote td {
 }
 
 .sphinx-tabs .ui.menu {
-  font-family: 'Garamond', 'Georgia', serif !important;
+  font-family: "Atkinson Hyperlegible Next", sans-serif !important;
 }
 
 .sphinx-tabs .ui.attached.menu {

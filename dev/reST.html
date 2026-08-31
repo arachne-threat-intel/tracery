@@ -1,27 +1,23 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>reST primer &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=6625fa76" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css?v=08d6f00e" />
+    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script data-project="searx" data-version="1.1.0" src="../_static/describe_version.js?v=fa7f30d0"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tooling box searx_extra for developers and users" href="../searx_extra/index.html" />
     <link rel="prev" title="Makefile" href="makefile.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,7 +41,7 @@
           <div class="body" role="main">
             
   <section id="rest-primer">
-<span id="id1"></span><h1>reST primer<a class="headerlink" href="#rest-primer" title="Permalink to this heading">¶</a></h1>
+<span id="id1"></span><h1>reST primer<a class="headerlink" href="#rest-primer" title="Link to this heading">¶</a></h1>
 <aside class="sidebar">
 <p class="sidebar-title"><a class="reference external" href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a> and <a class="reference external" href="https://docs.python-guide.org/writing/style/">readability</a></p>
 <p>Instead of defining more and more roles, we at searx encourage our
@@ -53,9 +49,9 @@ contributors to follow principles like <a class="reference external" href="https
 </aside>
 <p>We at searx are using reStructuredText (aka <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reST</a>) markup for all kind of
 documentation, with the builders from the <a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a> project a HTML output is
-generated and deployed at <a class="reference external" href="https://searx.github.io/searx/.">github.io</a>.  For build prerequisites read
+generated and deployed at <a class="extlink-docs reference external" href="https://searx.github.io/searx/.">github.io</a>.  For build prerequisites read
 <a class="reference internal" href="../admin/buildhosts.html#docs-build"><span class="std std-ref">Build docs</span></a>.</p>
-<p>The source files of Searx’s documentation are located at <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs">Origin: docs</a>.  Sphinx
+<p>The source files of Searx’s documentation are located at <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs">Origin: docs</a>.  Sphinx
 assumes source files to be encoded in UTF-8 by default.  Run <a class="reference internal" href="contribution_guide.html#make-docs-live"><span class="std std-ref">make docs.live</span></a> to build HTML while editing.</p>
 <aside class="sidebar">
 <p class="sidebar-title">Further reading</p>
@@ -151,7 +147,7 @@ word <em>mostly</em>: like everything in live, reST has its advantages and
 disadvantages, some markups feel a bit grumpy (especially if you are used to
 other plaintext markups).</p>
 <section id="soft-skills">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">Soft skills</a><a class="headerlink" href="#soft-skills" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Soft skills</a><a class="headerlink" href="#soft-skills" title="Link to this heading">¶</a></h2>
 <p>Before going any deeper into the markup let’s face on some <strong>soft skills</strong> a
 trained author brings with, to reach a well feedback from readers:</p>
 <ul class="simple">
@@ -161,17 +157,17 @@ audience point of view.</p></li>
 view.</p></li>
 <li><p>Limit the subject, use cross links for any further reading.</p></li>
 </ul>
-<p>To be more concrete what a <em>point of view</em> means.  In the (<a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs">Origin: docs</a>)
+<p>To be more concrete what a <em>point of view</em> means.  In the (<a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs">Origin: docs</a>)
 folder we have three sections (and the <em>blog</em> folder), each dedicate to a
 different group of audience.</p>
 <dl class="simple">
-<dt>User’s POV: <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/user">Origin: docs/user</a></dt><dd><p>A typical user knows about search engines and might have heard about
+<dt>User’s POV: <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/user">Origin: docs/user</a></dt><dd><p>A typical user knows about search engines and might have heard about
 meta crawlers and privacy.</p>
 </dd>
-<dt>Admin’s POV: <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/admin">Origin: docs/admin</a></dt><dd><p>A typical Admin knows about setting up services on a linux system, but he does
+<dt>Admin’s POV: <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/admin">Origin: docs/admin</a></dt><dd><p>A typical Admin knows about setting up services on a linux system, but he does
 not know all the pros and cons of a searx setup.</p>
 </dd>
-<dt>Developer’s POV: <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/dev">Origin: docs/dev</a></dt><dd><p>Depending on the <a class="reference external" href="https://docs.python-guide.org/writing/style/">readability</a> of code, a typical developer is able to read and
+<dt>Developer’s POV: <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/dev">Origin: docs/dev</a></dt><dd><p>Depending on the <a class="reference external" href="https://docs.python-guide.org/writing/style/">readability</a> of code, a typical developer is able to read and
 understand source code.  Describe what a item aims to do (e.g. a function).
 If the chronological order matters, describe it.  Name the <em>out-of-limits
 conditions</em> and all the side effects a external developer will not know.</p>
@@ -179,7 +175,7 @@ conditions</em> and all the side effects a external developer will not know.</p>
 </dl>
 </section>
 <section id="basic-inline-markup">
-<span id="rest-inline-markup"></span><h2><a class="toc-backref" href="#id16" role="doc-backlink">Basic inline markup</a><a class="headerlink" href="#basic-inline-markup" title="Permalink to this heading">¶</a></h2>
+<span id="rest-inline-markup"></span><h2><a class="toc-backref" href="#id16" role="doc-backlink">Basic inline markup</a><a class="headerlink" href="#basic-inline-markup" title="Link to this heading">¶</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">Inline markup</p>
 <ul class="simple">
@@ -191,11 +187,11 @@ conditions</em> and all the side effects a external developer will not know.</p>
 backquotes appear in running text and could be confused with inline markup
 delimiters, they have to be escaped with a backslash (<code class="docutils literal notranslate"><span class="pre">\*pointer</span></code>).</p>
 <table class="docutils align-default" id="id4">
-<caption><span class="caption-number">Table 4 </span><span class="caption-text">basic inline markup</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">basic inline markup</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 29%" />
-<col style="width: 21%" />
-<col style="width: 50%" />
+<col style="width: 28.6%" />
+<col style="width: 21.4%" />
+<col style="width: 50.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>description</p></th>
@@ -224,11 +220,11 @@ delimiters, they have to be escaped with a backslash (<code class="docutils lite
 </table>
 </section>
 <section id="basic-article-structure">
-<span id="rest-basic-structure"></span><h2><a class="toc-backref" href="#id17" role="doc-backlink">Basic article structure</a><a class="headerlink" href="#basic-article-structure" title="Permalink to this heading">¶</a></h2>
+<span id="rest-basic-structure"></span><h2><a class="toc-backref" href="#id17" role="doc-backlink">Basic article structure</a><a class="headerlink" href="#basic-article-structure" title="Link to this heading">¶</a></h2>
 <p>The basic structure of an article makes use of heading adornments to markup
 chapter, sections and subsections.</p>
 <section id="rest-template">
-<span id="id2"></span><h3><a class="toc-backref" href="#id18" role="doc-backlink">reST template</a><a class="headerlink" href="#rest-template" title="Permalink to this heading">¶</a></h3>
+<span id="id2"></span><h3><a class="toc-backref" href="#id18" role="doc-backlink">reST template</a><a class="headerlink" href="#rest-template" title="Link to this heading">¶</a></h3>
 <p>reST template for an simple article:</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_doc refname:</span>
 
@@ -264,7 +260,7 @@ lorem ..
 </div>
 </section>
 <section id="headings">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink">Headings</a><a class="headerlink" href="#headings" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Headings</a><a class="headerlink" href="#headings" title="Link to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>title - with overline for document title:</p></li>
 </ol>
@@ -300,9 +296,9 @@ lorem ..
 </section>
 </section>
 <section id="anchors-links">
-<h2><a class="toc-backref" href="#id20" role="doc-backlink">Anchors &amp; Links</a><a class="headerlink" href="#anchors-links" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">Anchors &amp; Links</a><a class="headerlink" href="#anchors-links" title="Link to this heading">¶</a></h2>
 <section id="anchors">
-<span id="rest-anchor"></span><h3><a class="toc-backref" href="#id21" role="doc-backlink">Anchors</a><a class="headerlink" href="#anchors" title="Permalink to this heading">¶</a></h3>
+<span id="rest-anchor"></span><h3><a class="toc-backref" href="#id21" role="doc-backlink">Anchors</a><a class="headerlink" href="#anchors" title="Link to this heading">¶</a></h3>
 <p>To refer a point in the documentation a anchor is needed.  The <a class="reference internal" href="#rest-template"><span class="std std-ref">reST
 template</span></a> shows an example where a chapter titled <em>“Chapters”</em>
 gets an anchor named <code class="docutils literal notranslate"><span class="pre">chapter</span> <span class="pre">title</span></code>.  Another example from <em>this</em> document,
@@ -327,7 +323,7 @@ bar</span></a>.</p>
 </div>
 </section>
 <section id="link-ordinary-url">
-<span id="rest-ordinary-ref"></span><h3><a class="toc-backref" href="#id22" role="doc-backlink">Link ordinary URL</a><a class="headerlink" href="#link-ordinary-url" title="Permalink to this heading">¶</a></h3>
+<span id="rest-ordinary-ref"></span><h3><a class="toc-backref" href="#id22" role="doc-backlink">Link ordinary URL</a><a class="headerlink" href="#link-ordinary-url" title="Link to this heading">¶</a></h3>
 <p>If you need to reference external URLs use <em>named</em> hyperlinks to maintain
 readability of reST sources.  Here is a example taken from <em>this</em> article:</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_Sphinx Field Lists:</span>
@@ -350,15 +346,15 @@ Lists</a>.</p>
 </div>
 </section>
 <section id="smart-refs">
-<span id="rest-smart-ref"></span><h3><a class="toc-backref" href="#id23" role="doc-backlink">Smart refs</a><a class="headerlink" href="#smart-refs" title="Permalink to this heading">¶</a></h3>
+<span id="rest-smart-ref"></span><h3><a class="toc-backref" href="#id23" role="doc-backlink">Smart refs</a><a class="headerlink" href="#smart-refs" title="Link to this heading">¶</a></h3>
 <p>With the power of <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html">sphinx.ext.extlinks</a> and <a class="reference external" href="https://www.sphinx-doc.org/en/stable/ext/intersphinx.html">intersphinx</a> referencing external
 content becomes smart.</p>
 <table class="docutils align-default" id="id5">
-<caption><span class="caption-number">Table 5 </span><span class="caption-text">smart refs with <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html">sphinx.ext.extlinks</a> and <a class="reference external" href="https://www.sphinx-doc.org/en/stable/ext/intersphinx.html">intersphinx</a></span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">smart refs with <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html">sphinx.ext.extlinks</a> and <a class="reference external" href="https://www.sphinx-doc.org/en/stable/ext/intersphinx.html">intersphinx</a></span><a class="headerlink" href="#id5" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 29%" />
-<col style="width: 21%" />
-<col style="width: 50%" />
+<col style="width: 28.6%" />
+<col style="width: 21.4%" />
+<col style="width: 50.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>refer …</p></th>
@@ -378,31 +374,31 @@ content becomes smart.</p>
 <tr class="row-even"><td colspan="3"><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html">sphinx.ext.extlinks</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>project’s wiki article</p></td>
-<td><p><a class="reference external" href="https://github.com/searx/searx/wiki/Offline-engines">Offline-engines</a></p></td>
+<td><p><a class="extlink-wiki reference external" href="https://github.com/searx/searx/wiki/Offline-engines">Offline-engines</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:wiki:`Offline-engines`</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>to docs public URL</p></td>
-<td><p><a class="reference external" href="https://searx.github.io/searx/dev/reST.html">docs: dev/reST.html</a></p></td>
+<td><p><a class="extlink-docs reference external" href="https://searx.github.io/searx/dev/reST.html">docs: dev/reST.html</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:docs:`dev/reST.html`</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>files &amp; folders origin</p></td>
-<td><p><a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/dev/reST.rst">Origin: docs/dev/reST.rst</a></p></td>
+<td><p><a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/dev/reST.rst">Origin: docs/dev/reST.rst</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:origin:`docs/dev/reST.rst`</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>pull request</p></td>
-<td><p><a class="reference external" href="https://github.com/searx/searx/pull/1756">PR 1756</a></p></td>
+<td><p><a class="extlink-pull reference external" href="https://github.com/searx/searx/pull/1756">PR 1756</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:pull:`1756`</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>patch</p></td>
-<td><p><a class="reference external" href="https://github.com/arachne-threat-intel/tracery//commit/af2cae6">path af2cae6</a></p></td>
+<td><p><a class="extlink-patch reference external" href="https://github.com/arachne-threat-intel/tracery//commit/af2cae6">path af2cae6</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:patch:`af2cae6`</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>PyPi package</p></td>
-<td><p><a class="reference external" href="https://pypi.org/project/searx">PyPi: searx</a></p></td>
+<td><p><a class="extlink-pypi reference external" href="https://pypi.org/project/searx">PyPi: searx</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:pypi:`searx`</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>manual page man</p></td>
-<td><p><a class="reference external" href="https://manpages.debian.org/jump?q=bash">man: bash</a></p></td>
+<td><p><a class="extlink-man reference external" href="https://manpages.debian.org/jump?q=bash">man: bash</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:man:`bash`</span></code></p></td>
 </tr>
 <tr class="row-even"><td colspan="3"><p><a class="reference external" href="https://www.sphinx-doc.org/en/stable/ext/intersphinx.html">intersphinx</a></p></td>
@@ -425,7 +421,7 @@ content becomes smart.</p>
 </tr>
 </tbody>
 </table>
-<p>Intersphinx is configured in <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/conf.py">Origin: docs/conf.py</a>:</p>
+<p>Intersphinx is configured in <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/conf.py">Origin: docs/conf.py</a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"python"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"https://docs.python.org/3/"</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
     <span class="s2">"flask"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"https://flask.palletsprojects.com/"</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
@@ -445,13 +441,13 @@ $<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span
 </section>
 </section>
 <section id="literal-blocks">
-<h2><a class="toc-backref" href="#id24" role="doc-backlink">Literal blocks</a><a class="headerlink" href="#literal-blocks" title="Permalink to this heading">¶</a></h2>
-<p>The simplest form of <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#literal-blocks">literal-blocks</a> is a indented block introduced by
-two colons (<code class="docutils literal notranslate"><span class="pre">::</span></code>).  For highlighting use <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#highlight">highlight</a> or <a class="reference internal" href="#rest-code"><span class="std std-ref">code-block</span></a> directive.  To include literals from external files use
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">Literal blocks</a><a class="headerlink" href="#literal-blocks" title="Link to this heading">¶</a></h2>
+<p>The simplest form of <a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#literal-blocks">literal-blocks</a> is a indented block introduced by
+two colons (<code class="docutils literal notranslate"><span class="pre">::</span></code>).  For highlighting use <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#highlight">highlight</a> or <a class="reference internal" href="#rest-code"><span class="std std-ref">code-block</span></a> directive.  To include literals from external files use
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude" title="(in Sphinx v9.1.1)"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">literalinclude</span></code></a> or <a class="reference external" href="https://return42.github.io/linuxdoc/linuxdoc-howto/kernel-include-directive.html#kernel-include-directive" title="(in LinuxDoc v20240924.dev1)"><span class="xref std std-ref">kernel-include</span></a>
 directive (latter one expands environment variables in the path name).</p>
 <section id="rest-literal">
-<span id="id3"></span><h3><a class="toc-backref" href="#id25" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">::</span></code></a><a class="headerlink" href="#rest-literal" title="Permalink to this heading">¶</a></h3>
+<span id="id3"></span><h3><a class="toc-backref" href="#id25" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">::</span></code></a><a class="headerlink" href="#rest-literal" title="Link to this heading">¶</a></h3>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="se">::</span>
 
 <span class="s">  Literal block</span>
@@ -483,12 +479,12 @@ eirmod tempor invidunt ut labore</p>
 </div>
 </section>
 <section id="code-block">
-<span id="rest-code"></span><h3><a class="toc-backref" href="#id26" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">code-block</span></code></a><a class="headerlink" href="#code-block" title="Permalink to this heading">¶</a></h3>
+<span id="rest-code"></span><h3><a class="toc-backref" href="#id26" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">code-block</span></code></a><a class="headerlink" href="#code-block" title="Link to this heading">¶</a></h3>
 <aside class="sidebar">
 <p class="sidebar-title">Syntax highlighting</p>
 <p>is handled by <a class="reference external" href="https://pygments.org/languages/">pygments</a>.</p>
 </aside>
-<p>The <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-code-block" title="(in Sphinx v9.1.1)"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">code-block</span></code></a> directive is a variant of the <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#code">code</a> directive
+<p>The <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-code-block" title="(in Sphinx v9.1.1)"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">code-block</span></code></a> directive is a variant of the <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#code">code</a> directive
 with additional options.  To learn more about code literals visit
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#code-examples" title="(in Sphinx v9.1.1)"><span>Showing code examples</span></a>.</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span>The URL <span class="s">``/stats``</span> handle is shown in <span class="na">:ref:</span><span class="nv">`stats-handle`</span>
@@ -513,7 +509,7 @@ with additional options.  To learn more about code literals visit
 <p class="admonition-title">Code block</p>
 <p>The URL <code class="docutils literal notranslate"><span class="pre">/stats</span></code> handle is shown in <a class="reference internal" href="#stats-handle"><span class="std std-ref">python code block</span></a></p>
 <div class="literal-block-wrapper docutils container" id="stats-handle">
-<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">python code block</span><a class="headerlink" href="#stats-handle" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">python code block</span><a class="headerlink" href="#stats-handle" title="Link to this code">¶</a></div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/stats'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'GET'</span><span class="p">])</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">stats</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">"""Render engine statistics page."""</span>
@@ -528,8 +524,8 @@ with additional options.  To learn more about code literals visit
 </section>
 </section>
 <section id="unicode-substitution">
-<h2><a class="toc-backref" href="#id27" role="doc-backlink">Unicode substitution</a><a class="headerlink" href="#unicode-substitution" title="Permalink to this heading">¶</a></h2>
-<p>The <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#unicode-character-codes">unicode directive</a> converts Unicode
+<h2><a class="toc-backref" href="#id27" role="doc-backlink">Unicode substitution</a><a class="headerlink" href="#unicode-substitution" title="Link to this heading">¶</a></h2>
+<p>The <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#unicode-character-codes">unicode directive</a> converts Unicode
 character codes (numerical values) to characters.  This directive can only be
 used within a substitution definition.</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">|copy|</span> <span class="ow">unicode</span><span class="p">::</span> 0xA9 .. copyright sign
@@ -544,7 +540,7 @@ Trademark |(TM)| and copyright |copy| glyphs.
 </div>
 </section>
 <section id="roles">
-<span id="rest-roles"></span><h2><a class="toc-backref" href="#id28" role="doc-backlink">Roles</a><a class="headerlink" href="#roles" title="Permalink to this heading">¶</a></h2>
+<span id="rest-roles"></span><h2><a class="toc-backref" href="#id28" role="doc-backlink">Roles</a><a class="headerlink" href="#roles" title="Link to this heading">¶</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">Further reading</p>
 <ul class="simple">
@@ -552,7 +548,7 @@ Trademark |(TM)| and copyright |copy| glyphs.
 <li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html" title="(in Sphinx v9.1.1)"><span>MOVED: Domains</span></a></p></li>
 </ul>
 </aside>
-<p>A <em>custom interpreted text role</em> (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#roles">ref</a>) is an inline piece of
+<p>A <em>custom interpreted text role</em> (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#roles">ref</a>) is an inline piece of
 explicit markup.  It signifies that that the enclosed text should be interpreted
 in a specific way.</p>
 <p>The general markup is one of:</p>
@@ -561,11 +557,11 @@ in a specific way.</p>
 </pre></div>
 </div>
 <table class="docutils align-default" id="id6">
-<caption><span class="caption-number">Table 6 </span><span class="caption-text">smart refs with <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html">sphinx.ext.extlinks</a> and <a class="reference external" href="https://www.sphinx-doc.org/en/stable/ext/intersphinx.html">intersphinx</a></span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">smart refs with <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html">sphinx.ext.extlinks</a> and <a class="reference external" href="https://www.sphinx-doc.org/en/stable/ext/intersphinx.html">intersphinx</a></span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 29%" />
-<col style="width: 21%" />
-<col style="width: 50%" />
+<col style="width: 28.6%" />
+<col style="width: 21.4%" />
+<col style="width: 50.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>role</p></th>
@@ -579,7 +575,7 @@ in a specific way.</p>
 <td><p><code class="docutils literal notranslate"><span class="pre">:guilabel:`&amp;Cancel`</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-kbd" title="(in Sphinx v9.1.1)"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">kbd</span></code></a></p></td>
-<td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">x</kbd> <kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">f</kbd></kbd></p></td>
+<td><p><kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">x</kbd> <kbd class="kbd docutils literal notranslate">C</kbd>-<kbd class="kbd docutils literal notranslate">f</kbd></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:kbd:`C-x</span> <span class="pre">C-f`</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-menuselection" title="(in Sphinx v9.1.1)"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">menuselection</span></code></a></p></td>
@@ -591,7 +587,7 @@ in a specific way.</p>
 <td><p><code class="docutils literal notranslate"><span class="pre">:download:`this</span> <span class="pre">file</span> <span class="pre">&lt;reST.rst&gt;`</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#math">math</a></p></td>
-<td><p><img class="math" src="_images/math/6673b43f9fe29455c1fcd1164e5844698cc64d38.svg" alt="a^2 + b^2 = c^2"/></p></td>
+<td><p><img class="math" src="../_images/math/6673b43f9fe29455c1fcd1164e5844698cc64d38.svg" alt="a^2 + b^2 = c^2"/></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:math:`a^2</span> <span class="pre">+</span> <span class="pre">b^2</span> <span class="pre">=</span> <span class="pre">c^2`</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/referencing.html#role-ref" title="(in Sphinx v9.1.1)"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">ref</span></code></a></p></td>
@@ -602,27 +598,27 @@ in a specific way.</p>
 <td><p><strong class="command">ls -la</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:command:`ls</span> <span class="pre">-la`</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#emphasis">emphasis</a></p></td>
+<tr class="row-odd"><td><p><a class="extlink-durole reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#emphasis">emphasis</a></p></td>
 <td><p><em>italic</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:emphasis:`italic`</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#strong">strong</a></p></td>
+<tr class="row-even"><td><p><a class="extlink-durole reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#strong">strong</a></p></td>
 <td><p><strong>bold</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:strong:`bold`</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#literal">literal</a></p></td>
+<tr class="row-odd"><td><p><a class="extlink-durole reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#literal">literal</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">foo()</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:literal:`foo()`</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#subscript">subscript</a></p></td>
+<tr class="row-even"><td><p><a class="extlink-durole reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#subscript">subscript</a></p></td>
 <td><p>H<sub>2</sub>O</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">H\</span> <span class="pre">:sub:`2`\</span> <span class="pre">O</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#superscript">superscript</a></p></td>
+<tr class="row-odd"><td><p><a class="extlink-durole reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#superscript">superscript</a></p></td>
 <td><p>E = mc<sup>2</sup></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">=</span> <span class="pre">mc\</span> <span class="pre">:sup:`2`</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#title-reference">title-reference</a></p></td>
+<tr class="row-even"><td><p><a class="extlink-durole reference external" href="https://docutils.sourceforge.net/docs/ref/rst/roles.html#title-reference">title-reference</a></p></td>
 <td><p><cite>Time</cite></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">:title:`Time`</span></code></p></td>
 </tr>
@@ -630,7 +626,7 @@ in a specific way.</p>
 </table>
 </section>
 <section id="figures-images">
-<h2><a class="toc-backref" href="#id29" role="doc-backlink">Figures &amp; Images</a><a class="headerlink" href="#figures-images" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id29" role="doc-backlink">Figures &amp; Images</a><a class="headerlink" href="#figures-images" title="Link to this heading">¶</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">Image processing</p>
 <p>With the directives from <a class="reference external" href="https://return42.github.io/linuxdoc/linuxdoc-howto/kfigure.html#kfigure" title="(in LinuxDoc v20240924.dev1)"><span class="xref std std-ref">linuxdoc</span></a> the build process
@@ -644,7 +640,7 @@ about the build process when handling with images, especially since he has no
 access to the build process.  With <a class="reference external" href="https://return42.github.io/linuxdoc/linuxdoc-howto/kfigure.html#kfigure" title="(in LinuxDoc v20240924.dev1)"><span>Scalable figure and image handling</span></a> the build process
 continues and scales output quality in dependence of installed image processors.</p>
 <p>If you want to add an image, you should use the <code class="docutils literal notranslate"><span class="pre">kernel-figure</span></code> (inheritance
-of <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#figure">figure</a>) and <code class="docutils literal notranslate"><span class="pre">kernel-image</span></code> (inheritance of <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#image">image</a>)
+of <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#figure">figure</a>) and <code class="docutils literal notranslate"><span class="pre">kernel-image</span></code> (inheritance of <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#image">image</a>)
 directives.  E.g. to insert a figure with a scalable image format use SVG
 (<a class="reference internal" href="#svg-image-example"><span class="std std-ref">Simple SVG image.</span></a>):</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_svg image example:</span>
@@ -658,13 +654,14 @@ directives.  E.g. to insert a figure with a scalable image format use SVG
 </pre></div>
 </div>
 <figure class="align-default" id="id7">
-<img alt="SVG image example" src="../_images/svg_image.svg" /><figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Simple SVG image.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<img alt="SVG image example" src="../_images/svg_image.svg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Simple SVG image.</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>To refer the figure, a caption block is needed: <a class="reference internal" href="#svg-image-example"><span class="std std-ref">Simple SVG image.</span></a>.</p>
 <section id="dot-files-aka-graphviz">
-<h3><a class="toc-backref" href="#id30" role="doc-backlink">DOT files (aka Graphviz)</a><a class="headerlink" href="#dot-files-aka-graphviz" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">DOT files (aka Graphviz)</a><a class="headerlink" href="#dot-files-aka-graphviz" title="Link to this heading">¶</a></h3>
 <p>With <a class="reference external" href="https://return42.github.io/linuxdoc/linuxdoc-howto/kfigure.html#kernel-figure" title="(in LinuxDoc v20240924.dev1)"><span>kernel-figure &amp; kernel-image</span></a> reST support for <strong>DOT</strong> formatted files is
 given.</p>
 <ul class="simple">
@@ -684,14 +681,15 @@ given.</p>
 <div class="rst-example admonition">
 <p class="admonition-title">hello.dot</p>
 <figure class="align-default" id="id8">
-<img alt="hello world" src="../_images/hello.svg" /><figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">DOT’s hello world example</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<img alt="hello world" src="../_images/hello.svg" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">DOT’s hello world example</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </div>
 </section>
 <section id="kernel-render-dot">
-<h3><a class="toc-backref" href="#id31" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">kernel-render</span></code> DOT</a><a class="headerlink" href="#kernel-render-dot" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id31" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">kernel-render</span></code> DOT</a><a class="headerlink" href="#kernel-render-dot" title="Link to this heading">¶</a></h3>
 <p>Embed <em>render</em> markups (or languages) like Graphviz’s <strong>DOT</strong> is provided by the
 <a class="reference external" href="https://return42.github.io/linuxdoc/linuxdoc-howto/kfigure.html#kernel-render" title="(in LinuxDoc v20240924.dev1)"><span>kernel-render</span></a> directive.  A simple example of embedded <a class="reference external" href="https://graphviz.gitlab.io/_pages/doc/info/lang.html">DOT</a> is
 shown in figure <a class="reference internal" href="#dot-render-example"><span class="std std-ref">Embedded  DOT (Graphviz) code</span></a>:</p>
@@ -715,15 +713,16 @@ installed, you will see an vector image.  If not, the raw markup is inserted as
 <div class="rst-example admonition">
 <p class="admonition-title">kernel-render DOT</p>
 <figure class="align-default" id="id9">
-<span id="dot-render-example"></span><img alt="digraph" src="../_images/DOT-57a4a7f78690d0b6b884bc59f36e84cfb0b61f76.svg" /><figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Embedded  DOT (Graphviz) code</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<span id="dot-render-example"></span><img alt="digraph" src="../_images/DOT-57a4a7f78690d0b6b884bc59f36e84cfb0b61f76.svg" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Embedded  DOT (Graphviz) code</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Attribute <code class="docutils literal notranslate"><span class="pre">caption</span></code> is needed, if you want to refer the figure: <a class="reference internal" href="#dot-render-example"><span class="std std-ref">Embedded  DOT (Graphviz) code</span></a>.</p>
 </div>
 </section>
 <section id="kernel-render-svg">
-<h3><a class="toc-backref" href="#id32" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">kernel-render</span></code> SVG</a><a class="headerlink" href="#kernel-render-svg" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id32" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">kernel-render</span></code> SVG</a><a class="headerlink" href="#kernel-render-svg" title="Link to this heading">¶</a></h3>
 <p>A simple example of embedded <a class="reference external" href="https://www.w3.org/TR/SVG11/expanded-toc.html">SVG</a> is shown in figure <a class="reference internal" href="#svg-render-example"><span class="std std-ref">Embedded SVG markup</span></a>:</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_svg render example:</span>
 
@@ -752,18 +751,19 @@ installed, you will see an vector image.  If not, the raw markup is inserted as
 <div class="rst-example admonition">
 <p class="admonition-title">kernel-render SVG</p>
 <figure class="align-default" id="id10">
-<span id="svg-render-example"></span><img alt="so-nw-arrow" src="../_images/SVG-1fb7029fa2cc454a267bae271cccb2c591387416.svg" /><figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Embedded <strong>SVG</strong> markup</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<span id="svg-render-example"></span><img alt="so-nw-arrow" src="../_images/SVG-1fb7029fa2cc454a267bae271cccb2c591387416.svg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Embedded <strong>SVG</strong> markup</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
 <section id="list-markups">
-<span id="rest-lists"></span><h2><a class="toc-backref" href="#id33" role="doc-backlink">List markups</a><a class="headerlink" href="#list-markups" title="Permalink to this heading">¶</a></h2>
+<span id="rest-lists"></span><h2><a class="toc-backref" href="#id33" role="doc-backlink">List markups</a><a class="headerlink" href="#list-markups" title="Link to this heading">¶</a></h2>
 <section id="bullet-list">
-<h3><a class="toc-backref" href="#id34" role="doc-backlink">Bullet list</a><a class="headerlink" href="#bullet-list" title="Permalink to this heading">¶</a></h3>
-<p>List markup (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#bullet-lists">ref</a>) is simple:</p>
+<h3><a class="toc-backref" href="#id34" role="doc-backlink">Bullet list</a><a class="headerlink" href="#bullet-list" title="Link to this heading">¶</a></h3>
+<p>List markup (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#bullet-lists">ref</a>) is simple:</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="m">-</span> This is a bulleted list.
 
   <span class="m">1.</span> Nested lists are possible, but be aware that they must be separated from
@@ -797,7 +797,7 @@ item uses two lines.</p></li>
 </div>
 </section>
 <section id="horizontal-list">
-<h3><a class="toc-backref" href="#id35" role="doc-backlink">Horizontal list</a><a class="headerlink" href="#horizontal-list" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id35" role="doc-backlink">Horizontal list</a><a class="headerlink" href="#horizontal-list" title="Link to this heading">¶</a></h3>
 <p>The <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-hlist" title="(in Sphinx v9.1.1)"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">..</span> <span class="pre">hlist::</span></code></a> transforms a bullet list into a more compact
 list.</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">hlist</span><span class="p">::</span>
@@ -825,17 +825,17 @@ list.</p>
 </div>
 </section>
 <section id="definition-list">
-<h3><a class="toc-backref" href="#id36" role="doc-backlink">Definition list</a><a class="headerlink" href="#definition-list" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id36" role="doc-backlink">Definition list</a><a class="headerlink" href="#definition-list" title="Link to this heading">¶</a></h3>
 <aside class="sidebar">
 <p class="sidebar-title">Note ..</p>
 <ul class="simple">
 <li><p>the term cannot have more than one line of text</p></li>
 <li><p>there is <strong>no blank line between term and definition block</strong> // this
-distinguishes definition lists (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#definition-lists">ref</a>) from block
-quotes (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#block-quotes">ref</a>).</p></li>
+distinguishes definition lists (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#definition-lists">ref</a>) from block
+quotes (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#block-quotes">ref</a>).</p></li>
 </ul>
 </aside>
-<p>Each definition list (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#definition-lists">ref</a>) item contains a term,
+<p>Each definition list (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#definition-lists">ref</a>) item contains a term,
 optional classifiers and a definition.  A term is a simple one-line word or
 phrase.  Optional classifiers may follow the term on the same line, each after
 an inline ‘ : ‘ (<strong>space, colon, space</strong>).  A definition is a block indented
@@ -876,7 +876,7 @@ term 4 : classifier one : classifier two
 <blockquote>
 <div><p>And this is not term’s definition.  <strong>There is a blank line</strong> in between
 the line above and this paragraph.  That’s why this paragraph is taken as
-<strong>block quote</strong> (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#block-quotes">ref</a>) and not as term’s definition!</p>
+<strong>block quote</strong> (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#block-quotes">ref</a>) and not as term’s definition!</p>
 </div></blockquote>
 <dl>
 <dt>term 2</dt><dd><p>Definition 2, paragraph 1.</p>
@@ -889,9 +889,9 @@ the line above and this paragraph.  That’s why this paragraph is taken as
 </div>
 </section>
 <section id="quoted-paragraphs">
-<h3><a class="toc-backref" href="#id37" role="doc-backlink">Quoted paragraphs</a><a class="headerlink" href="#quoted-paragraphs" title="Permalink to this heading">¶</a></h3>
-<p>Quoted paragraphs (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#block-quotes">ref</a>) are created by just indenting
-them more than the surrounding paragraphs.  Line blocks (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#line-blocks">ref</a>) are a way of preserving line breaks:</p>
+<h3><a class="toc-backref" href="#id37" role="doc-backlink">Quoted paragraphs</a><a class="headerlink" href="#quoted-paragraphs" title="Link to this heading">¶</a></h3>
+<p>Quoted paragraphs (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#block-quotes">ref</a>) are created by just indenting
+them more than the surrounding paragraphs.  Line blocks (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#line-blocks">ref</a>) are a way of preserving line breaks:</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span>normal paragraph ...
 lorem ipsum.
 
@@ -919,7 +919,7 @@ lorem ipsum.</p>
 </div>
 </section>
 <section id="field-lists">
-<span id="rest-field-list"></span><h3><a class="toc-backref" href="#id38" role="doc-backlink">Field Lists</a><a class="headerlink" href="#field-lists" title="Permalink to this heading">¶</a></h3>
+<span id="rest-field-list"></span><h3><a class="toc-backref" href="#id38" role="doc-backlink">Field Lists</a><a class="headerlink" href="#field-lists" title="Link to this heading">¶</a></h3>
 <aside class="sidebar">
 <p class="sidebar-title">bibliographic fields</p>
 <p>First lines fields are bibliographic fields, see <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/field-lists.html">Sphinx Field Lists</a>.</p>
@@ -963,20 +963,20 @@ are mappings from field names to field bodies.  They marked up like this:</p>
 </div>
 </section>
 <section id="further-list-blocks">
-<h3><a class="toc-backref" href="#id39" role="doc-backlink">Further list blocks</a><a class="headerlink" href="#further-list-blocks" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id39" role="doc-backlink">Further list blocks</a><a class="headerlink" href="#further-list-blocks" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p>field lists (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#field-lists">ref</a>, with caveats noted in
+<li><p>field lists (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#field-lists">ref</a>, with caveats noted in
 <a class="reference internal" href="#rest-field-list"><span class="std std-ref">Field Lists</span></a>)</p></li>
-<li><p>option lists (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#option-lists">ref</a>)</p></li>
-<li><p>quoted literal blocks (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#quoted-literal-blocks">ref</a>)</p></li>
-<li><p>doctest blocks (<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#doctest-blocks">ref</a>)</p></li>
+<li><p>option lists (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#option-lists">ref</a>)</p></li>
+<li><p>quoted literal blocks (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#quoted-literal-blocks">ref</a>)</p></li>
+<li><p>doctest blocks (<a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#doctest-blocks">ref</a>)</p></li>
 </ul>
 </section>
 </section>
 <section id="admonitions">
-<h2><a class="toc-backref" href="#id40" role="doc-backlink">Admonitions</a><a class="headerlink" href="#admonitions" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id40" role="doc-backlink">Admonitions</a><a class="headerlink" href="#admonitions" title="Link to this heading">¶</a></h2>
 <section id="sidebar">
-<h3><a class="toc-backref" href="#id41" role="doc-backlink">Sidebar</a><a class="headerlink" href="#sidebar" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id41" role="doc-backlink">Sidebar</a><a class="headerlink" href="#sidebar" title="Link to this heading">¶</a></h3>
 <p>Sidebar is an eye catcher, often used for admonitions pointing further stuff or
 site effects.  Here is the source of the sidebar <a class="reference internal" href="#rest-primer"><span class="std std-ref">on top of this page</span></a>.</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">sidebar</span><span class="p">::</span> KISS_ and readability_
@@ -987,8 +987,8 @@ site effects.  Here is the source of the sidebar <a class="reference internal" h
 </div>
 </section>
 <section id="generic-admonition">
-<h3><a class="toc-backref" href="#id42" role="doc-backlink">Generic admonition</a><a class="headerlink" href="#generic-admonition" title="Permalink to this heading">¶</a></h3>
-<p>The generic <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions">admonition</a> needs a title:</p>
+<h3><a class="toc-backref" href="#id42" role="doc-backlink">Generic admonition</a><a class="headerlink" href="#generic-admonition" title="Link to this heading">¶</a></h3>
+<p>The generic <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions">admonition</a> needs a title:</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> generic admonition title
 
    lorem ipsum ..
@@ -1000,10 +1000,10 @@ site effects.  Here is the source of the sidebar <a class="reference internal" h
 </div>
 </section>
 <section id="specific-admonitions">
-<h3><a class="toc-backref" href="#id43" role="doc-backlink">Specific admonitions</a><a class="headerlink" href="#specific-admonitions" title="Permalink to this heading">¶</a></h3>
-<p>Specific admonitions: <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#hint">hint</a>, <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#note">note</a>, <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#tip">tip</a> <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#attention">attention</a>,
-<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#caution">caution</a>, <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#danger">danger</a>, <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#error">error</a>, , <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#important">important</a>, and
-<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#warning">warning</a> .</p>
+<h3><a class="toc-backref" href="#id43" role="doc-backlink">Specific admonitions</a><a class="headerlink" href="#specific-admonitions" title="Link to this heading">¶</a></h3>
+<p>Specific admonitions: <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#hint">hint</a>, <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#note">note</a>, <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#tip">tip</a> <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#attention">attention</a>,
+<a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#caution">caution</a>, <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#danger">danger</a>, <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#error">error</a>, , <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#important">important</a>, and
+<a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#warning">warning</a> .</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">hint</span><span class="p">::</span>
 
    lorem ipsum ..
@@ -1056,7 +1056,7 @@ site effects.  Here is the source of the sidebar <a class="reference internal" h
 </section>
 </section>
 <section id="tables">
-<h2><a class="toc-backref" href="#id44" role="doc-backlink">Tables</a><a class="headerlink" href="#tables" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id44" role="doc-backlink">Tables</a><a class="headerlink" href="#tables" title="Link to this heading">¶</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">Nested tables</p>
 <p>Nested tables are ugly! Not all builder support nested tables, don’t use
@@ -1080,10 +1080,10 @@ here are some helpers:</p>
 <li><p><a class="reference external" href="https://www.tablesgenerator.com/text_tables">Online Tables Generator</a></p></li>
 </ul>
 <section id="simple-tables">
-<span id="rest-simple-table"></span><h3><a class="toc-backref" href="#id45" role="doc-backlink">Simple tables</a><a class="headerlink" href="#simple-tables" title="Permalink to this heading">¶</a></h3>
-<p><a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#simple-tables">Simple tables</a> allow <em>colspan</em> but not <em>rowspan</em>.  If
+<span id="rest-simple-table"></span><h3><a class="toc-backref" href="#id45" role="doc-backlink">Simple tables</a><a class="headerlink" href="#simple-tables" title="Link to this heading">¶</a></h3>
+<p><a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#simple-tables">Simple tables</a> allow <em>colspan</em> but not <em>rowspan</em>.  If
 your table need some metadata (e.g. a title) you need to add the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">table::</span>
-<span class="pre">directive</span></code> <a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#table">(ref)</a> in front and place the table in its body:</p>
+<span class="pre">directive</span></code> <a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#table">(ref)</a> in front and place the table in its body:</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">table</span><span class="p">::</span> foo gate truth table
    <span class="nc">:widths:</span> grid
    <span class="nc">:align:</span> left
@@ -1108,11 +1108,11 @@ your table need some metadata (e.g. a title) you need to add the <code class="do
 <div class="rst-example admonition">
 <p class="admonition-title">Simple ASCII table</p>
 <table class="docutils align-left" id="id11">
-<caption><span class="caption-number">Table 7 </span><span class="caption-text">foo gate truth table</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">foo gate truth table</span><a class="headerlink" href="#id11" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head" colspan="2"><p>Inputs</p></th>
@@ -1142,8 +1142,8 @@ your table need some metadata (e.g. a title) you need to add the <code class="do
 </div>
 </section>
 <section id="grid-tables">
-<span id="rest-grid-table"></span><h3><a class="toc-backref" href="#id46" role="doc-backlink">Grid tables</a><a class="headerlink" href="#grid-tables" title="Permalink to this heading">¶</a></h3>
-<p><a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#grid-tables">Grid tables</a> allow colspan <em>colspan</em> and <em>rowspan</em>:</p>
+<span id="rest-grid-table"></span><h3><a class="toc-backref" href="#id46" role="doc-backlink">Grid tables</a><a class="headerlink" href="#grid-tables" title="Link to this heading">¶</a></h3>
+<p><a class="extlink-duref reference external" href="https://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#grid-tables">Grid tables</a> allow colspan <em>colspan</em> and <em>rowspan</em>:</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">table</span><span class="p">::</span> grid table example
    <span class="nc">:widths:</span> 1 1 5
 
@@ -1163,11 +1163,11 @@ your table need some metadata (e.g. a title) you need to add the <code class="do
 <div class="rst-example admonition">
 <p class="admonition-title">ASCII grid table</p>
 <table class="docutils align-default" id="id12">
-<caption><span class="caption-number">Table 8 </span><span class="caption-text">grid table example</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">grid table example</span><a class="headerlink" href="#id12" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 71%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 71.4%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Header 1</p></th>
@@ -1200,9 +1200,9 @@ span rows.</p></td>
 </div>
 </section>
 <section id="flat-table">
-<span id="rest-flat-table"></span><h3><a class="toc-backref" href="#id47" role="doc-backlink">flat-table</a><a class="headerlink" href="#flat-table" title="Permalink to this heading">¶</a></h3>
+<span id="rest-flat-table"></span><h3><a class="toc-backref" href="#id47" role="doc-backlink">flat-table</a><a class="headerlink" href="#flat-table" title="Link to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">flat-table</span></code> is a further developed variant of the <a class="reference external" href="https://return42.github.io/linuxdoc/linuxdoc-howto/table-markup.html#list-table-directives" title="(in LinuxDoc v20240924.dev1)"><span class="xref std std-ref">list tables</span></a>.  It is a double-stage list similar to the
-<a class="reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#list-table">list-table</a> with some additional features:</p>
+<a class="extlink-dudir reference external" href="https://docutils.sourceforge.net/docs/ref/rst/directives.html#list-table">list-table</a> with some additional features:</p>
 <dl class="simple">
 <dt>column-span: <code class="docutils literal notranslate"><span class="pre">cspan</span></code></dt><dd><p>with the role <code class="docutils literal notranslate"><span class="pre">cspan</span></code> a cell can be extended through additional columns</p>
 </dd>
@@ -1294,13 +1294,13 @@ and <em>targets</em> (e.g. a ref to <a class="reference internal" href="#row-bod
 <div class="rst-example admonition">
 <p class="admonition-title">List table</p>
 <table class="docutils align-default" id="id13">
-<caption><span class="caption-number">Table 9 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">flat-table</span></code> example</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 9 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">flat-table</span></code> example</span><a class="headerlink" href="#id13" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 33%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 33.3%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head stub" rowspan="2"><p> head / stub</p></th>
@@ -1352,7 +1352,7 @@ cell 2.3 with a span over</p>
 </div>
 </section>
 <section id="csv-table">
-<h3><a class="toc-backref" href="#id48" role="doc-backlink">CSV table</a><a class="headerlink" href="#csv-table" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id48" role="doc-backlink">CSV table</a><a class="headerlink" href="#csv-table" title="Link to this heading">¶</a></h3>
 <p>CSV table might be the choice if you want to include CSV-data from a outstanding
 (build) process into your documentation.</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">csv-table</span><span class="p">::</span> CSV table example
@@ -1374,11 +1374,11 @@ stub col row 1, column, column
 <div class="rst-example admonition">
 <p class="admonition-title">CSV table</p>
 <table class="docutils align-default" id="id14">
-<caption><span class="caption-number">Table 10 </span><span class="caption-text">CSV table example</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">CSV table example</span><a class="headerlink" href="#id14" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 23%" />
-<col style="width: 38%" />
-<col style="width: 38%" />
+<col style="width: 23.1%" />
+<col style="width: 38.5%" />
+<col style="width: 38.5%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head stub"></th>
@@ -1408,7 +1408,7 @@ kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p></td>
 </section>
 </section>
 <section id="templating">
-<h2><a class="toc-backref" href="#id49" role="doc-backlink">Templating</a><a class="headerlink" href="#templating" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id49" role="doc-backlink">Templating</a><a class="headerlink" href="#templating" title="Link to this heading">¶</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">Build environment</p>
 <p>All <em>generic-doc</em> tasks are running in the <a class="reference internal" href="makefile.html#make-install"><span class="std std-ref">Python environment</span></a>.</p>
@@ -1416,7 +1416,7 @@ kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p></td>
 <p>Templating is suitable for documentation which is created generic at the build
 time.  The <a class="reference external" href="https://github.com/tardyp/sphinx-jinja">sphinx-jinja</a> extension evaluates <a class="reference external" href="https://jinja.palletsprojects.com/">jinja</a> templates in the <a class="reference internal" href="makefile.html#make-install"><span class="std std-ref">Python environment</span></a> (with searx modules installed).  We use this e.g. to build chapter:
 <a class="reference internal" href="../admin/engines.html#engines-generic"><span class="std std-ref">General Engine Settings</span></a>.  Below the jinja directive from the
-<a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/admin/engines.rst">Origin: docs/admin/engines.rst</a> is shown:</p>
+<a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/admin/engines.rst">Origin: docs/admin/engines.rst</a> is shown:</p>
 <div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">jinja</span><span class="p">::</span> searx
 
 <span class="p">   ..</span> <span class="ow">flat-table</span><span class="p">::</span> Engines configured at built time (defaults)
@@ -1517,7 +1517,7 @@ time.  The <a class="reference external" href="https://github.com/tardyp/sphinx-
 </pre></div>
 </div>
 <p>The context for the template is selected in the line <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">jinja::</span> <span class="pre">searx</span></code>.  In
-sphinx’s build configuration (<a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/conf.py">Origin: docs/conf.py</a>) the <code class="docutils literal notranslate"><span class="pre">searx</span></code> context
+sphinx’s build configuration (<a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/docs/conf.py">Origin: docs/conf.py</a>) the <code class="docutils literal notranslate"><span class="pre">searx</span></code> context
 contains the <code class="docutils literal notranslate"><span class="pre">engines</span></code> and <code class="docutils literal notranslate"><span class="pre">plugins</span></code>.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">searx.search</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">searx.engines</span>
@@ -1533,7 +1533,7 @@ contains the <code class="docutils literal notranslate"><span class="pre">engine
 </div>
 </section>
 <section id="tabbed-views">
-<h2><a class="toc-backref" href="#id50" role="doc-backlink">Tabbed views</a><a class="headerlink" href="#tabbed-views" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id50" role="doc-backlink">Tabbed views</a><a class="headerlink" href="#tabbed-views" title="Link to this heading">¶</a></h2>
 <p>With <a class="reference external" href="https://github.com/djungelorm/sphinx-tabs">sphinx-tabs</a> extension we have <em>tabbed views</em>.  To provide installation
 instructions with one tab per distribution we use the <a class="reference external" href="https://github.com/djungelorm/sphinx-tabs#group-tabs">group-tabs</a> directive,
 others are <a class="reference external" href="https://github.com/djungelorm/sphinx-tabs#basic-tabs">basic-tabs</a> and <a class="reference external" href="https://github.com/djungelorm/sphinx-tabs#code-tabs">code-tabs</a>.  Below a <em>group-tab</em> example from
@@ -1561,7 +1561,7 @@ others are <a class="reference external" href="https://github.com/djungelorm/sph
 </div>
 </section>
 <section id="math-equations">
-<span id="math"></span><h2><a class="toc-backref" href="#id51" role="doc-backlink">Math equations</a><a class="headerlink" href="#math-equations" title="Permalink to this heading">¶</a></h2>
+<span id="math"></span><h2><a class="toc-backref" href="#id51" role="doc-backlink">Math equations</a><a class="headerlink" href="#math-equations" title="Link to this heading">¶</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">About LaTeX</p>
 <ul class="simple">
@@ -1570,7 +1570,7 @@ others are <a class="reference external" href="https://github.com/djungelorm/sph
 <li><p><a class="reference internal" href="../admin/buildhosts.html#docs-build"><span class="std std-ref">Build docs</span></a></p></li>
 </ul>
 </aside>
-<p>The input language for mathematics is LaTeX markup using the <a class="reference external" href="https://ctan.org/pkg/amsmath">CTAN: amsmath</a>
+<p>The input language for mathematics is LaTeX markup using the <a class="extlink-ctan reference external" href="https://ctan.org/pkg/amsmath">CTAN: amsmath</a>
 package.</p>
 <p>To embed LaTeX markup in reST documents, use role <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-math" title="(in Sphinx v9.1.1)"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">:math:</span></code></a> for
 inline and directive <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-math" title="(in Sphinx v9.1.1)"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">..</span> <span class="pre">math::</span></code></a> for block markup.</p>
@@ -1589,7 +1589,7 @@ is shown.
 <p>In <a class="reference internal" href="#equation-schroedinger-general">(1)</a> the time-dependent Schrödinger equation
 is shown.</p>
 <div class="math" id="equation-schroedinger-general">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-schroedinger-general" title="Permalink to this equation">¶</a></span><img src="_images/math/a6a994cb6e7278ec30eaebe7e636046d3deccb5b.svg" alt="\mathrm{i}\hbar\dfrac{\partial}{\partial t} |\,\psi (t) \rangle =
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-schroedinger-general" title="Link to this equation">¶</a></span><img src="../_images/math/a6a994cb6e7278ec30eaebe7e636046d3deccb5b.svg" alt="\mathrm{i}\hbar\dfrac{\partial}{\partial t} |\,\psi (t) \rangle =
        \hat{H} |\,\psi (t) \rangle."/></p>
 </div></div>
 <p>The next example shows the difference of <code class="docutils literal notranslate"><span class="pre">\tfrac</span></code> (<em>textstyle</em>) and <code class="docutils literal notranslate"><span class="pre">\dfrac</span></code>
@@ -1603,13 +1603,13 @@ is shown.</p>
 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
 voluptua.  …
-<code class="docutils literal notranslate"><span class="pre">\tfrac</span></code> <strong>inline example</strong> <img class="math" src="_images/math/3b8127a8eed95247f9249ea6c85e8e86df1baa82.svg" alt="\tfrac{\tfrac{1}{x}+\tfrac{1}{y}}{y-z}"/>
+<code class="docutils literal notranslate"><span class="pre">\tfrac</span></code> <strong>inline example</strong> <img class="math" src="../_images/math/3b8127a8eed95247f9249ea6c85e8e86df1baa82.svg" alt="\tfrac{\tfrac{1}{x}+\tfrac{1}{y}}{y-z}"/>
 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
 gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
 voluptua.  …
-<code class="docutils literal notranslate"><span class="pre">\tfrac</span></code> <strong>inline example</strong> <img class="math" src="_images/math/07c9ff4251510b06013159f4e45ec9ab97044096.svg" alt="\dfrac{\dfrac{1}{x}+\dfrac{1}{y}}{y-z}"/>
+<code class="docutils literal notranslate"><span class="pre">\tfrac</span></code> <strong>inline example</strong> <img class="math" src="../_images/math/07c9ff4251510b06013159f4e45ec9ab97044096.svg" alt="\dfrac{\dfrac{1}{x}+\dfrac{1}{y}}{y-z}"/>
 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
 gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 </div>
@@ -1622,12 +1622,12 @@ gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
   <span id="sidebar-top"></span>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   
     
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo of searx"/>
             </a></p>
   
 
@@ -1654,7 +1654,7 @@ gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     </ul>
   </li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -1662,18 +1662,15 @@ gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-  
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
-  <script src="../_static/version_warning_offset.js"></script>
-
   </body>
 </html>

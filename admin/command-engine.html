@@ -1,27 +1,23 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Run shell commands from your instance &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=6625fa76" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css?v=08d6f00e" />
+    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script data-project="searx" data-version="1.1.0" src="../_static/describe_version.js?v=fa7f30d0"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Search in indexers" href="indexer-engines.html" />
     <link rel="prev" title="How to create private engines" href="private-engines.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,25 +41,25 @@
           <div class="body" role="main">
             
   <section id="run-shell-commands-from-your-instance">
-<h1>Run shell commands from your instance<a class="headerlink" href="#run-shell-commands-from-your-instance" title="Permalink to this heading">¶</a></h1>
+<h1>Run shell commands from your instance<a class="headerlink" href="#run-shell-commands-from-your-instance" title="Link to this heading">¶</a></h1>
 <p>Command line engines are custom engines that run commands in the shell of the
 host. In this article you can learn how to create a command engine and how to
 customize the result display.</p>
 <section id="the-command">
-<h2>The command<a class="headerlink" href="#the-command" title="Permalink to this heading">¶</a></h2>
+<h2>The command<a class="headerlink" href="#the-command" title="Link to this heading">¶</a></h2>
 <p>When specifyng commands, you must make sure the commands are available on the
 searx host. Searx will not install anything for you. Also, make sure that the
 <code class="docutils literal notranslate"><span class="pre">searx</span></code> user on your host is allowed to run the selected command and has
 access to the required files.</p>
 </section>
 <section id="access-control">
-<h2>Access control<a class="headerlink" href="#access-control" title="Permalink to this heading">¶</a></h2>
+<h2>Access control<a class="headerlink" href="#access-control" title="Link to this heading">¶</a></h2>
 <p>Be careful when creating command engines if you are running a public
 instance. Do not expose any sensitive information. You can restrict access by
 configuring a list of access tokens under tokens in your <code class="docutils literal notranslate"><span class="pre">settings.yml</span></code>.</p>
 </section>
 <section id="available-settings">
-<h2>Available settings<a class="headerlink" href="#available-settings" title="Permalink to this heading">¶</a></h2>
+<h2>Available settings<a class="headerlink" href="#available-settings" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">command</span></code>: A comma separated list of the elements of the command. A special
 token <code class="docutils literal notranslate"><span class="pre">{{QUERY}}</span></code> tells searx where to put the search terms of the
@@ -85,7 +81,7 @@ set to <code class="docutils literal notranslate"><span class="pre">enum</span><
 </ul>
 </section>
 <section id="customize-the-result-template">
-<h2>Customize the result template<a class="headerlink" href="#customize-the-result-template" title="Permalink to this heading">¶</a></h2>
+<h2>Customize the result template<a class="headerlink" href="#customize-the-result-template" title="Link to this heading">¶</a></h2>
 <p>There is a default result template for displaying key-value pairs coming from
 command engines. If you want something more tailored to your result types, you
 can design your own template.</p>
@@ -116,9 +112,9 @@ option <code class="docutils literal notranslate"><span class="pre">result_templ
 </div>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <section id="find-files-by-name">
-<h3>Find files by name<a class="headerlink" href="#find-files-by-name" title="Permalink to this heading">¶</a></h3>
+<h3>Find files by name<a class="headerlink" href="#find-files-by-name" title="Link to this heading">¶</a></h3>
 <p>The first example is to find files on your searx host. It uses the command
 <cite>find</cite> available on most Linux distributions. It expects a path type query. The
 path in the search request must be inside the <code class="docutils literal notranslate"><span class="pre">working_dir</span></code>.</p>
@@ -138,7 +134,7 @@ is displayed in a single row table with the key “line”.</p>
 </div>
 </section>
 <section id="find-files-by-contents">
-<h3>Find files by contents<a class="headerlink" href="#find-files-by-contents" title="Permalink to this heading">¶</a></h3>
+<h3>Find files by contents<a class="headerlink" href="#find-files-by-contents" title="Link to this heading">¶</a></h3>
 <p>In the second example, we define an engine that searches in the contents of the
 files under the <code class="docutils literal notranslate"><span class="pre">working_dir</span></code>. The search type is not defined, so the user can
 input any string they want. To restrict the input, you can set the <code class="docutils literal notranslate"><span class="pre">query_type</span></code>
@@ -166,12 +162,12 @@ the engine.</p>
         </div>
       </div>
   <span id="sidebar-top"></span>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   
     
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo of searx"/>
             </a></p>
   
 
@@ -198,7 +194,7 @@ the engine.</p>
     </ul>
   </li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -206,18 +202,15 @@ the engine.</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-  
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
-  <script src="../_static/version_warning_offset.js"></script>
-
   </body>
 </html>

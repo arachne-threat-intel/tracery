@@ -1,27 +1,23 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Search syntax &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=6625fa76" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css?v=08d6f00e" />
+    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script data-project="searx" data-version="1.1.0" src="../_static/describe_version.js?v=fa7f30d0"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Why use a private instance?" href="own-instance.html" />
     <link rel="prev" title="User documentation" href="index.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,7 +41,7 @@
           <div class="body" role="main">
             
   <section id="search-syntax">
-<span id="id1"></span><h1>Search syntax<a class="headerlink" href="#search-syntax" title="Permalink to this heading">¶</a></h1>
+<span id="id1"></span><h1>Search syntax<a class="headerlink" href="#search-syntax" title="Link to this heading">¶</a></h1>
 <p>Searx allows you to modify the default categories, engines and search language
 via the search query.</p>
 <dl class="simple">
@@ -57,28 +53,28 @@ via the search query.</p>
 </dd>
 </dl>
 <p>Abbreviations of the engines and languages are also accepted.  Engine/category
-modifiers are chainable and inclusive (e.g. with <a class="reference external" href="/?q=%21it%20%21ddg%20%21wp%20qwer">!it !ddg !wp qwer</a> search in IT category <strong>and</strong> duckduckgo
+modifiers are chainable and inclusive (e.g. with <a class="extlink-search reference external" href="/?q=%21it%20%21ddg%20%21wp%20qwer">!it !ddg !wp qwer</a> search in IT category <strong>and</strong> duckduckgo
 <strong>and</strong> wikipedia for <code class="docutils literal notranslate"><span class="pre">qwer</span></code>).</p>
-<p>See the <a class="reference external" href="/preferences">/preferences page</a> for the list of engines,
+<p>See the <a class="extlink-search reference external" href="/preferences">/preferences page</a> for the list of engines,
 categories and languages.</p>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <p>Search in wikipedia for <code class="docutils literal notranslate"><span class="pre">qwer</span></code>:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="/?q=%21wp%20qwer">!wp qwer</a> or</p></li>
-<li><p><a class="reference external" href="/?q=%21wikipedia%20qwer">!wikipedia qwer :search:</a></p></li>
+<li><p><a class="extlink-search reference external" href="/?q=%21wp%20qwer">!wp qwer</a> or</p></li>
+<li><p><a class="extlink-search reference external" href="/?q=%21wikipedia%20qwer">!wikipedia qwer :search:</a></p></li>
 </ul>
 <p>Image search:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="/?q=%21images%20Cthulhu">!images Cthulhu</a></p></li>
+<li><p><a class="extlink-search reference external" href="/?q=%21images%20Cthulhu">!images Cthulhu</a></p></li>
 </ul>
 <p>Custom language in wikipedia:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="/?q=%3Ahu%20%21wp%20hackerspace">:hu !wp hackerspace</a></p></li>
+<li><p><a class="extlink-search reference external" href="/?q=%3Ahu%20%21wp%20hackerspace">:hu !wp hackerspace</a></p></li>
 </ul>
 </section>
 <section id="multilingual-search">
-<h2>Multilingual Search<a class="headerlink" href="#multilingual-search" title="Permalink to this heading">¶</a></h2>
+<h2>Multilingual Search<a class="headerlink" href="#multilingual-search" title="Link to this heading">¶</a></h2>
 <p>Searx does not support true multilingual search.
 You have to use the language prefix in your search query when searching in a different language.</p>
 <p>But there is a workaround:
@@ -107,12 +103,12 @@ By adding a new search engine with a different language, Searx will search in yo
         </div>
       </div>
   <span id="sidebar-top"></span>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   
     
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo of searx"/>
             </a></p>
   
 
@@ -139,7 +135,7 @@ By adding a new search engine with a different language, Searx will search in yo
     </ul>
   </li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -147,18 +143,15 @@ By adding a new search engine with a different language, Searx will search in yo
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-  
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
-  <script src="../_static/version_warning_offset.js"></script>
-
   </body>
 </html>

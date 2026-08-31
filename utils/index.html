@@ -1,27 +1,23 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin’s tooling box &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=6625fa76" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css?v=08d6f00e" />
+    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script data-project="searx" data-version="1.1.0" src="../_static/describe_version.js?v=fa7f30d0"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="utils/searx.sh" href="searx.sh.html" />
     <link rel="prev" title="searx_extra/standalone_searx.py" href="../searx_extra/standalone_searx.py.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,8 +40,8 @@
           <div class="body" role="main">
             
   <section id="admin-s-tooling-box">
-<span id="toolboxing"></span><span id="searx-utils"></span><h1>Admin’s tooling box<a class="headerlink" href="#admin-s-tooling-box" title="Permalink to this heading">¶</a></h1>
-<p>In the folder <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/">Origin: utils/</a> we maintain some tools useful for administrators.</p>
+<span id="toolboxing"></span><span id="searx-utils"></span><h1>Admin’s tooling box<a class="headerlink" href="#admin-s-tooling-box" title="Link to this heading">¶</a></h1>
+<p>In the folder <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/">Origin: utils/</a> we maintain some tools useful for administrators.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
@@ -79,7 +75,7 @@
 </ul>
 </div>
 <section id="common-commands-environment">
-<span id="toolboxing-common"></span><h2>Common commands &amp; environment<a class="headerlink" href="#common-commands-environment" title="Permalink to this heading">¶</a></h2>
+<span id="toolboxing-common"></span><h2>Common commands &amp; environment<a class="headerlink" href="#common-commands-environment" title="Link to this heading">¶</a></h2>
 <p>Scripts to maintain services often dispose of common commands and environments.</p>
 <dl>
 <dt><code class="docutils literal notranslate"><span class="pre">shell</span></code><span class="classifier">command</span></dt><dd><p>Opens a shell from the service user <code class="docutils literal notranslate"><span class="pre">${SERVICE_USSR}</span></code>, very helpful for
@@ -99,8 +95,8 @@ reverse proxy for filtron on all containers of the <a class="reference internal"
 </dl>
 </section>
 <section id="tooling-box-setup">
-<span id="toolboxing-setup"></span><h2>Tooling box setup<a class="headerlink" href="#tooling-box-setup" title="Permalink to this heading">¶</a></h2>
-<p>The main setup is done in the <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/.config.sh">Origin: .config.sh</a> (read also <a class="reference internal" href="../admin/settings.html#settings-global"><span class="std std-ref">Global Settings</span></a>).</p>
+<span id="toolboxing-setup"></span><h2>Tooling box setup<a class="headerlink" href="#tooling-box-setup" title="Link to this heading">¶</a></h2>
+<p>The main setup is done in the <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/.config.sh">Origin: .config.sh</a> (read also <a class="reference internal" href="../admin/settings.html#settings-global"><span class="std std-ref">Global Settings</span></a>).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8; mode: sh -*-</span>
 <span class="c1"># SPDX-License-Identifier: AGPL-3.0-or-later</span>
 <span class="c1"># shellcheck shell=bash disable=SC2034</span>
@@ -171,12 +167,12 @@ reverse proxy for filtron on all containers of the <a class="reference internal"
         </div>
       </div>
   <span id="sidebar-top"></span>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   
     
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo of searx"/>
             </a></p>
   
 
@@ -200,7 +196,7 @@ reverse proxy for filtron on all containers of the <a class="reference internal"
     </ul>
   </li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -208,18 +204,15 @@ reverse proxy for filtron on all containers of the <a class="reference internal"
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-  
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
-  <script src="../_static/version_warning_offset.js"></script>
-
   </body>
 </html>

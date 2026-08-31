@@ -1,27 +1,23 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Search in indexers &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=6625fa76" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css?v=08d6f00e" />
+    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script data-project="searx" data-version="1.1.0" src="../_static/describe_version.js?v=fa7f30d0"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Query SQL and NoSQL servers" href="no-sql-engines.html" />
     <link rel="prev" title="Run shell commands from your instance" href="command-engine.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,7 +41,7 @@
           <div class="body" role="main">
             
   <section id="search-in-indexers">
-<h1>Search in indexers<a class="headerlink" href="#search-in-indexers" title="Permalink to this heading">¶</a></h1>
+<h1>Search in indexers<a class="headerlink" href="#search-in-indexers" title="Link to this heading">¶</a></h1>
 <p>Searx supports three popular indexer search engines:</p>
 <ul class="simple">
 <li><p>Elasticsearch</p></li>
@@ -53,7 +49,7 @@
 <li><p>Solr</p></li>
 </ul>
 <section id="elasticsearch">
-<h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this heading">¶</a></h2>
+<h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Link to this heading">¶</a></h2>
 <p>Make sure that the Elasticsearch user has access to the index you are querying.
 If you are not using TLS during your connection, set <code class="docutils literal notranslate"><span class="pre">enable_http</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
@@ -68,7 +64,7 @@ If you are not using TLS during your connection, set <code class="docutils liter
 </pre></div>
 </div>
 <section id="available-settings">
-<h3>Available settings<a class="headerlink" href="#available-settings" title="Permalink to this heading">¶</a></h3>
+<h3>Available settings<a class="headerlink" href="#available-settings" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">base_url</span></code>: URL of Elasticsearch instance. By default it is set to <code class="docutils literal notranslate"><span class="pre">http://localhost:9200</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: Name of the index to query. Required.</p></li>
@@ -82,7 +78,7 @@ provide the JSON payload in this option.</p></li>
 </section>
 </section>
 <section id="meilisearch">
-<h2>Meilisearch<a class="headerlink" href="#meilisearch" title="Permalink to this heading">¶</a></h2>
+<h2>Meilisearch<a class="headerlink" href="#meilisearch" title="Link to this heading">¶</a></h2>
 <p>If you are not using TLS during connection, set <code class="docutils literal notranslate"><span class="pre">enable_http</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meilisearch</span>
 <span class="w">  </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meilisearch</span>
@@ -93,7 +89,7 @@ provide the JSON payload in this option.</p></li>
 </pre></div>
 </div>
 <section id="id1">
-<h3>Available settings<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<h3>Available settings<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">base_url</span></code>: URL of the Meilisearch instance. By default it is set to <a class="reference external" href="http://localhost:7700">http://localhost:7700</a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: Name of the index to query. Required.</p></li>
@@ -103,7 +99,7 @@ provide the JSON payload in this option.</p></li>
 </section>
 </section>
 <section id="solr">
-<h2>Solr<a class="headerlink" href="#solr" title="Permalink to this heading">¶</a></h2>
+<h2>Solr<a class="headerlink" href="#solr" title="Link to this heading">¶</a></h2>
 <p>If you are not using TLS during connection, set <code class="docutils literal notranslate"><span class="pre">enable_http</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">solr</span>
 <span class="w">  </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">solr</span>
@@ -115,7 +111,7 @@ provide the JSON payload in this option.</p></li>
 </pre></div>
 </div>
 <section id="id2">
-<h3>Available settings<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<h3>Available settings<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">base_url</span></code>: URL of the Meilisearch instance. By default it is set to <a class="reference external" href="http://localhost:8983">http://localhost:8983</a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">collection</span></code>: Name of the collection to query. Required.</p></li>
@@ -137,12 +133,12 @@ factor of a field, the more important the field is in the query. Example:
         </div>
       </div>
   <span id="sidebar-top"></span>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   
     
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo of searx"/>
             </a></p>
   
 
@@ -169,7 +165,7 @@ factor of a field, the more important the field is in the query. Example:
     </ul>
   </li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -177,18 +173,15 @@ factor of a field, the more important the field is in the query. Example:
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-  
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
-  <script src="../_static/version_warning_offset.js"></script>
-
   </body>
 </html>

@@ -1,27 +1,23 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Plugins &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=6625fa76" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css?v=08d6f00e" />
+    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script data-project="searx" data-version="1.1.0" src="../_static/describe_version.js?v=fa7f30d0"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Translation" href="translation.html" />
     <link rel="prev" title="Search API" href="search_api.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,7 +41,7 @@
           <div class="body" role="main">
             
   <section id="plugins">
-<span id="dev-plugin"></span><h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this heading">¶</a></h1>
+<span id="dev-plugin"></span><h1>Plugins<a class="headerlink" href="#plugins" title="Link to this heading">¶</a></h1>
 <aside class="sidebar">
 <p class="sidebar-title">Further reading ..</p>
 <ul class="simple">
@@ -54,7 +50,7 @@
 </aside>
 <p>Plugins can extend or replace functionality of various components of searx.</p>
 <section id="example-plugin">
-<h2>Example plugin<a class="headerlink" href="#example-plugin" title="Permalink to this heading">¶</a></h2>
+<h2>Example plugin<a class="headerlink" href="#example-plugin" title="Link to this heading">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Example plugin'</span>
 <span class="n">description</span> <span class="o">=</span> <span class="s1">'This plugin extends the suggestions with the word "example"'</span>
 <span class="n">default_on</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># disabled by default</span>
@@ -73,33 +69,33 @@
 </div>
 </section>
 <section id="external-plugins">
-<h2>External plugins<a class="headerlink" href="#external-plugins" title="Permalink to this heading">¶</a></h2>
+<h2>External plugins<a class="headerlink" href="#external-plugins" title="Link to this heading">¶</a></h2>
 <p>External plugins are standard python modules implementing all the requirements of the standard plugins.
 Plugins can be enabled by adding them to <a class="reference internal" href="../admin/settings.html#settings-yml"><span class="std std-ref">settings.yml</span></a>’s <code class="docutils literal notranslate"><span class="pre">plugins</span></code> section.
 Example external plugin can be found <a class="reference external" href="https://github.com/asciimoo/searx_external_plugin_example">here</a>.</p>
 </section>
 <section id="register-your-plugin">
-<h2>Register your plugin<a class="headerlink" href="#register-your-plugin" title="Permalink to this heading">¶</a></h2>
+<h2>Register your plugin<a class="headerlink" href="#register-your-plugin" title="Link to this heading">¶</a></h2>
 <p>To enable your plugin register your plugin in
 searx &gt; plugin &gt; __init__.py.
 And at the bottom of the file add your plugin like.
 <code class="docutils literal notranslate"><span class="pre">plugins.register(name_of_python_file)</span></code></p>
 </section>
 <section id="plugin-entry-points">
-<h2>Plugin entry points<a class="headerlink" href="#plugin-entry-points" title="Permalink to this heading">¶</a></h2>
+<h2>Plugin entry points<a class="headerlink" href="#plugin-entry-points" title="Link to this heading">¶</a></h2>
 <p>Entry points (hooks) define when a plugin runs. Right now only three hooks are
 implemented. So feel free to implement a hook if it fits the behaviour of your
 plugin.</p>
 <section id="pre-search-hook">
-<h3>Pre search hook<a class="headerlink" href="#pre-search-hook" title="Permalink to this heading">¶</a></h3>
+<h3>Pre search hook<a class="headerlink" href="#pre-search-hook" title="Link to this heading">¶</a></h3>
 <p>Runs BEFORE the search request. Function to implement: <code class="docutils literal notranslate"><span class="pre">pre_search</span></code></p>
 </section>
 <section id="post-search-hook">
-<h3>Post search hook<a class="headerlink" href="#post-search-hook" title="Permalink to this heading">¶</a></h3>
+<h3>Post search hook<a class="headerlink" href="#post-search-hook" title="Link to this heading">¶</a></h3>
 <p>Runs AFTER the search request. Function to implement: <code class="docutils literal notranslate"><span class="pre">post_search</span></code></p>
 </section>
 <section id="result-hook">
-<h3>Result hook<a class="headerlink" href="#result-hook" title="Permalink to this heading">¶</a></h3>
+<h3>Result hook<a class="headerlink" href="#result-hook" title="Link to this heading">¶</a></h3>
 <p>Runs when a new result is added to the result list. Function to implement:
 <code class="docutils literal notranslate"><span class="pre">on_result</span></code></p>
 </section>
@@ -112,12 +108,12 @@ plugin.</p>
         </div>
       </div>
   <span id="sidebar-top"></span>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   
     
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo of searx"/>
             </a></p>
   
 
@@ -144,7 +140,7 @@ plugin.</p>
     </ul>
   </li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -152,18 +148,15 @@ plugin.</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-  
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
-  <script src="../_static/version_warning_offset.js"></script>
-
   </body>
 </html>

@@ -1,27 +1,23 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Limit access to your searx engines &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=6625fa76" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css?v=08d6f00e" />
+    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script data-project="searx" data-version="1.1.0" src="../_static/describe_version.js?v=fa7f30d0"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Preparation for offline engines" href="intro-offline.html" />
     <link rel="prev" title="Developing in Linux containers [202006]" href="lxcdev-202006.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,14 +41,14 @@
           <div class="body" role="main">
             
   <section id="limit-access-to-your-searx-engines">
-<h1>Limit access to your searx engines<a class="headerlink" href="#limit-access-to-your-searx-engines" title="Permalink to this heading">¶</a></h1>
+<h1>Limit access to your searx engines<a class="headerlink" href="#limit-access-to-your-searx-engines" title="Link to this heading">¶</a></h1>
 <p>Administrators might find themselves wanting to limit access to some of the
 enabled engines on their instances. It might be because they do not want to
 expose some private information through an offline engine. Or they
 would rather share engines only with their trusted friends or colleagues.</p>
 <section id="private-engines">
-<span id="id1"></span><h2>Private engines<a class="headerlink" href="#private-engines" title="Permalink to this heading">¶</a></h2>
-<p>To solve this issue private engines were introduced in <a class="reference external" href="https://github.com/searx/searx/pull/1823">PR 1823</a>.
+<span id="id1"></span><h2>Private engines<a class="headerlink" href="#private-engines" title="Link to this heading">¶</a></h2>
+<p>To solve this issue private engines were introduced in <a class="extlink-pull reference external" href="https://github.com/searx/searx/pull/1823">PR 1823</a>.
 A new option was added to engines named <cite>tokens</cite>. It expects a list
 of strings. If the user making a request presents one of the tokens
 of an engine, they can access information about the engine
@@ -78,7 +74,7 @@ necessary to come up with a strict process. Instead,
 we would like to add guidelines to the documentation of the feature.</p>
 </section>
 <section id="next-steps">
-<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">¶</a></h2>
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
 <p>Now that searx has support for both offline engines and private engines,
 it is possible to add concrete engines which benefit from these features.
 For example engines which search on the local host running the instance.
@@ -86,7 +82,7 @@ Be it searching your file system or querying a private database. Be creative
 and come up with new solutions which fit your use case.</p>
 </section>
 <section id="acknowledgement">
-<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this heading">¶</a></h2>
+<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Link to this heading">¶</a></h2>
 <p>This development was sponsored by <a class="reference external" href="https://nlnet.nl/discovery">Search and Discovery Fund</a> of <a class="reference external" href="https://nlnet.nl/">NLnet Foundation</a> .</p>
 <div class="line-block">
 <div class="line">Happy hacking.</div>
@@ -101,12 +97,12 @@ and come up with new solutions which fit your use case.</p>
         </div>
       </div>
   <span id="sidebar-top"></span>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   
     
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo of searx"/>
             </a></p>
   
 
@@ -133,7 +129,7 @@ and come up with new solutions which fit your use case.</p>
     </ul>
   </li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -141,18 +137,15 @@ and come up with new solutions which fit your use case.</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-  
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
-  <script src="../_static/version_warning_offset.js"></script>
-
   </body>
 </html>

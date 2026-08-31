@@ -1,28 +1,25 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>utils/filtron.sh &#8212; Searx Documentation (Searx-1.1.0.tex)</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/searx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/tabs.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=6625fa76" />
+    <link rel="stylesheet" type="text/css" href="../_static/searx.css?v=08d6f00e" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+    <script src="../_static/documentation_options.js?v=fc837d61"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script data-project="searx" data-version="1.1.0" src="../_static/describe_version.js?v=fa7f30d0"></script>
+    <script src="../_static/tabs.js?v=3030b3cb"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="utils/morty.sh" href="morty.sh.html" />
     <link rel="prev" title="utils/searx.sh" href="searx.sh.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -46,7 +43,7 @@
           <div class="body" role="main">
             
   <section id="utils-filtron-sh">
-<span id="filtron-sh"></span><h1><code class="docutils literal notranslate"><span class="pre">utils/filtron.sh</span></code><a class="headerlink" href="#utils-filtron-sh" title="Permalink to this heading">¶</a></h1>
+<span id="filtron-sh"></span><h1><code class="docutils literal notranslate"><span class="pre">utils/filtron.sh</span></code><a class="headerlink" href="#utils-filtron-sh" title="Link to this heading">¶</a></h1>
 <aside class="sidebar">
 <p class="sidebar-title">further reading</p>
 <ul class="simple">
@@ -56,7 +53,7 @@
 </ul>
 </aside>
 <p>To simplify installation and maintenance of a filtron instance you can use the
-script <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/filtron.sh">Origin: utils/filtron.sh</a>.  In most cases you will install <a class="reference external" href="https://github.com/asciimoo/filtron">filtron</a>
+script <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/filtron.sh">Origin: utils/filtron.sh</a>.  In most cases you will install <a class="reference external" href="https://github.com/asciimoo/filtron">filtron</a>
 simply by running the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-H<span class="w"> </span>./utils/filtron.sh<span class="w"> </span>install<span class="w"> </span>all
 </pre></div>
@@ -68,12 +65,12 @@ into this user account:</p>
 <li><p>Download and install <a class="reference external" href="https://golang.org/">Go</a> binary in user’s $HOME (<code class="docutils literal notranslate"><span class="pre">~filtron</span></code>).</p></li>
 <li><p>Install filtron with the package management from <a class="reference external" href="https://golang.org/">Go</a> (<code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">get</span> <span class="pre">-v</span> <span class="pre">-u</span>
 <span class="pre">github.com/asciimoo/filtron</span></code>)</p></li>
-<li><p>Setup a proper rule configuration <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/templates/etc/filtron/rules.json">[ref]</a> (<code class="docutils literal notranslate"><span class="pre">/etc/filtron/rules.json</span></code>).</p></li>
-<li><p>Setup a systemd service unit <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/templates/lib/systemd/system/filtron.service">[ref]</a>
+<li><p>Setup a proper rule configuration <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/templates/etc/filtron/rules.json">[ref]</a> (<code class="docutils literal notranslate"><span class="pre">/etc/filtron/rules.json</span></code>).</p></li>
+<li><p>Setup a systemd service unit <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/templates/lib/systemd/system/filtron.service">[ref]</a>
 (<code class="docutils literal notranslate"><span class="pre">/lib/systemd/system/filtron.service</span></code>).</p></li>
 </ol>
 <section id="create-user">
-<h2>Create user<a class="headerlink" href="#create-user" title="Permalink to this heading">¶</a></h2>
+<h2>Create user<a class="headerlink" href="#create-user" title="Link to this heading">¶</a></h2>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-0-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-0-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>useradd<span class="w"> </span>--shell<span class="w"> </span>/bin/bash<span class="w"> </span>--system<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--home-dir<span class="w"> </span><span class="s2">"/usr/local/filtron"</span><span class="w"> </span><span class="se">\</span>
@@ -86,7 +83,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>c
 </div></div>
 </section>
 <section id="install-go">
-<h2>Install go<a class="headerlink" href="#install-go" title="Permalink to this heading">¶</a></h2>
+<h2>Install go<a class="headerlink" href="#install-go" title="Link to this heading">¶</a></h2>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-1-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-1-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"/usr/local/filtron/.go_env"</span><span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">export GOPATH=/usr/local/filtron/go-apps</span>
@@ -105,8 +102,8 @@ $<span class="w"> </span>sudo<span class="w"> </span>-i<span class="w"> </span>-
 </div></div>
 </section>
 <section id="install-filtron">
-<h2>Install filtron<a class="headerlink" href="#install-filtron" title="Permalink to this heading">¶</a></h2>
-<p>Install <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/templates/etc/filtron/rules.json">rules.json</a> at
+<h2>Install filtron<a class="headerlink" href="#install-filtron" title="Link to this heading">¶</a></h2>
+<p>Install <a class="extlink-origin reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/utils/templates/etc/filtron/rules.json">rules.json</a> at
 <code class="docutils literal notranslate"><span class="pre">/etc/filtron/rules.json</span></code> (see <a class="reference internal" href="../admin/filtron.html#sample-configuration-of-filtron"><span class="std std-ref">Sample configuration of filtron</span></a>) and
 install filtron software and systemd unit:</p>
 <div class="sphinx-tabs docutils container">
@@ -150,7 +147,7 @@ install filtron software and systemd unit:</p>
 </div></div>
 </section>
 <section id="overview">
-<span id="filtron-sh-overview"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<span id="filtron-sh-overview"></span><h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">--help</span></code> output of the script is largely self-explanatory
 (<a class="reference internal" href="index.html#toolboxing-common"><span class="std std-ref">Common commands &amp; environment</span></a>):</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>usage::
@@ -208,12 +205,12 @@ If needed, set PUBLIC_URL of your WEB service in the '.config.sh' file::
         </div>
       </div>
   <span id="sidebar-top"></span>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   
     
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo of searx"/>
             </a></p>
   
 
@@ -240,7 +237,7 @@ If needed, set PUBLIC_URL of your WEB service in the '.config.sh' file::
     </ul>
   </li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -248,18 +245,15 @@ If needed, set PUBLIC_URL of your WEB service in the '.config.sh' file::
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-  
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    &#169; Copyright 2015-2022, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
-  <script src="../_static/version_warning_offset.js"></script>
-
   </body>
 </html>
