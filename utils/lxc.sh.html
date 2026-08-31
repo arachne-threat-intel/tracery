@@ -164,19 +164,19 @@ of coffee).:</p>
   lxc.sh remove       [containers|&lt;name&gt;|images]
   lxc.sh [start|stop] [containers|&lt;name&gt;]
   lxc.sh show         [images|suite|info|config [&lt;name&gt;]]
-  lxc.sh cmd          [--|&lt;name&gt;] &#39;...&#39;
+  lxc.sh cmd          [--|&lt;name&gt;] '...'
   lxc.sh install      [suite|base [&lt;name&gt;]]
 
 build
-  :containers:   build, launch all containers and &#39;install base&#39; packages
-  :&lt;name&gt;:       build, launch container &lt;name&gt;  and &#39;install base&#39; packages
+  :containers:   build, launch all containers and 'install base' packages
+  :&lt;name&gt;:       build, launch container &lt;name&gt;  and 'install base' packages
 copy:
   :images:       copy remote images of the suite into local storage
 remove
-  :containers:   delete all &#39;containers&#39; or only &lt;container-name&gt;
+  :containers:   delete all 'containers' or only &lt;container-name&gt;
   :images:       delete local images of the suite
 start/stop
-  :containers:   start/stop all &#39;containers&#39; from the suite
+  :containers:   start/stop all 'containers' from the suite
   :&lt;name&gt;:       start/stop container &lt;name&gt; from suite
 show
   :info:         show info of all (or &lt;name&gt;) containers from LXC suite
@@ -184,14 +184,14 @@ show
   :suite:        show services of all (or &lt;name&gt;) containers from the LXC suite
   :images:       show information of local images
 cmd
-  use single quotes to evaluate in container&#39;s bash, e.g.: &#39;echo $(hostname)&#39;
-  --             run command &#39;...&#39; in all containers of the LXC suite
-  :&lt;name&gt;:       run command &#39;...&#39; in container &lt;name&gt;
+  use single quotes to evaluate in container's bash, e.g.: 'echo $(hostname)'
+  --             run command '...' in all containers of the LXC suite
+  :&lt;name&gt;:       run command '...' in container &lt;name&gt;
 install
   :base:         prepare LXC; install basic packages
   :suite:        install LXC searx suite into all (or &lt;name&gt;) containers
 
-LXC suite: searx --&gt; http://runnervm0kj6c/searx
+LXC suite: searx --&gt; http://runnervmgx7h7/searx
   suite includes searx, morty &amp; filtron
 suite images:
   ubu1804 ubu2004 ubu2010 fedora33 archlinux centos7
@@ -216,39 +216,39 @@ suite containers:
 <span class="c1"># ----------------------------------------------------------------------------</span>
 
 <span class="c1"># shellcheck disable=SC2034</span>
-<span class="nv">LXC_SUITE_NAME</span><span class="o">=</span><span class="s2">&quot;searx&quot;</span>
+<span class="nv">LXC_SUITE_NAME</span><span class="o">=</span><span class="s2">"searx"</span>
 lxc_set_suite_env<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="c1"># name of https://images.linuxcontainers.org</span>
-<span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">LINUXCONTAINERS_ORG_NAME</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LINUXCONTAINERS_ORG_NAME</span><span class="k">:-</span><span class="nv">images</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">LXC_HOST_PREFIX</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LXC_SUITE_NAME</span><span class="k">:-</span><span class="nv">searx</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">LINUXCONTAINERS_ORG_NAME</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">LINUXCONTAINERS_ORG_NAME</span><span class="k">:-</span><span class="nv">images</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">LXC_HOST_PREFIX</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">LXC_SUITE_NAME</span><span class="k">:-</span><span class="nv">searx</span><span class="si">}</span><span class="s2">"</span>
 <span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">LXC_SUITE</span><span class="o">=(</span>
 
 <span class="w">        </span><span class="c1"># to disable containers, comment out lines ..</span>
 
 <span class="w">        </span><span class="c1"># end of standard support see https://wiki.ubuntu.com/Releases</span>
-<span class="w">        </span><span class="s2">&quot;</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:ubuntu/18.04&quot;</span><span class="w">  </span><span class="s2">&quot;ubu1804&quot;</span><span class="w"> </span><span class="c1"># April 2023</span>
-<span class="w">        </span><span class="s2">&quot;</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:ubuntu/20.04&quot;</span><span class="w">  </span><span class="s2">&quot;ubu2004&quot;</span><span class="w"> </span><span class="c1"># April 2025</span>
-<span class="w">        </span><span class="s2">&quot;</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:ubuntu/20.10&quot;</span><span class="w">  </span><span class="s2">&quot;ubu2010&quot;</span><span class="w"> </span><span class="c1"># July 2021</span>
+<span class="w">        </span><span class="s2">"</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:ubuntu/18.04"</span><span class="w">  </span><span class="s2">"ubu1804"</span><span class="w"> </span><span class="c1"># April 2023</span>
+<span class="w">        </span><span class="s2">"</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:ubuntu/20.04"</span><span class="w">  </span><span class="s2">"ubu2004"</span><span class="w"> </span><span class="c1"># April 2025</span>
+<span class="w">        </span><span class="s2">"</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:ubuntu/20.10"</span><span class="w">  </span><span class="s2">"ubu2010"</span><span class="w"> </span><span class="c1"># July 2021</span>
 
 <span class="w">        </span><span class="c1"># EOL see https://fedoraproject.org/wiki/Releases</span>
-<span class="w">        </span><span class="s2">&quot;</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:fedora/33&quot;</span><span class="w">     </span><span class="s2">&quot;fedora33&quot;</span>
+<span class="w">        </span><span class="s2">"</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:fedora/33"</span><span class="w">     </span><span class="s2">"fedora33"</span>
 
 <span class="w">        </span><span class="c1"># rolling releases see https://www.archlinux.org/releng/releases/</span>
-<span class="w">        </span><span class="s2">&quot;</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:archlinux&quot;</span><span class="w">     </span><span class="s2">&quot;archlinux&quot;</span>
+<span class="w">        </span><span class="s2">"</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:archlinux"</span><span class="w">     </span><span class="s2">"archlinux"</span>
 
 <span class="w">        </span><span class="c1"># EOL 30 June 2024</span>
-<span class="w">        </span><span class="s2">&quot;</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:centos/7&quot;</span><span class="w">      </span><span class="s2">&quot;centos7&quot;</span>
+<span class="w">        </span><span class="s2">"</span><span class="nv">$LINUXCONTAINERS_ORG_NAME</span><span class="s2">:centos/7"</span><span class="w">      </span><span class="s2">"centos7"</span>
 <span class="w">    </span><span class="o">)</span>
 
-<span class="w">    </span><span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PUBLIC_URL</span><span class="k">:-</span><span class="nv">http</span><span class="p">://</span><span class="k">$(</span>uname<span class="w"> </span>-n<span class="k">)</span><span class="p">/searx</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">PUBLIC_URL</span><span class="k">:-</span><span class="nv">http</span><span class="p">://</span><span class="k">$(</span>uname<span class="w"> </span>-n<span class="k">)</span><span class="p">/searx</span><span class="si">}</span><span class="s2">"</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span>in_container<span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">        </span><span class="c1"># container hostnames do not have a DNS entry: use primary IP!</span>
-<span class="w">        </span><span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="s2">&quot;http://</span><span class="k">$(</span>primary_ip<span class="k">)</span><span class="s2">/searx&quot;</span>
+<span class="w">        </span><span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="s2">"http://</span><span class="k">$(</span>primary_ip<span class="k">)</span><span class="s2">/searx"</span>
 
-<span class="w">        </span><span class="c1"># make GUEST&#39;s services public to the HOST</span>
-<span class="w">        </span><span class="nv">FILTRON_API</span><span class="o">=</span><span class="s2">&quot;0.0.0.0:4005&quot;</span>
-<span class="w">        </span><span class="nv">FILTRON_LISTEN</span><span class="o">=</span><span class="s2">&quot;0.0.0.0:4004&quot;</span>
-<span class="w">        </span><span class="nv">MORTY_LISTEN</span><span class="o">=</span><span class="s2">&quot;0.0.0.0:3000&quot;</span>
+<span class="w">        </span><span class="c1"># make GUEST's services public to the HOST</span>
+<span class="w">        </span><span class="nv">FILTRON_API</span><span class="o">=</span><span class="s2">"0.0.0.0:4005"</span>
+<span class="w">        </span><span class="nv">FILTRON_LISTEN</span><span class="o">=</span><span class="s2">"0.0.0.0:4004"</span>
+<span class="w">        </span><span class="nv">MORTY_LISTEN</span><span class="o">=</span><span class="s2">"0.0.0.0:3000"</span>
 
 <span class="w">        </span><span class="c1"># export LXC specific environment</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span>PUBLIC_URL<span class="w"> </span>FILTRON_API<span class="w"> </span>FILTRON_LISTEN<span class="w"> </span>MORTY_LISTEN
@@ -262,9 +262,9 @@ lxc_suite_install_info<span class="o">()</span><span class="w"> </span><span cla
 <span class="s">LXC suite: ${LXC_SUITE_NAME} --&gt; ${PUBLIC_URL}</span>
 <span class="s">  suite includes searx, morty &amp; filtron</span>
 <span class="s">suite images:</span>
-<span class="s">$(echo &quot;  ${LOCAL_IMAGES[*]}&quot; | $FMT)</span>
+<span class="s">$(echo "  ${LOCAL_IMAGES[*]}" | $FMT)</span>
 <span class="s">suite containers:</span>
-<span class="s">$(echo &quot;  ${CONTAINERS[*]}&quot; | $FMT)</span>
+<span class="s">$(echo "  ${CONTAINERS[*]}" | $FMT)</span>
 <span class="s">EOF</span>
 <span class="w">    </span><span class="o">)</span>
 <span class="w">    </span><span class="o">}</span>
@@ -274,11 +274,11 @@ lxc_suite_install<span class="o">()</span><span class="w"> </span><span class="o
 <span class="w">        </span>lxc_set_suite_env
 <span class="w">        </span><span class="nv">FORCE_TIMEOUT</span><span class="o">=</span><span class="m">0</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span>FORCE_TIMEOUT
-<span class="w">        </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LXC_REPO_ROOT</span><span class="si">}</span><span class="s2">/utils/searx.sh&quot;</span><span class="w">   </span>install<span class="w"> </span>all
-<span class="w">        </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LXC_REPO_ROOT</span><span class="si">}</span><span class="s2">/utils/morty.sh&quot;</span><span class="w">   </span>install<span class="w"> </span>all
-<span class="w">        </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LXC_REPO_ROOT</span><span class="si">}</span><span class="s2">/utils/filtron.sh&quot;</span><span class="w"> </span>install<span class="w"> </span>all
+<span class="w">        </span><span class="s2">"</span><span class="si">${</span><span class="nv">LXC_REPO_ROOT</span><span class="si">}</span><span class="s2">/utils/searx.sh"</span><span class="w">   </span>install<span class="w"> </span>all
+<span class="w">        </span><span class="s2">"</span><span class="si">${</span><span class="nv">LXC_REPO_ROOT</span><span class="si">}</span><span class="s2">/utils/morty.sh"</span><span class="w">   </span>install<span class="w"> </span>all
+<span class="w">        </span><span class="s2">"</span><span class="si">${</span><span class="nv">LXC_REPO_ROOT</span><span class="si">}</span><span class="s2">/utils/filtron.sh"</span><span class="w"> </span>install<span class="w"> </span>all
 
-<span class="w">        </span>rst_title<span class="w"> </span><span class="s2">&quot;suite installation finished (</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">)&quot;</span><span class="w"> </span>part
+<span class="w">        </span>rst_title<span class="w"> </span><span class="s2">"suite installation finished (</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">)"</span><span class="w"> </span>part
 <span class="w">        </span>lxc_suite_info
 <span class="w">        </span><span class="nb">echo</span>
 <span class="w">    </span><span class="o">)</span>
@@ -289,13 +289,13 @@ lxc_suite_info<span class="o">()</span><span class="w"> </span><span class="o">{
 <span class="w">        </span>lxc_set_suite_env
 <span class="w">        </span><span class="k">for</span><span class="w"> </span>ip<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>global_IPs<span class="k">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$ip</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>.*:.*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">                </span>info_msg<span class="w"> </span><span class="s2">&quot;(</span><span class="si">${</span><span class="nv">ip</span><span class="p">%|*</span><span class="si">}</span><span class="s2">) IPv6:       http://[</span><span class="si">${</span><span class="nv">ip</span><span class="p">#*|</span><span class="si">}</span><span class="s2">]&quot;</span>
+<span class="w">                </span>info_msg<span class="w"> </span><span class="s2">"(</span><span class="si">${</span><span class="nv">ip</span><span class="p">%|*</span><span class="si">}</span><span class="s2">) IPv6:       http://[</span><span class="si">${</span><span class="nv">ip</span><span class="p">#*|</span><span class="si">}</span><span class="s2">]"</span>
 <span class="w">            </span><span class="k">else</span>
 <span class="w">                </span><span class="c1"># IPv4:</span>
 <span class="w">                </span><span class="c1"># shellcheck disable=SC2034,SC2031</span>
-<span class="w">                </span>info_msg<span class="w"> </span><span class="s2">&quot;(</span><span class="si">${</span><span class="nv">ip</span><span class="p">%|*</span><span class="si">}</span><span class="s2">) filtron:    http://</span><span class="si">${</span><span class="nv">ip</span><span class="p">#*|</span><span class="si">}</span><span class="s2">:4004/ </span><span class="nv">$PUBLIC_URL</span><span class="s2">&quot;</span>
-<span class="w">                </span>info_msg<span class="w"> </span><span class="s2">&quot;(</span><span class="si">${</span><span class="nv">ip</span><span class="p">%|*</span><span class="si">}</span><span class="s2">) morty:      http://</span><span class="si">${</span><span class="nv">ip</span><span class="p">#*|</span><span class="si">}</span><span class="s2">:3000/ </span><span class="nv">$PUBLIC_URL_MORTY</span><span class="s2">&quot;</span>
-<span class="w">                </span>info_msg<span class="w"> </span><span class="s2">&quot;(</span><span class="si">${</span><span class="nv">ip</span><span class="p">%|*</span><span class="si">}</span><span class="s2">) docs-live:  http://</span><span class="si">${</span><span class="nv">ip</span><span class="p">#*|</span><span class="si">}</span><span class="s2">:8080/&quot;</span>
+<span class="w">                </span>info_msg<span class="w"> </span><span class="s2">"(</span><span class="si">${</span><span class="nv">ip</span><span class="p">%|*</span><span class="si">}</span><span class="s2">) filtron:    http://</span><span class="si">${</span><span class="nv">ip</span><span class="p">#*|</span><span class="si">}</span><span class="s2">:4004/ </span><span class="nv">$PUBLIC_URL</span><span class="s2">"</span>
+<span class="w">                </span>info_msg<span class="w"> </span><span class="s2">"(</span><span class="si">${</span><span class="nv">ip</span><span class="p">%|*</span><span class="si">}</span><span class="s2">) morty:      http://</span><span class="si">${</span><span class="nv">ip</span><span class="p">#*|</span><span class="si">}</span><span class="s2">:3000/ </span><span class="nv">$PUBLIC_URL_MORTY</span><span class="s2">"</span>
+<span class="w">                </span>info_msg<span class="w"> </span><span class="s2">"(</span><span class="si">${</span><span class="nv">ip</span><span class="p">%|*</span><span class="si">}</span><span class="s2">) docs-live:  http://</span><span class="si">${</span><span class="nv">ip</span><span class="p">#*|</span><span class="si">}</span><span class="s2">:8080/"</span>
 <span class="w">            </span><span class="k">fi</span>
 <span class="w">        </span><span class="k">done</span>
 <span class="w">    </span><span class="o">)</span>

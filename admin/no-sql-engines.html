@@ -70,7 +70,7 @@ rely on these keywords during paging.</p>
 <span class="w">  </span><span class="nt">database </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_database</span>
 <span class="w">  </span><span class="nt">username </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">searx</span>
 <span class="w">  </span><span class="nt">password </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
-<span class="w">  </span><span class="nt">query_str </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;SELECT</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">my_table</span><span class="nv"> </span><span class="s">WHERE</span><span class="nv"> </span><span class="s">my_column</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">%(query)s&#39;</span>
+<span class="w">  </span><span class="nt">query_str </span><span class="p">:</span><span class="w"> </span><span class="s">'SELECT</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">my_table</span><span class="nv"> </span><span class="s">WHERE</span><span class="nv"> </span><span class="s">my_column</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">%(query)s'</span>
 <span class="w">  </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">psql</span>
 </pre></div>
 </div>
@@ -97,7 +97,7 @@ rely on these keywords during paging.</p>
 <span class="w">  </span><span class="nt">username </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">searx</span>
 <span class="w">  </span><span class="nt">password </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
 <span class="w">  </span><span class="nt">limit </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
-<span class="w">  </span><span class="nt">query_str </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;SELECT</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">my_table</span><span class="nv"> </span><span class="s">WHERE</span><span class="nv"> </span><span class="s">my_column=%(query)s&#39;</span>
+<span class="w">  </span><span class="nt">query_str </span><span class="p">:</span><span class="w"> </span><span class="s">'SELECT</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">my_table</span><span class="nv"> </span><span class="s">WHERE</span><span class="nv"> </span><span class="s">my_column=%(query)s'</span>
 <span class="w">  </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
 </pre></div>
 </div>
@@ -122,7 +122,7 @@ rely on these keywords during paging.</p>
 <span class="w">  </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlite</span>
 <span class="w">  </span><span class="nt">shortcut</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sq</span>
 <span class="w">  </span><span class="nt">database </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_database</span>
-<span class="w">  </span><span class="nt">query_str </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;SELECT</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">FROM</span><span class="nv"> </span><span class="s">my_table</span><span class="nv"> </span><span class="s">WHERE</span><span class="nv"> </span><span class="s">my_column=:query&#39;</span>
+<span class="w">  </span><span class="nt">query_str </span><span class="p">:</span><span class="w"> </span><span class="s">'SELECT</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">FROM</span><span class="nv"> </span><span class="s">my_table</span><span class="nv"> </span><span class="s">WHERE</span><span class="nv"> </span><span class="s">my_column=:query'</span>
 </pre></div>
 </div>
 <section id="id2">
@@ -177,7 +177,7 @@ structure. To query the supported servers, you must install their drivers using 
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mymongo</span>
 <span class="w">  </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongodb</span>
 <span class="w">  </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">icm</span>
-<span class="w">  </span><span class="nt">host </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;127.0.0.1&#39;</span>
+<span class="w">  </span><span class="nt">host </span><span class="p">:</span><span class="w"> </span><span class="s">'127.0.0.1'</span>
 <span class="w">  </span><span class="nt">port </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">27017</span>
 <span class="w">  </span><span class="nt">database </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">personal</span>
 <span class="w">  </span><span class="nt">collection </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">income</span>

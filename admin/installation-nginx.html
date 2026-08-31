@@ -194,9 +194,9 @@ figure: <a class="reference internal" href="architecture.html#arch-public"><span
 <p>For a fully result proxification add <a class="reference internal" href="morty.html#searx-morty"><span class="std std-ref">morty’s</span></a> <strong>public
 URL</strong> to your <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/searx/settings.yml">Origin: searx/settings.yml</a>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">result_proxy</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># replace example.org with your server&#39;s public name</span>
+<span class="w">    </span><span class="c1"># replace example.org with your server's public name</span>
 <span class="w">    </span><span class="nt">url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.org/morty</span>
-<span class="w">    </span><span class="nt">key </span><span class="p">:</span><span class="w"> </span><span class="kt">!!binary</span><span class="w"> </span><span class="s">&quot;insert_your_morty_proxy_key_here&quot;</span>
+<span class="w">    </span><span class="nt">key </span><span class="p">:</span><span class="w"> </span><span class="kt">!!binary</span><span class="w"> </span><span class="s">"insert_your_morty_proxy_key_here"</span>
 
 <span class="nt">server</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">image_proxy </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -231,7 +231,7 @@ the uWSGI socket (<code class="docutils literal notranslate"><span class="pre">u
 <a class="reference internal" href="installation-searx.html#searx-src"><span class="std std-ref">searx-src clone</span></a> and wraps directly the
 <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/searx/static/">Origin: searx/static/</a> content at <code class="docutils literal notranslate"><span class="pre">location</span> <span class="pre">/static</span></code>.</p>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">server</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1"># replace hostname.local with your server&#39;s name</span>
+<span class="w">    </span><span class="c1"># replace hostname.local with your server's name</span>
 <span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">hostname.local</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">80</span><span class="p">;</span>
@@ -293,7 +293,7 @@ value is shipped via the <a class="reference external" href="https://werkzeug.pa
 <p>For searx to work correctly the <code class="docutils literal notranslate"><span class="pre">base_url</span></code> must be set in the
 <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/searx/settings.yml">Origin: searx/settings.yml</a>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">server</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># replace example.org with your server&#39;s public name</span>
+<span class="w">    </span><span class="c1"># replace example.org with your server's public name</span>
 <span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.org/searx/</span>
 </pre></div>
 </div>

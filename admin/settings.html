@@ -87,7 +87,7 @@ file.</p>
 <h3><a class="toc-backref" href="#id4" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">general:</span></code></a><a class="headerlink" href="#general" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">general</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">debug </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Debug mode, only for development</span>
-<span class="w">    </span><span class="nt">instance_name </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;searx&quot;</span><span class="w"> </span><span class="c1"># displayed name</span>
+<span class="w">    </span><span class="nt">instance_name </span><span class="p">:</span><span class="w"> </span><span class="s">"searx"</span><span class="w"> </span><span class="c1"># displayed name</span>
 <span class="w">    </span><span class="nt">git_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/arachne-threat-intel/tracery</span>
 <span class="w">    </span><span class="nt">git_branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="w">    </span><span class="nt">issue_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/arachne-threat-intel/tracery/issues</span>
@@ -118,11 +118,11 @@ messages in the browser too, so this must be deactivated in production.</p>
 <h3><a class="toc-backref" href="#id5" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">server:</span></code></a><a class="headerlink" href="#server" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">server</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">port </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8888</span>
-<span class="w">    </span><span class="nt">bind_address </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;127.0.0.1&quot;</span><span class="w">      </span><span class="c1"># address to listen on</span>
-<span class="w">    </span><span class="nt">secret_key </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ultrasecretkey&quot;</span><span class="w">   </span><span class="c1"># change this!</span>
+<span class="w">    </span><span class="nt">bind_address </span><span class="p">:</span><span class="w"> </span><span class="s">"127.0.0.1"</span><span class="w">      </span><span class="c1"># address to listen on</span>
+<span class="w">    </span><span class="nt">secret_key </span><span class="p">:</span><span class="w"> </span><span class="s">"ultrasecretkey"</span><span class="w">   </span><span class="c1"># change this!</span>
 <span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">                </span><span class="c1"># set custom base_url (or False)</span>
 <span class="w">    </span><span class="nt">image_proxy </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">             </span><span class="c1"># proxying image results through searx</span>
-<span class="w">    </span><span class="nt">default_locale </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w">             </span><span class="c1"># default interface locale</span>
+<span class="w">    </span><span class="nt">default_locale </span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w">             </span><span class="c1"># default interface locale</span>
 <span class="w">    </span><span class="nt">default_theme </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oscar</span><span class="w">           </span><span class="c1"># ui theme</span>
 <span class="w">    </span><span class="nt">default_http_headers</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">X-Content-Type-Options </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nosniff</span>
@@ -161,7 +161,7 @@ code, like <code class="docutils literal notranslate"><span class="pre">fr</span
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">outgoing</span><span class="p">:</span><span class="w"> </span><span class="c1"># communication with search engines</span>
 <span class="w">    </span><span class="nt">request_timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.0</span><span class="w">        </span><span class="c1"># default timeout in seconds, can be override by engine</span>
 <span class="w">    </span><span class="c1"># max_request_timeout: 10.0  # the maximum timeout in seconds</span>
-<span class="w">    </span><span class="nt">useragent_suffix </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w">        </span><span class="c1"># information like an email address to the administrator</span>
+<span class="w">    </span><span class="nt">useragent_suffix </span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w">        </span><span class="c1"># information like an email address to the administrator</span>
 <span class="w">    </span><span class="nt">pool_connections </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w">       </span><span class="c1"># Number of different hosts</span>
 <span class="w">    </span><span class="nt">pool_maxsize </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">            </span><span class="c1"># Number of simultaneous requests by host</span>
 <span class="c1"># uncomment below section if you want to use a proxy</span>
@@ -237,10 +237,10 @@ be made. This parameter is ignored when <code class="docutils literal notranslat
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bing</span>
 <span class="w">  </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bing</span>
 <span class="w">  </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bi</span>
-<span class="w">  </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://{language}.wikipedia.org/&#39;</span>
+<span class="w">  </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">'https://{language}.wikipedia.org/'</span>
 <span class="w">  </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
 <span class="w">  </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0</span>
-<span class="w">  </span><span class="nt">api_key </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;apikey&#39;</span>
+<span class="w">  </span><span class="nt">api_key </span><span class="p">:</span><span class="w"> </span><span class="s">'apikey'</span>
 <span class="w">  </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">  </span><span class="nt">language </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en_US</span>
 <span class="w">  </span><span class="c1">#proxies:</span>
@@ -316,8 +316,8 @@ in <a class="reference external" href="https://github.com/arachne-threat-intel/t
 the <code class="docutils literal notranslate"><span class="pre">bind_address</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">use_default_settings</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="nt">server</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;uvys6bRhKHUdFF5CqbJonSDSRN8H0sCBziNSrDGNVdpz7IeZhveVart3yvghoKHA&quot;</span>
-<span class="w">    </span><span class="nt">bind_address</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.0.0.0&quot;</span>
+<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="s">"uvys6bRhKHUdFF5CqbJonSDSRN8H0sCBziNSrDGNVdpz7IeZhveVart3yvghoKHA"</span>
+<span class="w">    </span><span class="nt">bind_address</span><span class="p">:</span><span class="w"> </span><span class="s">"0.0.0.0"</span>
 </pre></div>
 </div>
 </dd>
@@ -327,10 +327,10 @@ similar way, the <code class="docutils literal notranslate"><span class="pre">en
 wiki engine has a <a class="reference internal" href="../blog/private-engines.html#private-engines"><span class="std std-ref">token</span></a>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">use_default_settings</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="nt">server</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;uvys6bRhKHUdFF5CqbJonSDSRN8H0sCBziNSrDGNVdpz7IeZhveVart3yvghoKHA&quot;</span>
+<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="s">"uvys6bRhKHUdFF5CqbJonSDSRN8H0sCBziNSrDGNVdpz7IeZhveVart3yvghoKHA"</span>
 <span class="nt">engines</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arch linux wiki</span>
-<span class="w">    </span><span class="nt">tokens</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;$ecretValue&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">tokens</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'$ecretValue'</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 </dd>
@@ -342,10 +342,10 @@ engine:</p>
 <span class="w">       </span><span class="nt">remove</span><span class="p">:</span>
 <span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google</span>
 <span class="nt">server</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;uvys6bRhKHUdFF5CqbJonSDSRN8H0sCBziNSrDGNVdpz7IeZhveVart3yvghoKHA&quot;</span>
+<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="s">"uvys6bRhKHUdFF5CqbJonSDSRN8H0sCBziNSrDGNVdpz7IeZhveVart3yvghoKHA"</span>
 <span class="nt">engines</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arch linux wiki</span>
-<span class="w">    </span><span class="nt">tokens</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;$ecretValue&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">tokens</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'$ecretValue'</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 </dd>
@@ -357,12 +357,12 @@ following example, searx has only two engines:</p>
 <span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google</span>
 <span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">duckduckgo</span>
 <span class="nt">server</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;uvys6bRhKHUdFF5CqbJonSDSRN8H0sCBziNSrDGNVdpz7IeZhveVart3yvghoKHA&quot;</span>
+<span class="w">    </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="s">"uvys6bRhKHUdFF5CqbJonSDSRN8H0sCBziNSrDGNVdpz7IeZhveVart3yvghoKHA"</span>
 <span class="nt">engines</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google</span>
-<span class="w">    </span><span class="nt">tokens</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;$ecretValue&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">tokens</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'$ecretValue'</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">duckduckgo</span>
-<span class="w">    </span><span class="nt">tokens</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;$ecretValue&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">tokens</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'$ecretValue'</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 </dd>

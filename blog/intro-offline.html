@@ -57,17 +57,17 @@ finds the engine file and imports it.</p>
 <p>Example skeleton for the new engines:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">subprocess</span><span class="w"> </span><span class="kn">import</span> <span class="n">PIPE</span><span class="p">,</span> <span class="n">Popen</span>
 
-<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;general&#39;</span><span class="p">]</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'general'</span><span class="p">]</span>
 <span class="n">offline</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="n">settings</span><span class="p">):</span>
     <span class="k">pass</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
-    <span class="n">process</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span> <span class="n">query</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">)</span>
+    <span class="n">process</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">([</span><span class="s1">'ls'</span><span class="p">,</span> <span class="n">query</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">)</span>
     <span class="n">return_code</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">return_code</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;non-zero return code&#39;</span><span class="p">,</span> <span class="n">return_code</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">'non-zero return code'</span><span class="p">,</span> <span class="n">return_code</span><span class="p">)</span>
 
     <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">line</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>

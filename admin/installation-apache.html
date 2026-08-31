@@ -114,8 +114,8 @@ How this default intro site is configured, depends on the linux distribution
 </pre></div>
 </div>
 <p>In this file, there is a line setting the <a class="reference external" href="https://httpd.apache.org/docs/trunk/mod/core.html#documentroot">DocumentRoot</a> directive:</p>
-<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">DocumentRoot</span><span class="w"> </span><span class="s2">&quot;/srv/http&quot;</span>
-<span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">&quot;/srv/http&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">DocumentRoot</span><span class="w"> </span><span class="s2">"/srv/http"</span>
+<span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">"/srv/http"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nb">Options</span><span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks
 <span class="w">    </span><span class="nb">AllowOverride</span><span class="w"> </span><span class="k">None</span>
 <span class="w">    </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
@@ -134,9 +134,9 @@ How this default intro site is configured, depends on the linux distribution
 </pre></div>
 </div>
 <p>In this file, there is a line setting the <code class="docutils literal notranslate"><span class="pre">DocumentRoot</span></code> directive:</p>
-<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">DocumentRoot</span><span class="w"> </span><span class="s2">&quot;/var/www/html&quot;</span>
+<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">DocumentRoot</span><span class="w"> </span><span class="s2">"/var/www/html"</span>
 ...
-<span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">&quot;/var/www&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">"/var/www"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nb">AllowOverride</span><span class="w"> </span><span class="k">None</span>
 <span class="w">    </span><span class="c"># Allow open access:</span>
 <span class="w">    </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
@@ -207,7 +207,7 @@ figure: <a class="reference internal" href="architecture.html#arch-public"><span
 </ol>
 <div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Location</span><span class="w"> </span><span class="s">/searx </span><span class="nt">&gt;</span>
 
-<span class="w">    </span><span class="c"># SetEnvIf Request_URI &quot;/searx&quot; dontlog</span>
+<span class="w">    </span><span class="c"># SetEnvIf Request_URI "/searx" dontlog</span>
 <span class="w">    </span><span class="c"># CustomLog /dev/null combined env=dontlog</span>
 
 <span class="w">    </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
@@ -230,7 +230,7 @@ figure: <a class="reference internal" href="architecture.html#arch-public"><span
 
 <span class="nt">&lt;Location</span><span class="w"> </span><span class="s">/morty </span><span class="nt">&gt;</span>
 
-<span class="w">    </span><span class="c"># SetEnvIf Request_URI &quot;/morty&quot; dontlog</span>
+<span class="w">    </span><span class="c"># SetEnvIf Request_URI "/morty" dontlog</span>
 <span class="w">    </span><span class="c"># CustomLog /dev/null combined env=dontlog</span>
 
 <span class="w">    </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
@@ -249,9 +249,9 @@ figure: <a class="reference internal" href="architecture.html#arch-public"><span
 <p>For a fully result proxification add <a class="reference internal" href="morty.html#searx-morty"><span class="std std-ref">morty’s</span></a> <strong>public
 URL</strong> to your <a class="reference external" href="https://github.com/arachne-threat-intel/tracery//blob/main/searx/settings.yml">Origin: searx/settings.yml</a>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">result_proxy</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># replace example.org with your server&#39;s public name</span>
+<span class="w">    </span><span class="c1"># replace example.org with your server's public name</span>
 <span class="w">    </span><span class="nt">url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.org/morty</span>
-<span class="w">    </span><span class="nt">key </span><span class="p">:</span><span class="w"> </span><span class="kt">!!binary</span><span class="w"> </span><span class="s">&quot;insert_your_morty_proxy_key_here&quot;</span>
+<span class="w">    </span><span class="nt">key </span><span class="p">:</span><span class="w"> </span><span class="kt">!!binary</span><span class="w"> </span><span class="s">"insert_your_morty_proxy_key_here"</span>
 
 <span class="nt">server</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">image_proxy </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -364,7 +364,7 @@ sudo<span class="w"> </span>-H<span class="w"> </span>chown<span class="w"> </sp
 ANYMORE!</p>
 <div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;IfModule</span><span class="w"> </span><span class="s">mod_uwsgi.c</span><span class="nt">&gt;</span>
 
-<span class="w">    </span><span class="c"># SetEnvIf Request_URI &quot;/searx&quot; dontlog</span>
+<span class="w">    </span><span class="c"># SetEnvIf Request_URI "/searx" dontlog</span>
 <span class="w">    </span><span class="c"># CustomLog /dev/null combined env=dontlog</span>
 
 <span class="w">    </span><span class="nt">&lt;Location</span><span class="w"> </span><span class="s">/searx </span><span class="nt">&gt;</span>
@@ -408,7 +408,7 @@ sudo<span class="w"> </span>-H<span class="w"> </span>touch<span class="w"> </sp
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">disable logs</a><a class="headerlink" href="#disable-logs" title="Permalink to this heading">¶</a></h2>
 <p>For better privacy you can disable Apache logs.  In the examples above activate
 one of the lines and <a class="reference internal" href="#restart-apache">restart apache</a>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># SetEnvIf Request_URI &quot;/searx&quot; dontlog
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># SetEnvIf Request_URI "/searx" dontlog
 # CustomLog /dev/null combined env=dontlog
 </pre></div>
 </div>

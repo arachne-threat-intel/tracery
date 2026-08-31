@@ -92,82 +92,82 @@ of:</p>
 </ul>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;search request&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">            </span><span class="s2">&quot;Param:q&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Path=^(/|/search)$&quot;</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search request"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">"Param:q"</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">"Path=^(/|/search)$"</span>
 <span class="w">        </span><span class="p">],</span>
-<span class="w">        </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;time-interval-in-sec (int)&gt;&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;max-request-number-in-interval (int)&gt;&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;subrules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="nt">"interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;time-interval-in-sec (int)&gt;"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;max-request-number-in-interval (int)&gt;"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"subrules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;missing Accept-Language&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;!Header:Accept-Language&quot;</span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;max-request-number-in-interval (int)&gt;&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;stop&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                    </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;log&quot;</span><span class="p">},</span>
-<span class="w">                    </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;block&quot;</span><span class="p">,</span>
-<span class="w">                     </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rate limit exceeded&quot;</span><span class="p">}}</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"missing Accept-Language"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"!Header:Accept-Language"</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;max-request-number-in-interval (int)&gt;"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"log"</span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rate limit exceeded"</span><span class="p">}}</span>
 <span class="w">                </span><span class="p">]</span>
 <span class="w">            </span><span class="p">},</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;suspiciously Connection=close header&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Header:Connection=close&quot;</span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;max-request-number-in-interval (int)&gt;&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;stop&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                    </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;log&quot;</span><span class="p">},</span>
-<span class="w">                    </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;block&quot;</span><span class="p">,</span>
-<span class="w">                     </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rate limit exceeded&quot;</span><span class="p">}}</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"suspiciously Connection=close header"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Header:Connection=close"</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;max-request-number-in-interval (int)&gt;"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"log"</span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rate limit exceeded"</span><span class="p">}}</span>
 <span class="w">                </span><span class="p">]</span>
 <span class="w">            </span><span class="p">},</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IP limit&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;time-interval-in-sec (int)&gt;&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;max-request-number-in-interval (int)&gt;&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;stop&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;aggregations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                    </span><span class="s2">&quot;Header:X-Forwarded-For&quot;</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IP limit"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;time-interval-in-sec (int)&gt;"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;max-request-number-in-interval (int)&gt;"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"aggregations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="s2">"Header:X-Forwarded-For"</span>
 <span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;log&quot;</span><span class="p">},</span>
-<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;block&quot;</span><span class="p">,</span>
-<span class="w">                      </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                          </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rate limit exceeded&quot;</span>
+<span class="w">                </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"log"</span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                          </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rate limit exceeded"</span>
 <span class="w">                      </span><span class="p">}</span>
 <span class="w">                    </span><span class="p">}</span>
 <span class="w">                </span><span class="p">]</span>
 <span class="w">            </span><span class="p">},</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rss/json limit&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                    </span><span class="s2">&quot;Param:format=(csv|json|rss)&quot;</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rss/json limit"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="s2">"Param:format=(csv|json|rss)"</span>
 <span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;time-interval-in-sec (int)&gt;&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;max-request-number-in-interval (int)&gt;&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;stop&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;log&quot;</span><span class="p">},</span>
-<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;block&quot;</span><span class="p">,</span>
-<span class="w">                      </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                          </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rate limit exceeded&quot;</span>
+<span class="w">                </span><span class="nt">"interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;time-interval-in-sec (int)&gt;"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;max-request-number-in-interval (int)&gt;"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"log"</span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                          </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rate limit exceeded"</span>
 <span class="w">                      </span><span class="p">}</span>
 <span class="w">                    </span><span class="p">}</span>
 <span class="w">                </span><span class="p">]</span>
 <span class="w">            </span><span class="p">},</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;useragent limit&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;time-interval-in-sec (int)&gt;&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;max-request-number-in-interval (int)&gt;&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;aggregations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                    </span><span class="s2">&quot;Header:User-Agent&quot;</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"useragent limit"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;time-interval-in-sec (int)&gt;"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;max-request-number-in-interval (int)&gt;"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"aggregations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="s2">"Header:User-Agent"</span>
 <span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;log&quot;</span><span class="p">},</span>
-<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;block&quot;</span><span class="p">,</span>
-<span class="w">                      </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                          </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rate limit exceeded&quot;</span>
+<span class="w">                </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"log"</span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                          </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rate limit exceeded"</span>
 <span class="w">                      </span><span class="p">}</span>
 <span class="w">                    </span><span class="p">}</span>
 <span class="w">                </span><span class="p">]</span>

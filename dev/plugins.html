@@ -55,8 +55,8 @@
 <p>Plugins can extend or replace functionality of various components of searx.</p>
 <section id="example-plugin">
 <h2>Example plugin<a class="headerlink" href="#example-plugin" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Example plugin&#39;</span>
-<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;This plugin extends the suggestions with the word &quot;example&quot;&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Example plugin'</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s1">'This plugin extends the suggestions with the word "example"'</span>
 <span class="n">default_on</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># disabled by default</span>
 
 <span class="n">js_dependencies</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>  <span class="c1"># optional, list of static js files</span>
@@ -67,7 +67,7 @@
 <span class="c1">#  request: flask request object</span>
 <span class="c1">#  ctx: the whole local context of the post search hook</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">post_search</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
-    <span class="n">ctx</span><span class="p">[</span><span class="s1">&#39;search&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">suggestions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+    <span class="n">ctx</span><span class="p">[</span><span class="s1">'search'</span><span class="p">]</span><span class="o">.</span><span class="n">suggestions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">'example'</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">True</span>
 </pre></div>
 </div>

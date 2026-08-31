@@ -115,47 +115,47 @@ reverse proxy for filtron on all containers of the <a class="reference internal"
 <span class="c1">#</span>
 <span class="c1">#     git add .config</span>
 
-<span class="c1"># The public URL of the searx instance: PUBLIC_URL=&quot;https://mydomain.xy/searx&quot;</span>
+<span class="c1"># The public URL of the searx instance: PUBLIC_URL="https://mydomain.xy/searx"</span>
 <span class="c1"># The default is taken from ./utils/brand.env.</span>
 
-<span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SEARX_URL</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">SEARX_URL</span><span class="si">}</span><span class="s2">"</span>
 
-<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="si">${</span><span class="nv">PUBLIC_URL</span><span class="si">}</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;https://searx.me&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="si">${</span><span class="nv">PUBLIC_URL</span><span class="si">}</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"https://searx.me"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="c1"># hint: Linux containers do not have DNS entries, lets use IPs</span>
-<span class="w">    </span><span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="s2">&quot;http://</span><span class="k">$(</span>primary_ip<span class="k">)</span><span class="s2">/searx&quot;</span>
+<span class="w">    </span><span class="nv">PUBLIC_URL</span><span class="o">=</span><span class="s2">"http://</span><span class="k">$(</span>primary_ip<span class="k">)</span><span class="s2">/searx"</span>
 <span class="k">fi</span>
 
 <span class="c1"># searx.sh</span>
 <span class="c1"># ---------</span>
 
-<span class="c1"># SEARX_INTERNAL_URL=&quot;127.0.0.1:8888&quot;</span>
-<span class="c1"># SEARX_SETTINGS_TEMPLATE=&quot;${REPO_ROOT}/utils/templates/etc/searx/use_default_settings.yml&quot;</span>
+<span class="c1"># SEARX_INTERNAL_URL="127.0.0.1:8888"</span>
+<span class="c1"># SEARX_SETTINGS_TEMPLATE="${REPO_ROOT}/utils/templates/etc/searx/use_default_settings.yml"</span>
 
 <span class="c1"># Only change, if you maintain a searx brand in your searx fork (GIT_URL) which</span>
-<span class="c1"># is not hold by branch &#39;main&#39;.  The branch has to be a local branch, in the</span>
+<span class="c1"># is not hold by branch 'main'.  The branch has to be a local branch, in the</span>
 <span class="c1"># repository from which you install (which is most often the case).  If you want</span>
-<span class="c1"># to install branch &#39;foo&#39;, don&#39;t forget to run &#39;git branch foo origin/foo&#39; once.</span>
-<span class="c1"># GIT_BRANCH=&quot;${GIT_BRANCH:-main}&quot;</span>
+<span class="c1"># to install branch 'foo', don't forget to run 'git branch foo origin/foo' once.</span>
+<span class="c1"># GIT_BRANCH="${GIT_BRANCH:-main}"</span>
 
 <span class="c1"># filtron.sh</span>
 <span class="c1"># ----------</span>
 
-<span class="c1"># FILTRON_API=&quot;127.0.0.1:4005&quot;</span>
-<span class="c1"># FILTRON_LISTEN=&quot;127.0.0.1:4004&quot;</span>
-<span class="c1"># FILTRON_TARGET=&quot;127.0.0.1:8888&quot;</span>
+<span class="c1"># FILTRON_API="127.0.0.1:4005"</span>
+<span class="c1"># FILTRON_LISTEN="127.0.0.1:4004"</span>
+<span class="c1"># FILTRON_TARGET="127.0.0.1:8888"</span>
 
 <span class="c1"># morty.sh</span>
 <span class="c1"># --------</span>
 
 <span class="c1"># morty listen address</span>
-<span class="c1"># MORTY_LISTEN=&quot;127.0.0.1:3000&quot;</span>
-<span class="c1"># PUBLIC_URL_PATH_MORTY=&quot;/morty/&quot;</span>
+<span class="c1"># MORTY_LISTEN="127.0.0.1:3000"</span>
+<span class="c1"># PUBLIC_URL_PATH_MORTY="/morty/"</span>
 
 <span class="c1"># system services</span>
 <span class="c1"># ---------------</span>
 
 <span class="c1"># Common $HOME folder of the service accounts</span>
-<span class="c1"># SERVICE_HOME_BASE=&quot;/usr/local&quot;</span>
+<span class="c1"># SERVICE_HOME_BASE="/usr/local"</span>
 
 <span class="c1"># **experimental**: Set SERVICE_USER to run all services by one account, but be</span>
 <span class="c1"># aware that removing discrete components might conflict!</span>

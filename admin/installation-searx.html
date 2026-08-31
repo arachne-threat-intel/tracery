@@ -93,11 +93,11 @@ universe repository.</p>
 <span id="create-searx-user"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink">Create user</a><a class="headerlink" href="#create-user" title="Permalink to this heading">¶</a></h2>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-1-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-1-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>useradd<span class="w"> </span>--shell<span class="w"> </span>/bin/bash<span class="w"> </span>--system<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--home-dir<span class="w"> </span><span class="s2">&quot;/usr/local/searx&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--comment<span class="w"> </span><span class="s1">&#39;Privacy-respecting metasearch engine&#39;</span><span class="w"> </span>searx
+<span class="w">    </span>--home-dir<span class="w"> </span><span class="s2">"/usr/local/searx"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--comment<span class="w"> </span><span class="s1">'Privacy-respecting metasearch engine'</span><span class="w"> </span>searx
 
-$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>mkdir<span class="w"> </span><span class="s2">&quot;/usr/local/searx&quot;</span>
-$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;searx:searx&quot;</span><span class="w"> </span><span class="s2">&quot;/usr/local/searx&quot;</span>
+$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>mkdir<span class="w"> </span><span class="s2">"/usr/local/searx"</span>
+$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span><span class="s2">"searx:searx"</span><span class="w"> </span><span class="s2">"/usr/local/searx"</span>
 </pre></div>
 </div>
 </div></div>
@@ -107,14 +107,14 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>c
 <p>Start a interactive shell from new created user and clone searx:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-2-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-2-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>-u<span class="w"> </span>searx<span class="w"> </span>-i
-<span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/searx/searx.git&quot;</span><span class="w"> </span><span class="s2">&quot;/usr/local/searx/searx-src&quot;</span>
+<span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span><span class="s2">"https://github.com/searx/searx.git"</span><span class="w"> </span><span class="s2">"/usr/local/searx/searx-src"</span>
 </pre></div>
 </div>
 </div></div>
 <p>In the same shell create <em>virtualenv</em>:</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-3-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-3-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span><span class="s2">&quot;/usr/local/searx/searx-pyenv&quot;</span>
-<span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;. /usr/local/searx/searx-pyenv/bin/activate&quot;</span><span class="w"> </span>&gt;&gt;<span class="w">  </span><span class="s2">&quot;/usr/local/searx/.profile&quot;</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-3-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-3-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span><span class="s2">"/usr/local/searx/searx-pyenv"</span>
+<span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">". /usr/local/searx/searx-pyenv/bin/activate"</span><span class="w"> </span>&gt;&gt;<span class="w">  </span><span class="s2">"/usr/local/searx/.profile"</span>
 </pre></div>
 </div>
 </div></div>
@@ -128,14 +128,14 @@ from the login (<em>~/.profile</em>):</p>
 /usr/local/searx/searx-pyenv/bin/python
 Python<span class="w"> </span><span class="m">3</span>.8.1
 
-<span class="c1"># update pip&#39;s boilerplate ..</span>
+<span class="c1"># update pip's boilerplate ..</span>
 pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pip
 pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
 pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>wheel
 pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pyyaml
 
-<span class="c1"># jump to searx&#39;s working tree and install searx into virtualenv</span>
-<span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;/usr/local/searx/searx-src&quot;</span>
+<span class="c1"># jump to searx's working tree and install searx into virtualenv</span>
+<span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="s2">"/usr/local/searx/searx-src"</span>
 <span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
@@ -165,20 +165,20 @@ file <a class="reference external" href="https://github.com/arachne-threat-intel
 <span class="pre">-n)</span></code> with a name of your choice, set <code class="docutils literal notranslate"><span class="pre">ultrasecretkey</span></code> – <em>and/or</em> edit
 <code class="docutils literal notranslate"><span class="pre">/etc/searx/settings.yml</span></code> to your needs.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-VXNlIGRlZmF1bHQgc2V0dGluZ3M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-5-VXNlIGRlZmF1bHQgc2V0dGluZ3M=" name="VXNlIGRlZmF1bHQgc2V0dGluZ3M=" role="tab" tabindex="0">Use default settings</button><button aria-controls="panel-5-c2Vhcngvc2V0dGluZ3MueW1s" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-c2Vhcngvc2V0dGluZ3MueW1s" name="c2Vhcngvc2V0dGluZ3MueW1s" role="tab" tabindex="-1">searx/settings.yml</button></div><div aria-labelledby="tab-5-VXNlIGRlZmF1bHQgc2V0dGluZ3M=" class="sphinx-tabs-panel group-tab" id="panel-5-VXNlIGRlZmF1bHQgc2V0dGluZ3M=" name="VXNlIGRlZmF1bHQgc2V0dGluZ3M=" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;/etc/searx&quot;</span>
-$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>cp<span class="w"> </span><span class="s2">&quot;/usr/local/searx/searx-src/utils/templates/etc/searx/use_default_settings.yml&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">             </span><span class="s2">&quot;/etc/searx/settings.yml&quot;</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-VXNlIGRlZmF1bHQgc2V0dGluZ3M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-5-VXNlIGRlZmF1bHQgc2V0dGluZ3M=" name="VXNlIGRlZmF1bHQgc2V0dGluZ3M=" role="tab" tabindex="0">Use default settings</button><button aria-controls="panel-5-c2Vhcngvc2V0dGluZ3MueW1s" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-c2Vhcngvc2V0dGluZ3MueW1s" name="c2Vhcngvc2V0dGluZ3MueW1s" role="tab" tabindex="-1">searx/settings.yml</button></div><div aria-labelledby="tab-5-VXNlIGRlZmF1bHQgc2V0dGluZ3M=" class="sphinx-tabs-panel group-tab" id="panel-5-VXNlIGRlZmF1bHQgc2V0dGluZ3M=" name="VXNlIGRlZmF1bHQgc2V0dGluZ3M=" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"/etc/searx"</span>
+$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>cp<span class="w"> </span><span class="s2">"/usr/local/searx/searx-src/utils/templates/etc/searx/use_default_settings.yml"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">             </span><span class="s2">"/etc/searx/settings.yml"</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-5-c2Vhcngvc2V0dGluZ3MueW1s" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-c2Vhcngvc2V0dGluZ3MueW1s" name="c2Vhcngvc2V0dGluZ3MueW1s" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;/etc/searx&quot;</span>
-$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>cp<span class="w"> </span><span class="s2">&quot;/usr/local/searx/searx-src/searx/settings.yml&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">             </span><span class="s2">&quot;/etc/searx/settings.yml&quot;</span>
+</div><div aria-labelledby="tab-5-c2Vhcngvc2V0dGluZ3MueW1s" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-c2Vhcngvc2V0dGluZ3MueW1s" name="c2Vhcngvc2V0dGluZ3MueW1s" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"/etc/searx"</span>
+$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>cp<span class="w"> </span><span class="s2">"/usr/local/searx/searx-src/searx/settings.yml"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">             </span><span class="s2">"/etc/searx/settings.yml"</span>
 </pre></div>
 </div>
 </div></div>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-bWluaW1hbCBzZXR1cA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-6-bWluaW1hbCBzZXR1cA==" name="bWluaW1hbCBzZXR1cA==" role="tab" tabindex="0">minimal setup</button></div><div aria-labelledby="tab-6-bWluaW1hbCBzZXR1cA==" class="sphinx-tabs-panel group-tab" id="panel-6-bWluaW1hbCBzZXR1cA==" name="bWluaW1hbCBzZXR1cA==" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/ultrasecretkey/</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">16</span><span class="k">)</span><span class="s2">/g&quot;</span><span class="w"> </span><span class="s2">&quot;/etc/searx/settings.yml&quot;</span>
-$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/{instance_name}/searx@</span><span class="k">$(</span>uname<span class="w"> </span>-n<span class="k">)</span><span class="s2">/g&quot;</span><span class="w"> </span><span class="s2">&quot;/etc/searx/settings.yml&quot;</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-bWluaW1hbCBzZXR1cA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-6-bWluaW1hbCBzZXR1cA==" name="bWluaW1hbCBzZXR1cA==" role="tab" tabindex="0">minimal setup</button></div><div aria-labelledby="tab-6-bWluaW1hbCBzZXR1cA==" class="sphinx-tabs-panel group-tab" id="panel-6-bWluaW1hbCBzZXR1cA==" name="bWluaW1hbCBzZXR1cA==" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">"s/ultrasecretkey/</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">16</span><span class="k">)</span><span class="s2">/g"</span><span class="w"> </span><span class="s2">"/etc/searx/settings.yml"</span>
+$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">"s/{instance_name}/searx@</span><span class="k">$(</span>uname<span class="w"> </span>-n<span class="k">)</span><span class="s2">/g"</span><span class="w"> </span><span class="s2">"/etc/searx/settings.yml"</span>
 </pre></div>
 </div>
 </div></div>
@@ -187,29 +187,29 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 
 <span class="nt">general</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">debug </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Debug mode, only for development</span>
-<span class="w">    </span><span class="nt">instance_name </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;searx&quot;</span><span class="w"> </span><span class="c1"># displayed name</span>
+<span class="w">    </span><span class="nt">instance_name </span><span class="p">:</span><span class="w"> </span><span class="s">"searx"</span><span class="w"> </span><span class="c1"># displayed name</span>
 
 <span class="nt">search</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">safe_search </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># Filter results. 0: None, 1: Moderate, 2: Strict</span>
-<span class="w">    </span><span class="nt">autocomplete </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Existing autocomplete backends: &quot;dbpedia&quot;, &quot;duckduckgo&quot;, &quot;google&quot;, &quot;startpage&quot;, &quot;swisscows&quot;, &quot;qwant&quot;, &quot;wikipedia&quot; - leave blank to turn it off by default</span>
-<span class="w">    </span><span class="nt">default_lang </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Default search language - leave blank to detect from browser information or use codes from &#39;languages.py&#39;</span>
+<span class="w">    </span><span class="nt">autocomplete </span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w"> </span><span class="c1"># Existing autocomplete backends: "dbpedia", "duckduckgo", "google", "startpage", "swisscows", "qwant", "wikipedia" - leave blank to turn it off by default</span>
+<span class="w">    </span><span class="nt">default_lang </span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w"> </span><span class="c1"># Default search language - leave blank to detect from browser information or use codes from 'languages.py'</span>
 
 <span class="nt">server</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">port </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8888</span>
-<span class="w">    </span><span class="nt">bind_address </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;127.0.0.1&quot;</span><span class="w"> </span><span class="c1"># address to listen on</span>
-<span class="w">    </span><span class="nt">secret_key </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ultrasecretkey&quot;</span><span class="w"> </span><span class="c1"># change this!</span>
-<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Set custom base_url. Possible values: False or &quot;https://your.custom.host/location/&quot;</span>
+<span class="w">    </span><span class="nt">bind_address </span><span class="p">:</span><span class="w"> </span><span class="s">"127.0.0.1"</span><span class="w"> </span><span class="c1"># address to listen on</span>
+<span class="w">    </span><span class="nt">secret_key </span><span class="p">:</span><span class="w"> </span><span class="s">"ultrasecretkey"</span><span class="w"> </span><span class="c1"># change this!</span>
+<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Set custom base_url. Possible values: False or "https://your.custom.host/location/"</span>
 <span class="w">    </span><span class="nt">image_proxy </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Proxying image results through searx</span>
 
 <span class="c1"># uncomment below section if you have running morty proxy</span>
 <span class="c1">#result_proxy:</span>
 <span class="c1">#    url : http://127.0.0.1:3000/</span>
-<span class="c1">#    key : !!binary &quot;your_morty_proxy_key&quot;</span>
+<span class="c1">#    key : !!binary "your_morty_proxy_key"</span>
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-7-c2Vhcngvc2V0dGluZ3MueW1s" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-7-c2Vhcngvc2V0dGluZ3MueW1s" name="c2Vhcngvc2V0dGluZ3MueW1s" role="tabpanel" tabindex="0"><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">general</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">debug </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Debug mode, only for development</span>
-<span class="w">    </span><span class="nt">instance_name </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;searx&quot;</span><span class="w"> </span><span class="c1"># displayed name</span>
+<span class="w">    </span><span class="nt">instance_name </span><span class="p">:</span><span class="w"> </span><span class="s">"searx"</span><span class="w"> </span><span class="c1"># displayed name</span>
 <span class="w">    </span><span class="nt">contact_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># mailto:contact@example.com</span>
 <span class="w">    </span><span class="nt">enable_stats</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># activate /stats page - note: it may leak usage data</span>
 
@@ -224,8 +224,8 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 
 <span class="nt">search</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">safe_search </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># Filter results. 0: None, 1: Moderate, 2: Strict</span>
-<span class="w">    </span><span class="nt">autocomplete </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Existing autocomplete backends: &quot;dbpedia&quot;, &quot;duckduckgo&quot;, &quot;google&quot;, &quot;startpage&quot;, &quot;swisscows&quot;, &quot;qwant&quot;, &quot;wikipedia&quot; - leave blank to turn it off by default</span>
-<span class="w">    </span><span class="nt">default_lang </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Default search language - leave blank to detect from browser information or use codes from &#39;languages.py&#39;</span>
+<span class="w">    </span><span class="nt">autocomplete </span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w"> </span><span class="c1"># Existing autocomplete backends: "dbpedia", "duckduckgo", "google", "startpage", "swisscows", "qwant", "wikipedia" - leave blank to turn it off by default</span>
+<span class="w">    </span><span class="nt">default_lang </span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w"> </span><span class="c1"># Default search language - leave blank to detect from browser information or use codes from 'languages.py'</span>
 <span class="w">    </span><span class="nt">ban_time_on_fail </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"> </span><span class="c1"># ban time in seconds after engine errors</span>
 <span class="w">    </span><span class="nt">max_ban_time_on_fail </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">120</span><span class="w"> </span><span class="c1"># max ban time in seconds after engine errors</span>
 <span class="w">    </span><span class="nt">prefer_configured_language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># increase weight of results in configured language in ranking</span>
@@ -233,12 +233,12 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 
 <span class="nt">server</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">port </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9000</span>
-<span class="w">    </span><span class="nt">bind_address </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;127.0.0.1&quot;</span><span class="w"> </span><span class="c1"># address to listen on</span>
-<span class="w">    </span><span class="nt">secret_key </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ultrasecretkey&quot;</span><span class="w"> </span><span class="c1"># change this!</span>
-<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Set custom base_url. Possible values: False or &quot;https://your.custom.host/location/&quot;</span>
+<span class="w">    </span><span class="nt">bind_address </span><span class="p">:</span><span class="w"> </span><span class="s">"127.0.0.1"</span><span class="w"> </span><span class="c1"># address to listen on</span>
+<span class="w">    </span><span class="nt">secret_key </span><span class="p">:</span><span class="w"> </span><span class="s">"ultrasecretkey"</span><span class="w"> </span><span class="c1"># change this!</span>
+<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Set custom base_url. Possible values: False or "https://your.custom.host/location/"</span>
 <span class="w">    </span><span class="nt">image_proxy </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># Proxying image results through searx</span>
-<span class="w">    </span><span class="nt">http_protocol_version </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span><span class="w">  </span><span class="c1"># 1.0 and 1.1 are supported</span>
-<span class="w">    </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;POST&quot;</span><span class="w"> </span><span class="c1"># POST queries are more secure as they don&#39;t show up in history but may cause problems when using Firefox containers</span>
+<span class="w">    </span><span class="nt">http_protocol_version </span><span class="p">:</span><span class="w"> </span><span class="s">"1.0"</span><span class="w">  </span><span class="c1"># 1.0 and 1.1 are supported</span>
+<span class="w">    </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="s">"POST"</span><span class="w"> </span><span class="c1"># POST queries are more secure as they don't show up in history but may cause problems when using Firefox containers</span>
 <span class="w">    </span><span class="nt">default_http_headers</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">X-Content-Type-Options </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nosniff</span>
 <span class="w">        </span><span class="nt">X-XSS-Protection </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1; mode=block</span>
@@ -249,10 +249,10 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="nt">ui</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">autofocus </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># Autofocus search input</span>
 <span class="w">    </span><span class="nt">archive_today </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># show archive.today links</span>
-<span class="w">    </span><span class="nt">static_path </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Custom static path - leave it blank if you didn&#39;t change</span>
-<span class="w">    </span><span class="nt">templates_path </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Custom templates path - leave it blank if you didn&#39;t change</span>
+<span class="w">    </span><span class="nt">static_path </span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w"> </span><span class="c1"># Custom static path - leave it blank if you didn't change</span>
+<span class="w">    </span><span class="nt">templates_path </span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w"> </span><span class="c1"># Custom templates path - leave it blank if you didn't change</span>
 <span class="w">    </span><span class="nt">default_theme </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oscar</span><span class="w"> </span><span class="c1"># ui theme</span>
-<span class="w">    </span><span class="nt">default_locale </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># Default interface locale - leave blank to detect from browser information or use codes from the &#39;locales&#39; config section</span>
+<span class="w">    </span><span class="nt">default_locale </span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w"> </span><span class="c1"># Default interface locale - leave blank to detect from browser information or use codes from the 'locales' config section</span>
 <span class="w">    </span><span class="nt">theme_args </span><span class="p">:</span>
 <span class="w">        </span><span class="nt">oscar_style </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logicodev</span><span class="w"> </span><span class="c1"># default style of oscar</span>
 <span class="c1">#   results_on_new_tab: False  # Open result links in a new tab by default</span>
@@ -265,7 +265,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 
 <span class="c1"># Lock arbitrary settings on the preferences page.</span>
 <span class="c1"># To find the ID of the user setting you want to lock, check</span>
-<span class="c1"># the ID of the form on the page &quot;preferences&quot;.</span>
+<span class="c1"># the ID of the form on the page "preferences".</span>
 <span class="c1">#preferences:</span>
 <span class="c1">#    lock:</span>
 <span class="c1">#      - language</span>
@@ -278,12 +278,12 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1"># Note: since commit af77ec3, morty accepts a base64 encoded key.</span>
 <span class="c1">#result_proxy:</span>
 <span class="c1">#    url : http://127.0.0.1:3000/</span>
-<span class="c1">#    key : !!binary &quot;your_morty_proxy_key&quot;</span>
+<span class="c1">#    key : !!binary "your_morty_proxy_key"</span>
 
 <span class="nt">outgoing</span><span class="p">:</span><span class="w"> </span><span class="c1"># communication with search engines</span>
 <span class="w">    </span><span class="nt">request_timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.0</span><span class="w"> </span><span class="c1"># default timeout in seconds, can be override by engine</span>
 <span class="w">    </span><span class="c1"># max_request_timeout: 10.0 # the maximum timeout in seconds</span>
-<span class="w">    </span><span class="nt">useragent_suffix </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># suffix of searx_useragent, could contain information like an email address to the administrator</span>
+<span class="w">    </span><span class="nt">useragent_suffix </span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w"> </span><span class="c1"># suffix of searx_useragent, could contain information like an email address to the administrator</span>
 <span class="w">    </span><span class="nt">pool_connections </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"> </span><span class="c1"># Number of different hosts</span>
 <span class="w">    </span><span class="nt">pool_maxsize </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"> </span><span class="c1"># Number of simultaneous requests by host</span>
 <span class="c1"># uncomment below section if you want to use a proxy</span>
@@ -315,30 +315,30 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1"># uncomment below section if you want to configure which plugin is enabled by default</span>
 <span class="c1">#</span>
 <span class="c1"># enabled_plugins:</span>
-<span class="c1">#   - &quot;HTTPS rewrite&quot;</span>
+<span class="c1">#   - "HTTPS rewrite"</span>
 <span class="c1">#   - ...</span>
 
 <span class="c1"># Example to rewrite hostnames in external links</span>
 <span class="c1">#</span>
 <span class="c1"># enabled_plugins:</span>
-<span class="c1">#   - &#39;Hostname replace&#39;</span>
+<span class="c1">#   - 'Hostname replace'</span>
 <span class="c1"># hostname_replace:</span>
-<span class="c1">#   &#39;(.*\.)?youtube\.com$&#39;:           &#39;invidious.example.com&#39;</span>
-<span class="c1">#   &#39;(.*\.)?youtu\.be$&#39;:              &#39;invidious.example.com&#39;</span>
-<span class="c1">#   &#39;(.*\.)?youtube-noocookie\.com$&#39;: &#39;yotter.example.com&#39;</span>
-<span class="c1">#   &#39;(.*\.)?reddit\.com$&#39;:            &#39;teddit.example.com&#39;</span>
-<span class="c1">#   &#39;(.*\.)?redd\.it$&#39;:               &#39;teddit.example.com&#39;</span>
-<span class="c1">#   &#39;(www\.)?twitter\.com$&#39;:          &#39;nitter.example.com&#39;</span>
+<span class="c1">#   '(.*\.)?youtube\.com$':           'invidious.example.com'</span>
+<span class="c1">#   '(.*\.)?youtu\.be$':              'invidious.example.com'</span>
+<span class="c1">#   '(.*\.)?youtube-noocookie\.com$': 'yotter.example.com'</span>
+<span class="c1">#   '(.*\.)?reddit\.com$':            'teddit.example.com'</span>
+<span class="c1">#   '(.*\.)?redd\.it$':               'teddit.example.com'</span>
+<span class="c1">#   '(www\.)?twitter\.com$':          'nitter.example.com'</span>
 
 <span class="nt">checker</span><span class="p">:</span>
 <span class="w">    </span><span class="c1"># disable checker when in debug mode</span>
 <span class="w">    </span><span class="nt">off_when_debug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 
 <span class="w">    </span><span class="c1"># scheduling: interval or int</span>
-<span class="w">    </span><span class="c1"># use &quot;scheduling: False&quot; to disable scheduling</span>
+<span class="w">    </span><span class="c1"># use "scheduling: False" to disable scheduling</span>
 <span class="w">    </span><span class="c1"># to activate the scheduler:</span>
-<span class="w">    </span><span class="c1"># * uncomment &quot;scheduling&quot; section</span>
-<span class="w">    </span><span class="c1"># * add &quot;cache2 = name=searxcache,items=2000,blocks=2000,blocksize=4096,bitmap=1&quot; to your uwsgi.ini</span>
+<span class="w">    </span><span class="c1"># * uncomment "scheduling" section</span>
+<span class="w">    </span><span class="c1"># * add "cache2 = name=searxcache,items=2000,blocks=2000,blocksize=4096,bitmap=1" to your uwsgi.ini</span>
 
 <span class="w">    </span><span class="c1"># scheduling:</span>
 <span class="w">    </span><span class="c1">#    start_after: [300, 1800]  # delay to start the first run of the checker</span>
@@ -353,17 +353,17 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">          </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span>
 <span class="w">        </span><span class="nt">result_container</span><span class="p">:</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">not_empty</span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;one_title_contains&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;citizen</span><span class="nv"> </span><span class="s">kane&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'one_title_contains'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'citizen</span><span class="nv"> </span><span class="s">kane'</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="nt">test</span><span class="p">:</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unique_results</span>
 
 <span class="w">      </span><span class="nt">android</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;test_android</span>
 <span class="w">        </span><span class="nt">matrix</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">query</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;android&#39;</span><span class="p p-Indicator">]</span>
-<span class="w">          </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;en&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;de&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;fr&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;zh-CN&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">query</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'android'</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'en'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'de'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'fr'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'zh-CN'</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="nt">result_container</span><span class="p">:</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">not_empty</span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;one_title_contains&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;google&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'one_title_contains'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'google'</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="nt">test</span><span class="p">:</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unique_results</span>
 
@@ -372,7 +372,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">      </span><span class="nt">infobox</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;tests_infobox</span>
 <span class="w">        </span><span class="nt">infobox</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">matrix</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">query</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;linux&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;new</span><span class="nv"> </span><span class="s">york&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;bbc&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">            </span><span class="nt">query</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"linux"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"new</span><span class="nv"> </span><span class="s">york"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"bbc"</span><span class="p p-Indicator">]</span>
 <span class="w">          </span><span class="nt">result_container</span><span class="p">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_infobox</span>
 
@@ -397,9 +397,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">archive is</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://archive.is/search/?q={query}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(//div[@class=&quot;TEXT-BLOCK&quot;]/a)/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(//div[@class=&quot;TEXT-BLOCK&quot;]/a)</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;TEXT-BLOCK&quot;]/ul/li</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(//div[@class="TEXT-BLOCK"]/a)/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(//div[@class="TEXT-BLOCK"]/a)</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="TEXT-BLOCK"]/ul/li</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
 <span class="w">    </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7.0</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -432,7 +432,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wikipedia</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wikipedia</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wp</span>
-<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://{language}.wikipedia.org/&#39;</span>
+<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">'https://{language}.wikipedia.org/'</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 
 <span class="w">    </span><span class="c1">#The fulltext and title parameter is necessary for Wikimini because sometimes it will not show the results and redirect instead</span>
@@ -440,9 +440,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">shortcut</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wkmn</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://fr.wikimini.org/w/index.php?search={query}&amp;title=Sp%C3%A9cial%3ASearch&amp;fulltext=Search</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li/div[@class=&quot;mw-search-result-heading&quot;]/a/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li//div[@class=&quot;mw-search-result-heading&quot;]/a</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li/div[@class=&quot;searchresult&quot;]</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li/div[@class="mw-search-result-heading"]/a/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li//div[@class="mw-search-result-heading"]/a</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li/div[@class="searchresult"]</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">about</span><span class="p">:</span>
@@ -472,9 +472,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://bitbucket.org/repo/all/{pageno}?name={query}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[@class=&quot;repo-summary&quot;]//a[@class=&quot;repo-link&quot;]/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[@class=&quot;repo-summary&quot;]//a[@class=&quot;repo-link&quot;]</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[@class=&quot;repo-summary&quot;]/p</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[@class="repo-summary"]//a[@class="repo-link"]/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[@class="repo-summary"]//a[@class="repo-link"]</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[@class="repo-summary"]/p</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 <span class="w">    </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.0</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -495,9 +495,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://media.ccc.de/search/?q={query}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;caption&quot;]/h3/a/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;caption&quot;]/h3/a/text()</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;caption&quot;]/h4/@title</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="caption"]/h3/a/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="caption"]/h3/a/text()</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="caption"]/h4/@title</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">videos</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c3tv</span>
@@ -519,7 +519,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#   categories : science</span>
 <span class="c1">#   shortcut : cor</span>
 <span class="c1">#   # get your API key from: https://core.ac.uk/api-keys/register/</span>
-<span class="c1">#   api_key : &#39;unset&#39;</span>
+<span class="c1">#   api_key : 'unset'</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crossref</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">json_engine</span>
@@ -577,9 +577,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">first_page_num </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 <span class="w">    </span><span class="nt">page_size </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.erowid.org/search.php?q={query}&amp;s={pageno}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//dl[@class=&quot;results-list&quot;]/dt[@class=&quot;result-title&quot;]/a/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//dl[@class=&quot;results-list&quot;]/dt[@class=&quot;result-title&quot;]/a/text()</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//dl[@class=&quot;results-list&quot;]/dd[@class=&quot;result-details&quot;]</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//dl[@class="results-list"]/dt[@class="result-title"]/a/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//dl[@class="results-list"]/dt[@class="result-title"]/a/text()</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//dl[@class="results-list"]/dd[@class="result-details"]</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ew</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -607,7 +607,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#    # available options: match, simple_query_string, term, terms, custom</span>
 <span class="c1">#    query_type : match</span>
 <span class="c1">#    # if query_type is set to custom, provide your query here</span>
-<span class="c1">#    #custom_query_json: {&quot;query&quot;:{&quot;match_all&quot;: {}}}</span>
+<span class="c1">#    #custom_query_json: {"query":{"match_all": {}}}</span>
 <span class="c1">#    #show_metadata: False</span>
 <span class="c1">#    disabled : True</span>
 
@@ -647,9 +647,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://etymonline.com/search?page={pageno}&amp;q={query}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[contains(@class, &quot;word__name--&quot;)]/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[contains(@class, &quot;word__name--&quot;)]</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//section[contains(@class, &quot;word__defination&quot;)]</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[contains(@class, "word__name--")]/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[contains(@class, "word__name--")]</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//section[contains(@class, "word__defination")]</span>
 <span class="w">    </span><span class="nt">first_page_num </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">et</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -684,7 +684,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1"># You can use the engine using the official stable API, but you need an API key</span>
 <span class="c1"># See : https://www.flickr.com/services/apps/create/</span>
 <span class="c1">#    engine : flickr</span>
-<span class="c1">#    api_key: &#39;apikey&#39; # required!</span>
+<span class="c1">#    api_key: 'apikey' # required!</span>
 <span class="c1"># Or you can use the html non-stable engine, activated by default</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flickr_noapi</span>
 
@@ -800,10 +800,10 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="c1">#   android: *test_android</span>
 <span class="w">    </span><span class="c1">#   dali:</span>
 <span class="w">    </span><span class="c1">#     matrix:</span>
-<span class="w">    </span><span class="c1">#       query: [&#39;Dali Christ&#39;]</span>
-<span class="w">    </span><span class="c1">#       lang: [&#39;en&#39;, &#39;de&#39;, &#39;fr&#39;, &#39;zh-CN&#39;]</span>
+<span class="w">    </span><span class="c1">#       query: ['Dali Christ']</span>
+<span class="w">    </span><span class="c1">#       lang: ['en', 'de', 'fr', 'zh-CN']</span>
 <span class="w">    </span><span class="c1">#     result_container:</span>
-<span class="w">    </span><span class="c1">#       - [&#39;one_title_contains&#39;, &#39;Salvador&#39;]</span>
+<span class="w">    </span><span class="c1">#       - ['one_title_contains', 'Salvador']</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google news</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google_news</span>
@@ -827,11 +827,11 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google play apps</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://play.google.com/store/search?q={query}&amp;c=apps</span>
-<span class="w">    </span><span class="nt">results_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;//div[@class=&quot;ImZGtf</span><span class="nv"> </span><span class="s">mpg5gc&quot;]&#39;</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.//div[@class=&quot;RZEgze&quot;]//div[@class=&quot;kCSSQe&quot;]//a&#39;</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.//div[@class=&quot;RZEgze&quot;]//div[@class=&quot;kCSSQe&quot;]//a/@href&#39;</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.//div[@class=&quot;RZEgze&quot;]//a[@class=&quot;mnKHRc&quot;]&#39;</span>
-<span class="w">    </span><span class="nt">thumbnail_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.//div[@class=&quot;uzcko&quot;]/div/span[1]//img/@data-src&#39;</span>
+<span class="w">    </span><span class="nt">results_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'//div[@class="ImZGtf</span><span class="nv"> </span><span class="s">mpg5gc"]'</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'.//div[@class="RZEgze"]//div[@class="kCSSQe"]//a'</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'.//div[@class="RZEgze"]//div[@class="kCSSQe"]//a/@href'</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'.//div[@class="RZEgze"]//a[@class="mnKHRc"]'</span>
+<span class="w">    </span><span class="nt">thumbnail_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'.//div[@class="uzcko"]/div/span[1]//img/@data-src'</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">files</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpa</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -866,11 +866,11 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google play movies</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://play.google.com/store/search?q={query}&amp;c=movies</span>
-<span class="w">    </span><span class="nt">results_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;//div[@class=&quot;ImZGtf</span><span class="nv"> </span><span class="s">mpg5gc&quot;]&#39;</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.//div[@class=&quot;RZEgze&quot;]//div[@class=&quot;kCSSQe&quot;]//a&#39;</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.//div[@class=&quot;RZEgze&quot;]//div[@class=&quot;kCSSQe&quot;]//a/@href&#39;</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.//div[@class=&quot;kCSSQe&quot;]&#39;</span>
-<span class="w">    </span><span class="nt">thumbnail_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.//div[@class=&quot;uzcko&quot;]/div/span[1]//img/@data-src&#39;</span>
+<span class="w">    </span><span class="nt">results_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'//div[@class="ImZGtf</span><span class="nv"> </span><span class="s">mpg5gc"]'</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'.//div[@class="RZEgze"]//div[@class="kCSSQe"]//a'</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'.//div[@class="RZEgze"]//div[@class="kCSSQe"]//a/@href'</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'.//div[@class="kCSSQe"]'</span>
+<span class="w">    </span><span class="nt">thumbnail_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'.//div[@class="uzcko"]/div/span[1]//img/@data-src'</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">videos</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpm</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -886,9 +886,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://habr.com/en/search/page{pageno}/?q={query}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, &quot;post&quot;)]//a[@class=&quot;post__title_link&quot;]/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, &quot;post&quot;)]//a[@class=&quot;post__title_link&quot;]</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, &quot;post&quot;)]//div[contains(@class, &quot;post__text&quot;)]</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, "post")]//a[@class="post__title_link"]/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, "post")]//a[@class="post__title_link"]</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, "post")]//div[contains(@class, "post__text")]</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 <span class="w">    </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.0</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -905,9 +905,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://habrahabr.ru/search/page{pageno}/?q={query}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, &quot;post&quot;)]//a[@class=&quot;post__title_link&quot;]/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, &quot;post&quot;)]//a[@class=&quot;post__title_link&quot;]</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, &quot;post&quot;)]//div[contains(@class, &quot;post__text&quot;)]</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, "post")]//a[@class="post__title_link"]/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, "post")]//a[@class="post__title_link"]</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[contains(@class, "post")]//div[contains(@class, "post__text")]</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 <span class="w">    </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.0</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -923,10 +923,10 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hoogle</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://hoogle.haskell.org/?hoogle={query}&amp;start={pageno}</span>
-<span class="w">    </span><span class="nt">results_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;//div[@class=&quot;result&quot;]&#39;</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;./div[@class=&quot;ans&quot;]&#39;</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;./div[@class=&quot;ans&quot;]//a/@href&#39;</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;./div[contains(@class,</span><span class="nv"> </span><span class="s">&quot;doc&quot;)]&#39;</span>
+<span class="w">    </span><span class="nt">results_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'//div[@class="result"]'</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'./div[@class="ans"]'</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'./div[@class="ans"]//a/@href'</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="s">'./div[contains(@class,</span><span class="nv"> </span><span class="s">"doc")]'</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ho</span>
 <span class="w">    </span><span class="nt">about</span><span class="p">:</span>
@@ -975,9 +975,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">page_size </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">25</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://libgen.rs/search.php?req={query}&amp;page={pageno}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[contains(@href,&quot;library.lol/main&quot;)]/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[contains(@href,&quot;book/&quot;)]/text()[1]</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//td/a[1][contains(@href,&quot;=author&quot;)]/text()</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[contains(@href,"library.lol/main")]/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[contains(@href,"book/")]/text()[1]</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//td/a[1][contains(@href,"=author")]/text()</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general, files</span>
 <span class="w">    </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7.0</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -998,9 +998,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://search.azlyrics.com/search.php?q={query}&amp;w=lyrics&amp;p={pageno}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//td[@class=&quot;text-left visitedlyr&quot;]/a/@href</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//td[@class="text-left visitedlyr"]/a/@href</span>
 <span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span/b/text()</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//td[@class=&quot;text-left visitedlyr&quot;]/a/small</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//td[@class="text-left visitedlyr"]/a/small</span>
 <span class="w">    </span><span class="nt">about</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">website</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://azlyrics.com</span>
 <span class="w">      </span><span class="nt">use_official_api</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
@@ -1021,10 +1021,10 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lobste.rs</span>
 <span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">search_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://lobste.rs/search?utf8=%E2%9C%93&amp;q={query}&amp;what=stories&amp;order=relevance</span>
-<span class="w">    </span><span class="nt">results_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li[contains(@class, &quot;story&quot;)]</span>
-<span class="w">    </span><span class="nt">url_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.//a[@class=&quot;u-url&quot;]/@href</span>
-<span class="w">    </span><span class="nt">title_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.//a[@class=&quot;u-url&quot;]</span>
-<span class="w">    </span><span class="nt">content_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.//a[@class=&quot;domain&quot;]</span>
+<span class="w">    </span><span class="nt">results_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li[contains(@class, "story")]</span>
+<span class="w">    </span><span class="nt">url_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.//a[@class="u-url"]/@href</span>
+<span class="w">    </span><span class="nt">title_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.//a[@class="u-url"]</span>
+<span class="w">    </span><span class="nt">content_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.//a[@class="domain"]</span>
 <span class="w">    </span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 <span class="w">    </span><span class="nt">shortcut</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lo</span>
 <span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span>
@@ -1059,12 +1059,12 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#    engine : mongodb</span>
 <span class="c1">#    shortcut : md</span>
 <span class="c1">#    exact_match_only : False</span>
-<span class="c1">#    host : &#39;127.0.0.1&#39;</span>
+<span class="c1">#    host : '127.0.0.1'</span>
 <span class="c1">#    port : 27017</span>
 <span class="c1">#    results_per_page : 20</span>
-<span class="c1">#    database : &#39;business&#39;</span>
-<span class="c1">#    collection : &#39;reviews&#39; # name of the db collection</span>
-<span class="c1">#    key : &#39;name&#39; # key in the collection to search for</span>
+<span class="c1">#    database : 'business'</span>
+<span class="c1">#    collection : 'reviews' # name of the db collection</span>
+<span class="c1">#    key : 'name' # key in the collection to search for</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npm</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">json_engine</span>
@@ -1151,7 +1151,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#  - name : opensemanticsearch</span>
 <span class="c1">#    engine : opensemantic</span>
 <span class="c1">#    shortcut : oss</span>
-<span class="c1">#    base_url : &#39;http://localhost:8983/solr/opensemanticsearch/&#39;</span>
+<span class="c1">#    base_url : 'http://localhost:8983/solr/opensemanticsearch/'</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openstreetmap</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openstreetmap</span>
@@ -1162,9 +1162,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#    shortcut : prow</span>
 <span class="c1">#    categories : files</span>
 <span class="c1">#    enable_http : True</span>
-<span class="c1">#    api_key : &#39;&#39;</span>
+<span class="c1">#    api_key : ''</span>
 <span class="c1">#    indexer_ids : 5 # comma separated list of indexer ids</span>
-<span class="c1">#    search_categories : &#39;&#39; # comma separated list of categories</span>
+<span class="c1">#    search_categories : '' # comma separated list of categories</span>
 <span class="c1">#    search_type : search</span>
 <span class="c1">#    base_url: http://localhost:9696/api/v1/search?</span>
 <span class="c1">#    timeout : 50.0</span>
@@ -1181,9 +1181,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://openrepos.net/search/node/{query}?page={pageno}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li[@class=&quot;search-result&quot;]//h3[@class=&quot;title&quot;]/a/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li[@class=&quot;search-result&quot;]//h3[@class=&quot;title&quot;]/a</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li[@class=&quot;search-result&quot;]//div[@class=&quot;search-snippet-info&quot;]//p[@class=&quot;search-snippet&quot;]</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li[@class="search-result"]//h3[@class="title"]/a/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li[@class="search-result"]//h3[@class="title"]/a</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//li[@class="search-result"]//div[@class="search-snippet-info"]//p[@class="search-snippet"]</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">files</span>
 <span class="w">    </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.0</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1221,7 +1221,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#    username : postgres</span>
 <span class="c1">#    password : postgres</span>
 <span class="c1">#    limit : 10</span>
-<span class="c1">#    query_str : &#39;SELECT * from my_table WHERE my_column = %(query)s&#39;</span>
+<span class="c1">#    query_str : 'SELECT * from my_table WHERE my_column = %(query)s'</span>
 <span class="c1">#    shortcut : psql</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pubmed</span>
@@ -1235,11 +1235,11 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.org/search?q={query}&amp;page={pageno}</span>
-<span class="w">    </span><span class="nt">results_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body/main/div/div/div/form/div/ul/li/a[@class=&quot;package-snippet&quot;]</span>
+<span class="w">    </span><span class="nt">results_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body/main/div/div/div/form/div/ul/li/a[@class="package-snippet"]</span>
 <span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./h3/span[@class=&quot;package-snippet__name&quot;]</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./h3/span[@class="package-snippet__name"]</span>
 <span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./p</span>
-<span class="w">    </span><span class="nt">suggestion_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body/main/div/div/div/form/div/div[@class=&quot;callout-block&quot;]/p/span/a[@class=&quot;link&quot;]</span>
+<span class="w">    </span><span class="nt">suggestion_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body/main/div/div/div/form/div/div[@class="callout-block"]/p/span/a[@class="link"]</span>
 <span class="w">    </span><span class="nt">first_page_num </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="w">    </span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 <span class="w">    </span><span class="nt">about</span><span class="p">:</span>
@@ -1279,20 +1279,20 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#  - name: library</span>
 <span class="c1">#    engine: recoll</span>
 <span class="c1">#    shortcut: lib</span>
-<span class="c1">#    base_url: &#39;https://recoll.example.org/&#39;</span>
-<span class="c1">#    search_dir: &#39;&#39;</span>
+<span class="c1">#    base_url: 'https://recoll.example.org/'</span>
+<span class="c1">#    search_dir: ''</span>
 <span class="c1">#    mount_prefix: /export</span>
-<span class="c1">#    dl_prefix: &#39;https://download.example.org&#39;</span>
+<span class="c1">#    dl_prefix: 'https://download.example.org'</span>
 <span class="c1">#    timeout: 30.0</span>
 <span class="c1">#    categories: files</span>
 <span class="c1">#    disabled: True</span>
 
 <span class="c1">#  - name: recoll library reference</span>
 <span class="c1">#    engine: recoll</span>
-<span class="c1">#    base_url: &#39;https://recoll.example.org/&#39;</span>
+<span class="c1">#    base_url: 'https://recoll.example.org/'</span>
 <span class="c1">#    search_dir: reference</span>
 <span class="c1">#    mount_prefix: /export</span>
-<span class="c1">#    dl_prefix: &#39;https://download.example.org&#39;</span>
+<span class="c1">#    dl_prefix: 'https://download.example.org'</span>
 <span class="c1">#    shortcut: libr</span>
 <span class="c1">#    timeout: 30.0</span>
 <span class="c1">#    categories: files</span>
@@ -1309,9 +1309,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#  - name : myredis</span>
 <span class="c1">#    engine : redis_server</span>
 <span class="c1">#    exact_match_only : False</span>
-<span class="c1">#    host : &#39;127.0.0.1&#39;</span>
+<span class="c1">#    host : '127.0.0.1'</span>
 <span class="c1">#    port : 6379</span>
-<span class="c1">#    password : &#39;&#39;</span>
+<span class="c1">#    password : ''</span>
 <span class="c1">#    db : 0</span>
 
 <span class="c1"># tmp suspended: bad certificate</span>
@@ -1332,19 +1332,19 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stackoverflow</span>
 <span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stackexchange</span>
 <span class="w">    </span><span class="nt">shortcut</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">st</span>
-<span class="w">    </span><span class="nt">api_site</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;stackoverflow&#39;</span>
+<span class="w">    </span><span class="nt">api_site</span><span class="p">:</span><span class="w"> </span><span class="s">'stackoverflow'</span>
 <span class="w">    </span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">askubuntu</span>
 <span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stackexchange</span>
 <span class="w">    </span><span class="nt">shortcut</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
-<span class="w">    </span><span class="nt">api_site</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;askubuntu&#39;</span>
+<span class="w">    </span><span class="nt">api_site</span><span class="p">:</span><span class="w"> </span><span class="s">'askubuntu'</span>
 <span class="w">    </span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">superuser</span>
 <span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stackexchange</span>
 <span class="w">    </span><span class="nt">shortcut</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">su</span>
-<span class="w">    </span><span class="nt">api_site</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;superuser&#39;</span>
+<span class="w">    </span><span class="nt">api_site</span><span class="p">:</span><span class="w"> </span><span class="s">'superuser'</span>
 <span class="w">    </span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">searchcode code</span>
@@ -1383,16 +1383,16 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#    shortcut : slr</span>
 <span class="c1">#    base_url : http://localhost:8983</span>
 <span class="c1">#    collection : collection_name</span>
-<span class="c1">#    sort : &#39;&#39; # sorting: asc or desc</span>
-<span class="c1">#    field_list : &#39;&#39; # comma separated list of field names to display on the UI</span>
-<span class="c1">#    default_fields : &#39;&#39; # default field to query</span>
-<span class="c1">#    query_fields : &#39;&#39; # query fields</span>
+<span class="c1">#    sort : '' # sorting: asc or desc</span>
+<span class="c1">#    field_list : '' # comma separated list of field names to display on the UI</span>
+<span class="c1">#    default_fields : '' # default field to query</span>
+<span class="c1">#    query_fields : '' # query fields</span>
 <span class="c1">#    enable_http : True</span>
 
 <span class="c1"># - name : springer nature</span>
 <span class="c1">#   engine : springer</span>
 <span class="c1">#   # get your API key from: https://dev.springernature.com/signup</span>
-<span class="c1">#   api_key : &#39;unset&#39; # working API key, for test &amp; debug: &quot;a69685087d07eca9f13db62f65b8f601&quot;</span>
+<span class="c1">#   api_key : 'unset' # working API key, for test &amp; debug: "a69685087d07eca9f13db62f65b8f601"</span>
 <span class="c1">#   disabled: True</span>
 <span class="c1">#   shortcut : springer</span>
 <span class="c1">#   categories : science</span>
@@ -1422,7 +1422,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#    engine : sqlite</span>
 <span class="c1">#    shortcut: sq</span>
 <span class="c1">#    database : mydb</span>
-<span class="c1">#    query_str : &#39;SELECT * FROM mytable WHERE fieldname=:query&#39;</span>
+<span class="c1">#    query_str : 'SELECT * FROM mytable WHERE fieldname=:query'</span>
 <span class="c1">#    disabled : True</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">torrentz</span>
@@ -1461,9 +1461,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urbandictionary</span>
 <span class="w">    </span><span class="nt">engine        </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">search_url    </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.urbandictionary.com/define.php?term={query}</span>
-<span class="w">    </span><span class="nt">url_xpath     </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//*[@class=&quot;word&quot;]/@href</span>
-<span class="w">    </span><span class="nt">title_xpath   </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//*[@class=&quot;def-header&quot;]</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//*[@class=&quot;meaning&quot;]</span>
+<span class="w">    </span><span class="nt">url_xpath     </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//*[@class="word"]/@href</span>
+<span class="w">    </span><span class="nt">title_xpath   </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//*[@class="def-header"]</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//*[@class="meaning"]</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ud</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 
@@ -1486,7 +1486,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="c1"># You can use the engine using the official stable API, but you need an API key</span>
 <span class="w">    </span><span class="c1"># See : https://console.developers.google.com/project</span>
 <span class="w">    </span><span class="c1">#    engine : youtube_api</span>
-<span class="w">    </span><span class="c1">#    api_key: &#39;apikey&#39; # required!</span>
+<span class="w">    </span><span class="c1">#    api_key: 'apikey' # required!</span>
 <span class="w">    </span><span class="c1"># Or you can use the html non-stable engine, activated by default</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">youtube_noapi</span>
 
@@ -1513,7 +1513,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mediawiki</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wb</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
-<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://{language}.wikibooks.org/&quot;</span>
+<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">"https://{language}.wikibooks.org/"</span>
 <span class="w">    </span><span class="nt">number_of_results </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
 <span class="w">    </span><span class="nt">search_type </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1525,7 +1525,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mediawiki</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wn</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">news</span>
-<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://{language}.wikinews.org/&quot;</span>
+<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">"https://{language}.wikinews.org/"</span>
 <span class="w">    </span><span class="nt">number_of_results </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
 <span class="w">    </span><span class="nt">search_type </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1537,7 +1537,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mediawiki</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wq</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
-<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://{language}.wikiquote.org/&quot;</span>
+<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">"https://{language}.wikiquote.org/"</span>
 <span class="w">    </span><span class="nt">number_of_results </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
 <span class="w">    </span><span class="nt">search_type </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1551,7 +1551,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mediawiki</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ws</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
-<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://{language}.wikisource.org/&quot;</span>
+<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">"https://{language}.wikisource.org/"</span>
 <span class="w">    </span><span class="nt">number_of_results </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
 <span class="w">    </span><span class="nt">search_type </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1563,7 +1563,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mediawiki</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wt</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
-<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://{language}.wiktionary.org/&quot;</span>
+<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">"https://{language}.wiktionary.org/"</span>
 <span class="w">    </span><span class="nt">number_of_results </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
 <span class="w">    </span><span class="nt">search_type </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1575,7 +1575,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mediawiki</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wv</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
-<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://{language}.wikiversity.org/&quot;</span>
+<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">"https://{language}.wikiversity.org/"</span>
 <span class="w">    </span><span class="nt">number_of_results </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
 <span class="w">    </span><span class="nt">search_type </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1587,7 +1587,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mediawiki</span>
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wy</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
-<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://{language}.wikivoyage.org/&quot;</span>
+<span class="w">    </span><span class="nt">base_url </span><span class="p">:</span><span class="w"> </span><span class="s">"https://{language}.wikivoyage.org/"</span>
 <span class="w">    </span><span class="nt">number_of_results </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
 <span class="w">    </span><span class="nt">search_type </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1600,7 +1600,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="c1"># You can use the engine using the official stable API, but you need an API key</span>
 <span class="w">    </span><span class="c1"># See : https://products.wolframalpha.com/api/</span>
 <span class="w">    </span><span class="c1"># engine : wolframalpha_api</span>
-<span class="w">    </span><span class="c1"># api_key: &#39;&#39; # required!</span>
+<span class="w">    </span><span class="c1"># api_key: '' # required!</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wolframalpha_noapi</span>
 <span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6.0</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">science</span>
@@ -1617,7 +1617,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="c1"># You can use without an API key, but you are limited to 1000 words/day</span>
 <span class="w">    </span><span class="c1"># See : https://mymemory.translated.net/doc/usagelimits.php</span>
-<span class="w">    </span><span class="c1"># api_key : &#39;&#39;</span>
+<span class="w">    </span><span class="c1"># api_key : ''</span>
 
 <span class="c1"># Required dependency: mysql-connector-python</span>
 <span class="c1">#  - name : mysql</span>
@@ -1626,7 +1626,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#    username : user</span>
 <span class="c1">#    password : pass</span>
 <span class="c1">#    limit : 10</span>
-<span class="c1">#    query_str : &#39;SELECT * from mytable WHERE fieldname=%(query)s&#39;</span>
+<span class="c1">#    query_str : 'SELECT * from mytable WHERE fieldname=%(query)s'</span>
 <span class="c1">#    shortcut : mysql</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1337x</span>
@@ -1649,11 +1649,11 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.mojeek.com/search?q={query}&amp;s={pageno}</span>
-<span class="w">    </span><span class="nt">results_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body//div[@class=&quot;results&quot;]/ul[@class=&quot;results-standard&quot;]/li</span>
+<span class="w">    </span><span class="nt">results_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body//div[@class="results"]/ul[@class="results-standard"]/li</span>
 <span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./h2/a/@href</span>
 <span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./h2</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./p[@class=&quot;s&quot;]</span>
-<span class="w">    </span><span class="nt">suggestion_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body//div[@class=&quot;top-info&quot;]/p[@class=&quot;top-info spell&quot;]/a</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./p[@class="s"]</span>
+<span class="w">    </span><span class="nt">suggestion_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body//div[@class="top-info"]/p[@class="top-info spell"]/a</span>
 <span class="w">    </span><span class="nt">first_page_num </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 <span class="w">    </span><span class="nt">page_size </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
 <span class="w">    </span><span class="nt">about</span><span class="p">:</span>
@@ -1668,11 +1668,11 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">shortcut </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dp</span>
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
-<span class="w">    </span><span class="c1"># Doesn&#39;t work without the &#39;sc&#39; parameter</span>
+<span class="w">    </span><span class="c1"># Doesn't work without the 'sc' parameter</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.dogpile.com/serp?q={query}&amp;page={pageno}&amp;sc=Gp0GqqlRVflv20</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class=&quot;web-bing__url&quot;]</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class=&quot;web-bing__title&quot;]</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class=&quot;web-bing__description&quot;]</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class="web-bing__url"]</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class="web-bing__title"]</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class="web-bing__description"]</span>
 <span class="w">    </span><span class="nt">page_size </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
 <span class="w">    </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7.0</span>
@@ -1710,10 +1710,10 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://petalsearch.com/search?query={query}&amp;pn={pageno}</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class=&quot;title-name&quot;]</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;card-source&quot;]/text()</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class=&quot;desc-cont&quot;]</span>
-<span class="w">    </span><span class="nt">suggestion_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//*[@class=&quot;rs-text&quot;]/*[contains(class, rs-text)]</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class="title-name"]</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="card-source"]/text()</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class="desc-cont"]</span>
+<span class="w">    </span><span class="nt">suggestion_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//*[@class="rs-text"]/*[contains(class, rs-text)]</span>
 <span class="w">    </span><span class="nt">page_size </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
 <span class="w">    </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.0</span>
@@ -1734,10 +1734,10 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">page_size </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.ask.com/web?q={query}&amp;qo=pagination&amp;page={pageno}</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class=&quot;PartialSearchResults-item-title-link result-link&quot;]</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class=&quot;PartialSearchResults-item-title-link result-link&quot;]/@href</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//p[@class=&quot;PartialSearchResults-item-abstract&quot;]</span>
-<span class="w">    </span><span class="nt">suggestion_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class=&quot;PartialRelatedSearch-item-link-text&quot;]</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class="PartialSearchResults-item-title-link result-link"]</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class="PartialSearchResults-item-title-link result-link"]/@href</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//p[@class="PartialSearchResults-item-abstract"]</span>
+<span class="w">    </span><span class="nt">suggestion_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class="PartialRelatedSearch-item-link-text"]</span>
 <span class="w">    </span><span class="nt">about</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">website</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://ask.com</span>
 <span class="w">      </span><span class="nt">wikidata_id </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Q847564</span>
@@ -1750,9 +1750,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://search.naver.com/search.naver?where=webkr&amp;sm=osp_hty&amp;ie=UTF-8&amp;query={query}&amp;start={pageno}</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class=&quot;link_tit&quot;]/@href</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class=&quot;link_tit&quot;]</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class=&quot;total_dsc&quot;]/div</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class="link_tit"]/@href</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class="link_tit"]</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class="total_dsc"]/div</span>
 <span class="w">    </span><span class="nt">first_page_num </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="w">    </span><span class="nt">page_size </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1769,11 +1769,11 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xpath</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://rubygems.org/search?page={pageno}&amp;query={query}</span>
-<span class="w">    </span><span class="nt">results_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body/main/div/a[@class=&quot;gems__gem&quot;]</span>
+<span class="w">    </span><span class="nt">results_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body/main/div/a[@class="gems__gem"]</span>
 <span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./@href</span>
 <span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./span/h2</span>
 <span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./span/p</span>
-<span class="w">    </span><span class="nt">suggestion_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body/main/div/div[@class=&quot;search__suggestions&quot;]/p/a</span>
+<span class="w">    </span><span class="nt">suggestion_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html/body/main/div/div[@class="search__suggestions"]/p/a</span>
 <span class="w">    </span><span class="nt">first_page_num </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="w">    </span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1803,10 +1803,10 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0</span>
 <span class="w">    </span><span class="nt">paging </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.kaufland.de/item/search/?search_value={query}&amp;page={pageno}</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;product__title&quot;]/text()</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[@class=&quot;product&quot;]//a/@href</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;price&quot;]</span>
-<span class="w">    </span><span class="c1">#thumbnail_xpath : &#39;//div[@class=&quot;product__image-container&quot;]//img/@data-src&#39;</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="product__title"]/text()</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//article[@class="product"]//a/@href</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="price"]</span>
+<span class="w">    </span><span class="c1">#thumbnail_xpath : '//div[@class="product__image-container"]//img/@data-src'</span>
 <span class="w">    </span><span class="nt">categories </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">about</span><span class="p">:</span>
@@ -1819,8 +1819,8 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#  - name : yacy</span>
 <span class="c1">#    engine : yacy</span>
 <span class="c1">#    shortcut : ya</span>
-<span class="c1">#    base_url : &#39;http://localhost:8090&#39;</span>
-<span class="c1">#    enable_http: True # required if you aren&#39;t using HTTPS for your local yacy instance</span>
+<span class="c1">#    base_url : 'http://localhost:8090'</span>
+<span class="c1">#    enable_http: True # required if you aren't using HTTPS for your local yacy instance</span>
 <span class="c1">#    number_of_results : 5</span>
 <span class="c1">#    timeout : 3.0</span>
 
@@ -1847,9 +1847,9 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">timeout </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span>
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">search_url </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://synonyme.woxikon.de/synonyme/{query}.php</span>
-<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;upper-synonyms&quot;]/a/@href</span>
-<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;synonyms-list-group&quot;]</span>
-<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;upper-synonyms&quot;]/a</span>
+<span class="w">    </span><span class="nt">url_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="upper-synonyms"]/a/@href</span>
+<span class="w">    </span><span class="nt">content_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="synonyms-list-group"]</span>
+<span class="w">    </span><span class="nt">title_xpath </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="upper-synonyms"]/a</span>
 <span class="w">    </span><span class="nt">about</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">website</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.woxikon.de/</span>
 <span class="w">      </span><span class="nt">wikidata_id</span><span class="p">:</span><span class="w"> </span><span class="c1"># No Wikidata ID</span>
@@ -1872,10 +1872,10 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">disabled </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">    </span><span class="nt">first_page_num</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 <span class="w">    </span><span class="nt">search_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://search.brave.com/search?q={query}&amp;offset={pageno}&amp;spellcheck=1</span>
-<span class="w">    </span><span class="nt">url_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class=&quot;result-header&quot;]/@href</span>
-<span class="w">    </span><span class="nt">title_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class=&quot;snippet-title&quot;]</span>
-<span class="w">    </span><span class="nt">content_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//p[1][@class=&quot;snippet-description&quot;]</span>
-<span class="w">    </span><span class="nt">suggestion_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class=&quot;text-gray h6&quot;]/a</span>
+<span class="w">    </span><span class="nt">url_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//a[@class="result-header"]/@href</span>
+<span class="w">    </span><span class="nt">title_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//span[@class="snippet-title"]</span>
+<span class="w">    </span><span class="nt">content_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//p[1][@class="snippet-description"]</span>
+<span class="w">    </span><span class="nt">suggestion_xpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//div[@class="text-gray h6"]/a</span>
 <span class="w">    </span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general</span>
 <span class="w">    </span><span class="nt">about</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">website</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://brave.com/search/</span>
@@ -1899,7 +1899,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#  - name : omnom</span>
 <span class="c1">#    engine : omnom</span>
 <span class="c1">#    paging : True</span>
-<span class="c1">#    base_url : &#39;http://your.omnom.host/&#39;</span>
+<span class="c1">#    base_url : 'http://your.omnom.host/'</span>
 <span class="c1">#    enable_http : True</span>
 <span class="c1">#    categories : general</span>
 <span class="c1">#    shortcut : om</span>
@@ -1909,7 +1909,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1">#  - name : ubuntuwiki</span>
 <span class="c1">#    engine : doku</span>
 <span class="c1">#    shortcut : uw</span>
-<span class="c1">#    base_url : &#39;https://doc.ubuntu-fr.org&#39;</span>
+<span class="c1">#    base_url : 'https://doc.ubuntu-fr.org'</span>
 
 <span class="c1"># Be careful when enabling this engine if you are</span>
 <span class="c1"># running a public instance. Do not expose any sensitive</span>
@@ -1917,13 +1917,13 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1"># of access tokens under tokens.</span>
 <span class="c1">#  - name: git grep</span>
 <span class="c1">#    engine: command</span>
-<span class="c1">#    command: [&#39;git&#39;, &#39;grep&#39;, &#39;{{QUERY}}&#39;]</span>
+<span class="c1">#    command: ['git', 'grep', '{{QUERY}}']</span>
 <span class="c1">#    shortcut: gg</span>
 <span class="c1">#    tokens: []</span>
 <span class="c1">#    disabled: True</span>
 <span class="c1">#    delimiter:</span>
-<span class="c1">#        chars: &#39;:&#39;</span>
-<span class="c1">#        keys: [&#39;filepath&#39;, &#39;code&#39;]</span>
+<span class="c1">#        chars: ':'</span>
+<span class="c1">#        keys: ['filepath', 'code']</span>
 
 <span class="c1"># Be careful when enabling this engine if you are</span>
 <span class="c1"># running a public instance. Do not expose any sensitive</span>
@@ -1931,13 +1931,13 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1"># of access tokens under tokens.</span>
 <span class="c1">#  - name: locate</span>
 <span class="c1">#    engine: command</span>
-<span class="c1">#    command: [&#39;locate&#39;, &#39;{{QUERY}}&#39;]</span>
+<span class="c1">#    command: ['locate', '{{QUERY}}']</span>
 <span class="c1">#    shortcut: loc</span>
 <span class="c1">#    tokens: []</span>
 <span class="c1">#    disabled: True</span>
 <span class="c1">#    delimiter:</span>
-<span class="c1">#        chars: &#39; &#39;</span>
-<span class="c1">#        keys: [&#39;line&#39;]</span>
+<span class="c1">#        chars: ' '</span>
+<span class="c1">#        keys: ['line']</span>
 
 <span class="c1"># Be careful when enabling this engine if you are</span>
 <span class="c1"># running a public instance. Do not expose any sensitive</span>
@@ -1945,14 +1945,14 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1"># of access tokens under tokens.</span>
 <span class="c1">#  - name: find</span>
 <span class="c1">#    engine: command</span>
-<span class="c1">#    command: [&#39;find&#39;, &#39;.&#39;, &#39;-name&#39;, &#39;{{QUERY}}&#39;]</span>
+<span class="c1">#    command: ['find', '.', '-name', '{{QUERY}}']</span>
 <span class="c1">#    query_type: path</span>
 <span class="c1">#    shortcut: fnd</span>
 <span class="c1">#    tokens: []</span>
 <span class="c1">#    disabled: True</span>
 <span class="c1">#    delimiter:</span>
-<span class="c1">#        chars: &#39; &#39;</span>
-<span class="c1">#        keys: [&#39;line&#39;]</span>
+<span class="c1">#        chars: ' '</span>
+<span class="c1">#        keys: ['line']</span>
 
 <span class="c1"># Be careful when enabling this engine if you are</span>
 <span class="c1"># running a public instance. Do not expose any sensitive</span>
@@ -1960,13 +1960,13 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1"># of access tokens under tokens.</span>
 <span class="c1">#  - name: pattern search in files</span>
 <span class="c1">#    engine: command</span>
-<span class="c1">#    command: [&#39;fgrep&#39;, &#39;{{QUERY}}&#39;]</span>
+<span class="c1">#    command: ['fgrep', '{{QUERY}}']</span>
 <span class="c1">#    shortcut: fgr</span>
 <span class="c1">#    tokens: []</span>
 <span class="c1">#    disabled: True</span>
 <span class="c1">#    delimiter:</span>
-<span class="c1">#        chars: &#39; &#39;</span>
-<span class="c1">#        keys: [&#39;line&#39;]</span>
+<span class="c1">#        chars: ' '</span>
+<span class="c1">#        keys: ['line']</span>
 
 <span class="c1"># Be careful when enabling this engine if you are</span>
 <span class="c1"># running a public instance. Do not expose any sensitive</span>
@@ -1974,13 +1974,13 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="c1"># of access tokens under tokens.</span>
 <span class="c1">#  - name: regex search in files</span>
 <span class="c1">#    engine: command</span>
-<span class="c1">#    command: [&#39;grep&#39;, &#39;{{QUERY}}&#39;]</span>
+<span class="c1">#    command: ['grep', '{{QUERY}}']</span>
 <span class="c1">#    shortcut: gr</span>
 <span class="c1">#    tokens: []</span>
 <span class="c1">#    disabled: True</span>
 <span class="c1">#    delimiter:</span>
-<span class="c1">#        chars: &#39; &#39;</span>
-<span class="c1">#        keys: [&#39;line&#39;]</span>
+<span class="c1">#        chars: ' '</span>
+<span class="c1">#        keys: ['line']</span>
 
 <span class="nt">locales</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">en </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">English</span>
@@ -2011,7 +2011,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">lt </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lietuvių (Lithuanian)</span>
 <span class="w">    </span><span class="nt">nl </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nederlands (Dutch)</span>
 <span class="w">    </span><span class="nt">nl_BE </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Vlaams (Dutch_Belgium)</span>
-<span class="w">    </span><span class="nt">oc </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lenga D&#39;òc (Occitan)</span>
+<span class="w">    </span><span class="nt">oc </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lenga D'òc (Occitan)</span>
 <span class="w">    </span><span class="nt">pl </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Polski (Polish)</span>
 <span class="w">    </span><span class="nt">pt </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Português (Portuguese)</span>
 <span class="w">    </span><span class="nt">pt_BR </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Português (Portuguese_Brazil)</span>
@@ -2030,17 +2030,17 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>s
 <span class="w">    </span><span class="nt">zh_TW </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">國語 (Taiwanese Mandarin)</span>
 
 <span class="nt">doi_resolvers </span><span class="p">:</span>
-<span class="w">  </span><span class="nt">oadoi.org </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://oadoi.org/&#39;</span>
-<span class="w">  </span><span class="nt">doi.org </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://doi.org/&#39;</span>
-<span class="w">  </span><span class="nt">doai.io  </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://dissem.in/&#39;</span>
-<span class="w">  </span><span class="nt">sci-hub.se </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://sci-hub.se/&#39;</span>
-<span class="w">  </span><span class="nt">sci-hub.do </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://sci-hub.do/&#39;</span>
-<span class="w">  </span><span class="nt">scihubtw.tw </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://scihubtw.tw/&#39;</span>
-<span class="w">  </span><span class="nt">sci-hub.st </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://sci-hub.st/&#39;</span>
-<span class="w">  </span><span class="nt">sci-hub.bar </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://sci-hub.bar/&#39;</span>
-<span class="w">  </span><span class="nt">sci-hub.it.nf </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://sci-hub.it.nf/&#39;</span>
+<span class="w">  </span><span class="nt">oadoi.org </span><span class="p">:</span><span class="w"> </span><span class="s">'https://oadoi.org/'</span>
+<span class="w">  </span><span class="nt">doi.org </span><span class="p">:</span><span class="w"> </span><span class="s">'https://doi.org/'</span>
+<span class="w">  </span><span class="nt">doai.io  </span><span class="p">:</span><span class="w"> </span><span class="s">'https://dissem.in/'</span>
+<span class="w">  </span><span class="nt">sci-hub.se </span><span class="p">:</span><span class="w"> </span><span class="s">'https://sci-hub.se/'</span>
+<span class="w">  </span><span class="nt">sci-hub.do </span><span class="p">:</span><span class="w"> </span><span class="s">'https://sci-hub.do/'</span>
+<span class="w">  </span><span class="nt">scihubtw.tw </span><span class="p">:</span><span class="w"> </span><span class="s">'https://scihubtw.tw/'</span>
+<span class="w">  </span><span class="nt">sci-hub.st </span><span class="p">:</span><span class="w"> </span><span class="s">'https://sci-hub.st/'</span>
+<span class="w">  </span><span class="nt">sci-hub.bar </span><span class="p">:</span><span class="w"> </span><span class="s">'https://sci-hub.bar/'</span>
+<span class="w">  </span><span class="nt">sci-hub.it.nf </span><span class="p">:</span><span class="w"> </span><span class="s">'https://sci-hub.it.nf/'</span>
 
-<span class="nt">default_doi_resolver </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;oadoi.org&#39;</span>
+<span class="nt">default_doi_resolver </span><span class="p">:</span><span class="w"> </span><span class="s">'oadoi.org'</span>
 </pre></div>
 </div>
 </div></div>
@@ -2052,16 +2052,16 @@ Searx looks at the exported environment <code class="docutils literal notranslat
 configuration file.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-8-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-8-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-8-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-8-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># enable debug ..</span>
-$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/debug : False/debug : True/g&quot;</span><span class="w"> </span><span class="s2">&quot;/etc/searx/settings.yml&quot;</span>
+$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">"s/debug : False/debug : True/g"</span><span class="w"> </span><span class="s2">"/etc/searx/settings.yml"</span>
 
 <span class="c1"># start webapp</span>
 $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>-u<span class="w"> </span>searx<span class="w"> </span>-i
 <span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/local/searx/searx-src
-<span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SEARX_SETTINGS_PATH</span><span class="o">=</span><span class="s2">&quot;/etc/searx/settings.yml&quot;</span>
+<span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SEARX_SETTINGS_PATH</span><span class="o">=</span><span class="s2">"/etc/searx/settings.yml"</span>
 <span class="o">(</span>searx<span class="o">)</span>$<span class="w"> </span>python<span class="w"> </span>searx/webapp.py
 
 <span class="c1"># disable debug</span>
-$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/debug : True/debug : False/g&quot;</span><span class="w"> </span><span class="s2">&quot;/etc/searx/settings.yml&quot;</span>
+$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">"s/debug : True/debug : False/g"</span><span class="w"> </span><span class="s2">"/etc/searx/settings.yml"</span>
 </pre></div>
 </div>
 </div></div>

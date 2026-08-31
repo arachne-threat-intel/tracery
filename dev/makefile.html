@@ -140,7 +140,7 @@ $ make install
 PYENV     [virtualenv] installing ./requirements*.txt into local/py3
 ...
 PYENV     OK
-PYENV     [install] pip install -e &#39;searx[test]&#39;
+PYENV     [install] pip install -e 'searx[test]'
 ...
 Successfully installed argparse-1.4.0 searx
 BUILDENV  INFO:searx:load the default settings from ./searx/settings.yml
@@ -161,7 +161,7 @@ PYENV     [virtualenv] requirements.sha256 failed
 PYENV     [virtualenv] installing ./requirements*.txt into local/py3
 ...
 PYENV     OK
-PYENV     [install] pip install -e &#39;searx[test]&#39;
+PYENV     [install] pip install -e 'searx[test]'
 ...
 Successfully installed argparse-1.4.0 searx
 BUILDENV  INFO:searx:load the default settings from ./searx/settings.yml
@@ -256,14 +256,14 @@ by underline:</p>
 </pre></div>
 </div>
 <p>To filter out HTTP redirects (<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_redirection">3xx</a>):</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make SEARX_DEBUG=1 search.checker.google_news | grep -A1 &quot;HTTP/1.1\&quot; 3[0-9][0-9]&quot;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make SEARX_DEBUG=1 search.checker.google_news | grep -A1 "HTTP/1.1\" 3[0-9][0-9]"
 ...
 Engine google news                   Checking
-https://news.google.com:443 &quot;GET /search?q=life&amp;hl=en&amp;lr=lang_en&amp;ie=utf8&amp;oe=utf8&amp;ceid=US%3Aen&amp;gl=US HTTP/1.1&quot; 302 0
-https://news.google.com:443 &quot;GET /search?q=life&amp;hl=en-US&amp;lr=lang_en&amp;ie=utf8&amp;oe=utf8&amp;ceid=US:en&amp;gl=US HTTP/1.1&quot; 200 None
+https://news.google.com:443 "GET /search?q=life&amp;hl=en&amp;lr=lang_en&amp;ie=utf8&amp;oe=utf8&amp;ceid=US%3Aen&amp;gl=US HTTP/1.1" 302 0
+https://news.google.com:443 "GET /search?q=life&amp;hl=en-US&amp;lr=lang_en&amp;ie=utf8&amp;oe=utf8&amp;ceid=US:en&amp;gl=US HTTP/1.1" 200 None
 --
-https://news.google.com:443 &quot;GET /search?q=computer&amp;hl=en&amp;lr=lang_en&amp;ie=utf8&amp;oe=utf8&amp;ceid=US%3Aen&amp;gl=US HTTP/1.1&quot; 302 0
-https://news.google.com:443 &quot;GET /search?q=computer&amp;hl=en-US&amp;lr=lang_en&amp;ie=utf8&amp;oe=utf8&amp;ceid=US:en&amp;gl=US HTTP/1.1&quot; 200 None
+https://news.google.com:443 "GET /search?q=computer&amp;hl=en&amp;lr=lang_en&amp;ie=utf8&amp;oe=utf8&amp;ceid=US%3Aen&amp;gl=US HTTP/1.1" 302 0
+https://news.google.com:443 "GET /search?q=computer&amp;hl=en-US&amp;lr=lang_en&amp;ie=utf8&amp;oe=utf8&amp;ceid=US:en&amp;gl=US HTTP/1.1" 200 None
 --
 </pre></div>
 </div>

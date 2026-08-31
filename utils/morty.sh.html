@@ -79,11 +79,11 @@ into this user account:</p>
 <h2>Create user<a class="headerlink" href="#create-user" title="Permalink to this heading">¶</a></h2>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-0-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-0-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>useradd<span class="w"> </span>--shell<span class="w"> </span>/bin/bash<span class="w"> </span>--system<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--home-dir<span class="w"> </span><span class="s2">&quot;/usr/local/morty&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--comment<span class="w"> </span><span class="s2">&quot;Privacy-respecting metasearch engine&quot;</span><span class="w"> </span>morty
+<span class="w">    </span>--home-dir<span class="w"> </span><span class="s2">"/usr/local/morty"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--comment<span class="w"> </span><span class="s2">"Privacy-respecting metasearch engine"</span><span class="w"> </span>morty
 
-$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>mkdir<span class="w"> </span><span class="s2">&quot;/usr/local/morty&quot;</span>
-$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;morty:morty&quot;</span><span class="w"> </span><span class="s2">&quot;/usr/local/morty&quot;</span>
+$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>mkdir<span class="w"> </span><span class="s2">"/usr/local/morty"</span>
+$<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span><span class="s2">"morty:morty"</span><span class="w"> </span><span class="s2">"/usr/local/morty"</span>
 </pre></div>
 </div>
 </div></div>
@@ -91,16 +91,16 @@ $<span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>c
 <section id="install-go">
 <h2>Install go<a class="headerlink" href="#install-go" title="Permalink to this heading">¶</a></h2>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-1-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-1-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;/usr/local/morty/.go_env&quot;</span><span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-1-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-1-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"/usr/local/morty/.go_env"</span><span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">export GOPATH=/usr/local/morty/go-apps</span>
 <span class="s">export PATH=$PATH:/usr/local/morty/local/go/bin:$GOPATH/bin</span>
 <span class="s">EOF</span>
-$<span class="w"> </span>sudo<span class="w"> </span>-i<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;morty&quot;</span>
-<span class="o">(</span>morty<span class="o">)</span><span class="w"> </span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;source /usr/local/morty/.go_env&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.profile
+$<span class="w"> </span>sudo<span class="w"> </span>-i<span class="w"> </span>-u<span class="w"> </span><span class="s2">"morty"</span>
+<span class="o">(</span>morty<span class="o">)</span><span class="w"> </span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'source /usr/local/morty/.go_env'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.profile
 <span class="o">(</span>morty<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>mkdir<span class="w"> </span>/usr/local/morty/local
-<span class="o">(</span>morty<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>wget<span class="w"> </span>--progress<span class="o">=</span>bar<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;go1.13.5.linux-amd64.tar.gz&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span><span class="s2">&quot;https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz&quot;</span>
-<span class="o">(</span>morty<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>tar<span class="w"> </span>-C<span class="w"> </span>/usr/local/morty/local<span class="w"> </span>-xzf<span class="w"> </span><span class="s2">&quot;go1.13.5.linux-amd64.tar.gz&quot;</span>
+<span class="o">(</span>morty<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>wget<span class="w"> </span>--progress<span class="o">=</span>bar<span class="w"> </span>-O<span class="w"> </span><span class="s2">"go1.13.5.linux-amd64.tar.gz"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">            </span><span class="s2">"https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz"</span>
+<span class="o">(</span>morty<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>tar<span class="w"> </span>-C<span class="w"> </span>/usr/local/morty/local<span class="w"> </span>-xzf<span class="w"> </span><span class="s2">"go1.13.5.linux-amd64.tar.gz"</span>
 <span class="o">(</span>morty<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>which<span class="w"> </span>go
 /usr/local/morty/local/go/bin/go
 </pre></div>
@@ -111,7 +111,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-i<span class="w"> </span>-
 <h2>Install morty<a class="headerlink" href="#install-morty" title="Permalink to this heading">¶</a></h2>
 <p>Install morty software and systemd unit:</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-2-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-2-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-i<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;morty&quot;</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-YmFzaA==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-YmFzaA==" name="YmFzaA==" role="tab" tabindex="0">bash</button></div><div aria-labelledby="tab-2-YmFzaA==" class="sphinx-tabs-panel group-tab" id="panel-2-YmFzaA==" name="YmFzaA==" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>-i<span class="w"> </span>-u<span class="w"> </span><span class="s2">"morty"</span>
 <span class="o">(</span>morty<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>go<span class="w"> </span>get<span class="w"> </span>-v<span class="w"> </span>-u<span class="w"> </span>github.com/asciimoo/morty
 </pre></div>
 </div>
@@ -129,7 +129,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>-i<span class="w"> </span>-
 <span class="nv">User</span><span class="o">=</span>morty
 <span class="nv">Group</span><span class="o">=</span>morty
 <span class="nv">WorkingDirectory</span><span class="o">=</span>/usr/local/morty
-<span class="nv">ExecStart</span><span class="o">=</span>/usr/local/morty/go-apps/bin/morty<span class="w"> </span>-key<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-listen<span class="w"> </span><span class="s1">&#39;127.0.0.1:3000&#39;</span><span class="w"> </span>-timeout<span class="w"> </span><span class="m">5</span>
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/local/morty/go-apps/bin/morty<span class="w"> </span>-key<span class="w"> </span><span class="s1">''</span><span class="w"> </span>-listen<span class="w"> </span><span class="s1">'127.0.0.1:3000'</span><span class="w"> </span>-timeout<span class="w"> </span><span class="m">5</span>
 
 <span class="nv">Restart</span><span class="o">=</span>always
 <span class="nv">Environment</span><span class="o">=</span><span class="nv">USER</span><span class="o">=</span>morty<span class="w"> </span><span class="nv">HOME</span><span class="o">=</span>/usr/local/morty<span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span><span class="nb">false</span>
@@ -171,7 +171,7 @@ shell
   start interactive shell from user morty
 install / remove
   all:        complete setup of morty service
-  user:       add/remove service user &#39;morty&#39; (/usr/local/morty)
+  user:       add/remove service user 'morty' (/usr/local/morty)
 update morty
   Update morty installation (/usr/local/morty)
 activate service
@@ -183,22 +183,22 @@ inspect service
 option
   set one of the available options
   :new-key:   set new morty key
-apache : http://runnervm0kj6c/morty/
+apache : http://runnervmgx7h7/morty/
   :install: apache site with a reverse proxy (ProxyPass)
   :remove:  apache site morty.conf
-nginx (http://runnervm0kj6c/morty/)
+nginx (http://runnervmgx7h7/morty/)
   :install: nginx site with a reverse proxy (ProxyPass)
   :remove:  nginx site morty.conf
 
-If needed, set the environment variables in the &#39;.config.sh&#39; file::
-  PUBLIC_URL_MORTY:     http://runnervm0kj6c/morty/
+If needed, set the environment variables in the '.config.sh' file::
+  PUBLIC_URL_MORTY:     http://runnervmgx7h7/morty/
   MORTY_LISTEN:         127.0.0.1:3000
   SERVICE_USER:         morty
 
 To activate result and image proxy in searx, edit settings.yml (read:
 https://searx.github.io/searx/admin/morty.html)::
   result_proxy:
-      url : http://runnervm0kj6c/morty/
+      url : http://runnervmgx7h7/morty/
   server:
       image_proxy : True
 </pre></div>
