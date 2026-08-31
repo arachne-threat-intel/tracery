@@ -42,7 +42,7 @@ Community-Driven Development: Tracery is developed with input from the community
 Requirements
 ############
 
-Tracery supports Python 3.10+
+Tracery supports Python 3.11+
 
 Installation
 ############
