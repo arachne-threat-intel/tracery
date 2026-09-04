@@ -1,4 +1,4 @@
-Brotli~=1.1
+Brotli~=1.2
 babel~=2.15
 certifi~=2026.7.22
 flask-babel~=4.0
