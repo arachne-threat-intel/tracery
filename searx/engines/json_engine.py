@@ -26,7 +26,7 @@ first_page_num = 1
 
 
 def iterate(iterable):
-    if type(iterable) == dict:
+    if isinstance(iterable, dict):
         it = iterable.items()
 
     else:
@@ -36,7 +36,7 @@ def iterate(iterable):
 
 
 def is_iterable(obj):
-    if type(obj) == str:
+    if isinstance(obj, str):
         return False
     return isinstance(obj, Iterable)
 

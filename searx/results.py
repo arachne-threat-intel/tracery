@@ -151,8 +151,8 @@ def result_score(result, language):
 class ResultContainer:
     """docstring for ResultContainer"""
 
-    __slots__ = '_merged_results', 'infoboxes', 'suggestions', 'answers', 'corrections', '_number_of_results',\
-                '_ordered', 'paging', 'unresponsive_engines', 'timings', 'redirect_url', 'engine_data',\
+    __slots__ = '_merged_results', 'infoboxes', 'suggestions', 'answers', 'corrections', '_number_of_results', \
+                '_ordered', 'paging', 'unresponsive_engines', 'timings', 'redirect_url', 'engine_data', \
                 '_language'
 
     def __init__(self, language):
