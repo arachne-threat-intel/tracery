@@ -24,7 +24,7 @@ class EngineRef:
 class SearchQuery:
     """container for all the search parameters (query, language, etc...)"""
 
-    __slots__ = 'query', 'engineref_list', 'lang', 'safesearch', 'pageno', 'time_range',\
+    __slots__ = 'query', 'engineref_list', 'lang', 'safesearch', 'pageno', 'time_range', \
                 'timeout_limit', 'external_bang', 'engine_data'
 
     def __init__(self,
