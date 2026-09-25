@@ -2,7 +2,7 @@ mock==5.2.0
 nose2[coverage_plugin]==0.16.0
 cov-core==1.15.0
 pycodestyle==2.14.0
-pylint~=3.2
+pylint~=4.0
 splinter==0.21.0
 selenium==4.48.0
 twine==4.0.2
