@@ -8,7 +8,11 @@
 
 <!-- MANDATORY -->
 
-<!-- explain the motivation behind your PR -->
+<!-- Explain in plain language who is affected, what happens today, and why it
+matters. Say what this change helps them do or avoid and which user, operational,
+or business outcome it supports. Include the technical cause and why this
+approach was chosen when they help the reviewer decide. Support measured impact
+with evidence and describe expected impact as an intended outcome. -->
 
 ## How to test this PR locally?
 
