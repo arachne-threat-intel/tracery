@@ -68,10 +68,9 @@ jobs:
     - name: Install Ubuntu packages
       run: sudo ./utils/searx.sh install packages
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.9'
-        architecture: 'x64'
+        python-version: '3.12'
     - name: Cache Python dependencies
       id: cache-python
       uses: actions/cache@v4
