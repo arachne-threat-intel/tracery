@@ -33,10 +33,9 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y firefox
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
-        architecture: 'x64'
     - name: Cache Python dependencies
       id: cache-python
       uses: actions/cache@v4
@@ -114,7 +113,8 @@ jobs:
 
   dockers:
     name: Docker
-    if: github.ref == 'refs/heads/main'
+    # skipping for now
+    if: false  # github.ref == 'refs/heads/main'
     needs:
       - python
       - themes
@@ -130,10 +130,9 @@ jobs:
           # make sure "make docker.push" can get the git history
           fetch-depth: '0'
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
-          architecture: 'x64'
+          python-version: '3.12'
       - name: Cache Python dependencies
         id: cache-python
         uses: actions/cache@v4
