@@ -93,7 +93,7 @@ def response(resp):
                 break
 
         if not img_src:
-            logger.debug('cannot find valid image size: {0}'.format(repr(photo)))
+            logger.debug('cannot find valid image size: %s', repr(photo))
             continue
 
         # For a bigger thumbnail, keep only the url_z, not the url_n

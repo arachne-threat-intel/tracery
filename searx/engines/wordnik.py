@@ -29,7 +29,7 @@ SEARCH_URL = URL + '/words/{query}'
 
 def request(query, params):
     params['url'] = SEARCH_URL.format(query=query)
-    logger.debug(f"query_url --> {params['url']}")
+    logger.debug("query_url --> %s", params['url'])
     return params
 
 
