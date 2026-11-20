@@ -62,11 +62,11 @@ engine_default_args = {'paging': False,
 def load_engine(engine_data):
     engine_name = engine_data['name']
     if '_' in engine_name:
-        logger.error('Engine name contains underscore: "{}"'.format(engine_name))
+        logger.error('Engine name contains underscore: "%s"', engine_name)
         sys.exit(1)
 
     if engine_name.lower() != engine_name:
-        logger.warn('Engine name is not lowercase: "{}", converting to lowercase'.format(engine_name))
+        logger.warning('Engine name is not lowercase: "%s", converting to lowercase', engine_name)
         engine_name = engine_name.lower()
         engine_data['name'] = engine_name
 
@@ -76,10 +76,10 @@ def load_engine(engine_data):
     try:
         engine = load_module(engine_module + '.py', engine_dir)
     except (SyntaxError, KeyboardInterrupt, SystemExit, SystemError, ImportError, RuntimeError):
-        logger.exception('Fatal exception in engine "{}"'.format(engine_module))
+        logger.exception('Fatal exception in engine "%s"', engine_module)
         sys.exit(1)
     except FileNotFoundError as e:
-        logger.exception(cannot_load_msg + '; ' + str(e), exc_info=False)
+        logger.exception('%s; %s', cannot_load_msg, e, exc_info=False)
         return None
     except:
         logger.exception(cannot_load_msg)
@@ -109,8 +109,7 @@ def load_engine(engine_data):
         if engine_attr == 'inactive' and getattr(engine, engine_attr) is True:
             return None
         if getattr(engine, engine_attr) is None:
-            logger.error('Missing engine config attribute: "{0}.{1}"'
-                         .format(engine.name, engine_attr))
+            logger.error('Missing engine config attribute: "%s.%s"', engine.name, engine_attr)
             sys.exit(1)
 
     # assign supported languages from json file
@@ -175,7 +174,7 @@ def load_engine(engine_data):
         categories.setdefault(category_name, []).append(engine)
 
     if engine.shortcut in engine_shortcuts:
-        logger.error('Engine config error: ambiguous shortcut: {0}'.format(engine.shortcut))
+        logger.error('Engine config error: ambiguous shortcut: %s', engine.shortcut)
         sys.exit(1)
 
     engine_shortcuts[engine.shortcut] = engine.name
@@ -298,7 +297,7 @@ def initialize_engines(engine_list):
         try:
             init_fn(get_engine_from_settings(engine_name))
         except SearxEngineResponseException as exc:
-            logger.warn('%s engine: Fail to initialize // %s', engine_name, exc)
+            logger.warning('%s engine: Fail to initialize // %s', engine_name, exc)
         except Exception:
             logger.exception('%s engine: Fail to initialize', engine_name)
         else:
