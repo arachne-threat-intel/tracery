@@ -113,8 +113,7 @@ jobs:
 
   dockers:
     name: Docker
-    # skipping for now
-    if: false  # github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     needs:
       - python
       - themes
