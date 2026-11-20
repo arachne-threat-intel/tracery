@@ -180,22 +180,22 @@ inspect service
 option
   set one of the available options
   :new-key:   set new morty key
-apache : http://runnervm0hi8g/morty/
+apache : http://runnervmccnms/morty/
   :install: apache site with a reverse proxy (ProxyPass)
   :remove:  apache site morty.conf
-nginx (http://runnervm0hi8g/morty/)
+nginx (http://runnervmccnms/morty/)
   :install: nginx site with a reverse proxy (ProxyPass)
   :remove:  nginx site morty.conf
 
 If needed, set the environment variables in the '.config.sh' file::
-  PUBLIC_URL_MORTY:     http://runnervm0hi8g/morty/
+  PUBLIC_URL_MORTY:     http://runnervmccnms/morty/
   MORTY_LISTEN:         127.0.0.1:3000
   SERVICE_USER:         morty
 
 To activate result and image proxy in searx, edit settings.yml (read:
 https://searx.github.io/searx/admin/morty.html)::
   result_proxy:
-      url : http://runnervm0hi8g/morty/
+      url : http://runnervmccnms/morty/
   server:
       image_proxy : True
 </pre></div>
