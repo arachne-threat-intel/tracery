@@ -176,7 +176,7 @@ def response(resp):
             continue
         img_src = vidthumb_imgdata.get(img_id, None)
         if not img_src:
-            logger.error("no vidthumb imgdata for: %s" % img_id)
+            logger.error("no vidthumb imgdata for: %s", img_id)
             img_src = eval_xpath_getindex(c_node, './div[1]//a/g-img/img/@src', 0)
 
         length = extract_text(eval_xpath(c_node, './/div[1]//a/div[3]'))
