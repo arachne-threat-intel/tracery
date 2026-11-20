@@ -79,6 +79,8 @@ jobs:
         key: python-ubuntu-latest-3.9-${{ hashFiles('requirements*.txt', 'setup.py') }}
     - name: Install node dependencies
       run: make V=1 node.env
+    - name: Install global grunt-cli
+      run: npm install -g grunt-cli
     - name: Build themes
       run: make V=1 themes.all
 
