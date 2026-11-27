@@ -13,6 +13,6 @@ sphinx-issues==6.0.0
 sphinx-jinja==2.0.2
 sphinx-tabs==3.5.0
 sphinxcontrib-programoutput==0.19
-sphinx-autobuild==2021.3.14
+sphinx-autobuild==2025.8.25
 linuxdoc==20260504
 setuptools<85.0.0
